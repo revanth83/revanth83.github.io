@@ -3,7 +3,7 @@ layout: post
 Title: Processing the MTA turnstile data!
 ---
 
-During the first week, I used Python to analyze the publicly available MTA turnstile data. I also wrote a proposal on the possible usage of this data for practical purposes and made a presentation on it.Next you can update your personal site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+During the first week, I wrote Python code to analyze the publicly available MTA turnstile data. I also wrote a proposal on the possible usage of this data for solving practical problems and made an oral presentation on it at the end of the week. Next you can update your personal site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 
