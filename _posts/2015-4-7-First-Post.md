@@ -1,5 +1,3 @@
----
-layout: post
 Title: Processing the MTA turnstile data!
 
 During the first week, I wrote Python code to analyze the publicly available MTA turnstile data.
