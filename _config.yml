@@ -10,8 +10,8 @@ name: Revanth Garlapati
 description: Data Scientist from Metis
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/2524dee.jpg
-
+#avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/2524dee.jpg
+avatar:![_config.yml]({{ site.baseurl }}/images/train-people.png)
 #
 # Flags below are optional
 #
@@ -19,15 +19,15 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/25
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: revanth.garlapati@gmail.com
+  email: revanth@alum.mit.edu
   facebook:
   flickr:
-  github: barryclark/jekyll-now
+  github: https://github.com/revanth83
   instagram:
-  linkedin:
+  linkedin:https://www.linkedin.com/in/revanthgarlapati
   pinterest:
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: jekyllrb
+  twitter: revanth2309
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
 
@@ -40,7 +40,7 @@ google_analytics:
 
 # Your website URL (e.g. http://revanth83.github.io or http://www.revanth83.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: http://revanth83.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
