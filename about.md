@@ -4,8 +4,6 @@ title: Data Scientist
 permalink: /about/
 ---
 
-Some information about you!
-
 I am a data scientist at Metis, an immersive 12 week data science program in New York city. Rather than focusing on a single type of problem, I have experience in and enjoy a wide range of machine learning and data mangling problems. Through five data projects, Metis teaches and reinforces concepts such as statistical inference, data acquisition, supervised and unsupervised learning, D3.js, SQL and NoSQL databases, and Hadoop MapReduce. Some of these include predicting cinema gross revenue, using natural language processing to classify blogs by political leaning etc.
 
 ### More Information
