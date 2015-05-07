@@ -10,9 +10,10 @@ an oral presentation on it at the end of the week.
 ![Train People]({{ site.baseurl }}/images/train-people.png)
 
 <figure>
- ![Bargraph MTA]({{ site.baseurl }}/images/bargraph-mta-data.png)
+  <img src="{{ site.baseurl }}/images/bargraph-mta-data.png">
   <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
 </figure>
 
 New York has one of the the busiest Subways in the world
 
+![Bargraph MTA]({{ site.baseurl }}/images/bargraph-mta-data.png)
