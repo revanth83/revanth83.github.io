@@ -11,7 +11,7 @@ an oral presentation on it at the end of the week.
 
 <figure>
   <img src="{{ site.baseurl }}/images/train-people.png">
-  <figcaption>Fig1. - A crowded train station on a typical day in New York.</figcaption>
+  <figcaption>Fig1. - A crowded subway train on a typical day in New York.</figcaption>
 </figure>
 
 <figure>
