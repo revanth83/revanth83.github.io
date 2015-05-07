@@ -7,13 +7,16 @@ During the first week, I wrote Python code to analyze the publicly available MTA
 I also wrote a proposal on the possible usage of this data for solving practical problems and made
 an oral presentation on it at the end of the week.
 
-![Train People]({{ site.baseurl }}/images/train-people.png)
+ New York has one of the the busiest Subways in the world
+
+<figure>
+  <img src="{{ site.baseurl }}/images/train-people.png">
+  <figcaption>Fig1. - A crowded train station on a typical day in New York.</figcaption>
+</figure>
 
 <figure>
   <img src="{{ site.baseurl }}/images/bargraph-mta-data.png">
-  <figcaption>Fig1. - A view of the pulpit rock in Norway.</figcaption>
+  <figcaption>Fig2. - A bargraph of the foot traffic at top 5 stations.</figcaption>
 </figure>
 
-New York has one of the the busiest Subways in the world
 
-![Bargraph MTA]({{ site.baseurl }}/images/bargraph-mta-data.png)
