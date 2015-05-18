@@ -1,4 +1,4 @@
-This b log was created using Jekyll -Revanth
+This blog was created using Jekyll -Revanth
 
 
 
