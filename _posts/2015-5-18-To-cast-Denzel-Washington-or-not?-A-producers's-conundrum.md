@@ -13,12 +13,12 @@ Firstly, let's go over the client and the problem. My client is a reclusive prod
 
 <figure>
    <img src="{{ site.baseurl }}/images/denzelpic1.png">
-  <figcaption>Fig1. - Denzel Washington in Training Day.</figcaption>
+  <figcaption style="text-align:center;">Fig1. - Denzel Washington in Training Day.</figcaption>
 </figure>
 
 <figure>
    <img src="{{ site.baseurl }}/images/charlie's_angels_pic2.png">
-  <figcaption>Fig2. - Charlie's angels deal with me on his behalf.</figcaption>
+  <figcaption style="text-align:center;">Fig2. - Charlie's angels deal with me on his behalf.</figcaption>
 </figure>
 
 I relied on 2 data sources: boxofficemojo.com and wikipedia.com. I used BeautifulSoup package to scrape various quantities of interest such as Gross Domestic Revenue and Production budget, Date released etc. OF 15,000 movies fromboxofficemojo.com. Subsequently, using the same, I scraped movie list of Denzel Washington from WikiPedia. 
@@ -29,7 +29,7 @@ Subsequently, I performed statistical analysis using Statsmodels package to unde
 
 <figure>
   <img src="{{ site.baseurl }}/images/regression_plot_pic3.png">
-  <figcaption>Fig3. - The regression plot demonstrating that the gross revenue per unit budget is lower for
+  <figcaption style="text-align:center;">Fig3. - The regression plot demonstrating that the gross revenue per unit budget is lower for
   Denzel's movies on an average than those of other Hollywood stars.</figcaption>
 </figure>
 
