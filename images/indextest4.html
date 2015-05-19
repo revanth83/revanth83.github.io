@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="../build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, #chart1, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class='with-3d-shadow with-transitions'>
+
+<div id="chart1"></div>
+
+<script>
+    // Wrapping in nv.addGraph allows for '0 timeout render', stores rendered charts in nv.graphs, and may do more in the future... it's NOT required
+    var chart;
+    nv.addGraph(function() {
+        chart = nv.models.lineChart()
+            .options({
+                transitionDuration: 300,
+                useInteractiveGuideline: true
+            })
+        ;
+        // chart sub-models (ie. xAxis, yAxis, etc) when accessed directly, return themselves, not the parent chart, so need to chain separately
+        chart.xAxis
+            .axisLabel('Age')
+            .tickFormat(d3.format(',.1f'))
+            .staggerLabels(true)
+        ;
+        chart.yAxis
+            .axisLabel('Heart Disease Risk %')
+            .tickFormat(d3.format(',.2f'))
+        ;
+        d3.select('#chart1').append('svg')
+            .datum(risk_data())
+            .call(chart);
+        nv.utils.windowResize(chart.update);
+        return chart;
+
+    });
+
+    function risk_data() {
+        // var sin = [],
+            cig_0 = [],
+            cig_30 = [],
+            cig_60 = [],
+            cig_0_m=[],
+            cig_30_m=[],
+            cig_60_m=[],
+            cig_0_nf = [],
+            cig_30_nf = [],
+            cig_60_nf = [],
+            cig_0_m_nf=[],
+            cig_30_m_nf=[],
+            cig_60_m_nf=[]
+            ;
+        for (var i = 0; i < 100; i++) {
+            // sin.push({x: i, y: i % 10 == 5 ? null : Math.sin(i/10) }); //the nulls are to show how defined works
+            // "#d62728", "#9467bd", "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"
+            cig_0.push({x: i, y: 100/(1+Math.exp(-0.04847*i - 0.185318))});
+            cig_30.push({x:i, y: 100/(1+Math.exp(-0.04847*i -0.002758*30 - 0.185318)) });
+            cig_60.push({x: i, y:100/(1+Math.exp(-0.04847*i -0.002758*60 - 0.185318)) }) ; //0.04847 -age, 1.68034-sex, 0.002758-cigs, 0.185318-famhist
+            cig_0_m.push({x: i, y: 100/(1+Math.exp(-0.04847*i -1.68034- 0.185318))});
+            cig_30_m.push({x: i, y: 100/(1+Math.exp(-0.04847*i -1.68034 -0.002758*30- 0.185318))});
+            cig_60_m.push({x: i, y: 100/(1+Math.exp(-0.04847*i -1.68034 -0.002758*60- 0.185318))});
+
+            cig_0_nf.push({x: i, y: 100/(1+Math.exp(-0.04847*i))});
+            cig_30_nf.push({x:i, y: 100/(1+Math.exp(-0.04847*i -0.002758*30)) });
+            cig_60_nf.push({x: i, y:100/(1+Math.exp(-0.04847*i -0.002758*60)) }) ; //0.04847 -age, 1.68034-sex, 0.002758-cigs, 0.185318-famhist
+
+            cig_0_m_nf.push({x: i, y: 100/(1+Math.exp(-0.04847*i -1.68034))});
+            cig_30_m_nf.push({x: i, y: 100/(1+Math.exp(-0.04847*i -1.68034 -0.002758*30))});
+            cig_60_m_nf.push({x: i, y: 100/(1+Math.exp(-0.04847*i -1.68034 -0.002758*60))});
+        }
+        return [
+            // {
+            //     area: true,
+            //     values: sin,
+            //     key: "Sine Wave",
+            //     color: "#ff7f0e"
+            // },
+            {
+                values: cig_0,
+                key: "Female and Cigarettes/day = 0 and Family history",
+                // disabled:'true',
+                color: "#2ca02c"
+            },
+            {
+                values: cig_30,
+                key: "Female and Cigarettes/day = 30 and Family history",
+                disabled:'true',
+                color: "#2222ff"
+            },
+            {
+                values: cig_60,
+                key: "Female and Cigarettes/day = 60 and Family history",
+                //color: "#667711" 
+                disabled:'true',
+                color: "#d62728"
+            },
+            {
+                values: cig_0_m,
+                key: "Male and Cigarettes/day = 0 and Family history",
+                disabled:'true',
+                //color: "#667711" 
+                color: "#667711"
+            },
+            {
+                values: cig_30_m,
+                key: "Male and Cigarettes/day = 30 and Family history",
+                //color: "#667711" 
+                disabled:'true',
+                color: "#ff7f0e"
+            },
+            {
+                values: cig_60_m,
+                key: "Male and Cigarettes/day = 60 and Family history",
+                //color: "#667711"
+                disabled:'true', 
+                color: "#8c564b"
+            },
+            {
+                values: cig_0_nf,
+                key: "Female, Cigarettes/day = 0 and No Family history",
+                disabled:'true',
+                color: "#17becf"
+            },
+            {
+                values: cig_30_nf,
+                key: "Female and Cigarettes/day = 30  and No Family history",
+                disabled:'true',
+                color: "#bcbd22"
+            },
+            {
+                values: cig_60_nf,
+                key: "Female and Cigarettes/day = 60 and No Family history",
+                //color: "#667711" 
+                disabled:'true',
+                color: "#7f7f7f"
+            },
+            {
+                values: cig_0_m_nf,
+                key: "Male and Cigarettes/day = 0 and No Family history",
+                //color: "#667711" 
+                //disabled:'true',
+                color: "#e377c2"
+            },
+            {
+                values: cig_30_m_nf,
+                key: "Male and Cigarettes/day = 30 and No Family history",
+                //color: "#667711" 
+                disabled:'true',
+                color: "#9467bd"
+            },
+            {
+                values: cig_60_m_nf,
+                key: "Male and Cigarettes/day = 60 and No Family history",
+                //color: "#667711" 
+                disabled:'true',
+                color: "#aec7e8"
+            }
+        ];
+    }
+</script>
+</body>
+</html>
