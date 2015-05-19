@@ -13,7 +13,7 @@ Title: Processing the MTA turnstile data!
 Analysis of the various risk factors associated with heart disease helps health care professionals to identify subjects with high risk of having heart disease. 
 The objective of this project is to develop an Intelligent Heart Disease Risk Prediction System that uses the patient's data to perform heart disease risk prediction.
 
-The dataset I looked at is publicly available from the University of California, Irvine machine learning repository; in particular, 4 databases coming from the Hungarian Institute of Cardiology in Budapest, the University Hospitals of Zurich and Basel in Switzerland, as well as the V.A. Medical Center in Long Beach and the Cleveland Clinic Foundation in the USA.
+The dataset I looked at is publicly available from the University of California, Irvine machine learning repository.
 
 Risk factors associated with heart disease are age, blood pressure, smoking habit, total cholesterol, diabetes, family history of heart disease, etc. I considered the attributes in the following file for this study(http://archive.ics.uci.edu/ml/datasets/Heart+Disease).
 
@@ -32,15 +32,15 @@ I was able to achieve 80% + Precision and 80%+ Recall with various classificatio
 
 This project also gave me an opportunity to work with remote relational databases and to visualize my data using D3.js an interactive tool for flexible and attractive presentations of data.
 
-My simplified version of interactive intelligent heart disease risk predictor based on d3 can provide heart disease risk prediction based on a person's age, family history, sex, smoking habits etc. The D3 visualization is available at this link ().
+My simplified version of interactive intelligent heart disease risk predictor based on d3 can provide heart disease risk prediction based on a person's age, family history, sex, smoking habits etc. The D3 visualization is available as follows:
 
 
 The subject may click on the relevant radio button in the legend to get their heart disease risk profile with respect to age. They can also visualise the comparison between their risk profile and a different subject's profile by selecting relevant radio buttons in the legend.  
 
-<figure>
+<<!-- figure>
    <img src="{{ site.baseurl }}/images/static_heart_disease_predictor.png">
   <figcaption style="text-align:center;">Fig2. - Static version of Heart Disease Risk Predictor</figcaption>
-</figure>
+</figure> -->
 
 
 <iframe src="{{ site.baseurl }}/images/html/indextest4.html" width="800" height="800" scrolling="yes"></iframe>
