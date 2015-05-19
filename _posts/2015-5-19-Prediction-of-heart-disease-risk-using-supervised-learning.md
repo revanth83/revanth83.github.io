@@ -3,6 +3,13 @@ layout: post
 Title: Processing the MTA turnstile data!
 ---
 
+<style>
+   img {
+       display: block;
+       margin: auto;
+   }
+</style>
+
 Analysis of the various risk factors associated with heart disease helps health care professionals to identify subjects with high risk of having heart disease. 
 The objective of this project is to develop an Intelligent Heart Disease Risk Prediction System that uses the patient's data to perform heart disease risk prediction.
 
@@ -20,7 +27,7 @@ I was able to achieve 80% + Precision and 80%+ Recall with various classificatio
 
 <figure>
    <img src="{{ site.baseurl }}/images/mcnulty_roc_curves_for_various_models.png">
-  <figcaption>Fig1. - Receiver Operating Characteristic curves for various models.</figcaption>
+  <figcaption style="text-align:center;">Fig1. - Receiver Operating Characteristic curves for various models.</figcaption>
 </figure>
 
 This project also gave me an opportunity to work with remote relational databases and to visualize my data using D3.js an interactive tool for flexible and attractive presentations of data.
