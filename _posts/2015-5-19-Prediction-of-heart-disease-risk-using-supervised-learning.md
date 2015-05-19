@@ -45,5 +45,6 @@ The subject may click on the relevant radio button in the legend to get their he
 
 <iframe src="{{ site.baseurl }}/images/indextest4.html" width="800" height="800" scrolling="yes"></iframe>
 
+<iframe src="{{'/images/diag_count.html' | prepend: site.baseurl }}" width="800" height="600" frameborder="0"></iframe>
 
 
