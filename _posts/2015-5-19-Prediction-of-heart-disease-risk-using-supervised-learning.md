@@ -37,14 +37,7 @@ My simplified version of interactive intelligent heart disease risk predictor ba
 
 The subject may click on the relevant radio button in the legend to get their heart disease risk profile with respect to age. They can also visualise the comparison between their risk profile and a different subject's profile by selecting relevant radio buttons in the legend.  
 
-<<!-- figure>
-   <img src="{{ site.baseurl }}/images/static_heart_disease_predictor.png">
-  <figcaption style="text-align:center;">Fig2. - Static version of Heart Disease Risk Predictor</figcaption>
-</figure> -->
-
-
 <iframe src="{{ site.baseurl }}/images/html/indextest4.html" width="800" height="800" scrolling="yes"></iframe>
-<!-- 
-<iframe src="{{'/images/diag_count.html' | prepend: site.baseurl }}" width="800" height="600" frameborder="0"></iframe> -->
+
 
 
