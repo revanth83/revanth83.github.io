@@ -30,7 +30,7 @@ My simplified version of interactive intelligent heart disease risk predictor ba
 The subject may click on the relevant radio button in the legend to get their heart disease risk profile with respect to age. They can also visualise the comparison between their risk profile and a different subject's profile by selecting relevant radio buttons in the legend.  
 
 <figure>
-   <img src="{{ site.baseurl }}/images/mcnulty_roc_curves_for_various_models.png">
+   <img src="{{ site.baseurl }}/images/static_heart_disease_predictor.png">
   <figcaption>Fig2. - Static version of Heart Disease Risk Predictor</figcaption>
 </figure>
 
