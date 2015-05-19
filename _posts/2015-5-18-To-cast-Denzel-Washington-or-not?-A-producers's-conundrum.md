@@ -2,16 +2,22 @@
 layout: post
 Title: Processing the MTA turnstile data!
 ---
+<style>
+   img {
+       display: block;
+       margin: auto;
+   }
+</style>
 
 Firstly, let's go over the client and the problem. My client is a reclusive producer named Charlie. He is the same Charlie from Charlie's Angels. So, we don't know much about him other than the fact that he is considering Denzel Washington as a lead in his next movie  and would like to know if casting Denzel would help generate more Gross Domestic Revenue than otherwise. I will step you through my approach in the following slides
 
 <figure>
-                                    <img src="{{ site.baseurl }}/images/denzelpic1.png">
+   <img src="{{ site.baseurl }}/images/denzelpic1.png">
   <figcaption>Fig1. - Denzel Washington in Training Day.</figcaption>
 </figure>
 
 <figure>
-                         <img src="{{ site.baseurl }}/images/charlie's_angels_pic2.png">
+   <img src="{{ site.baseurl }}/images/charlie's_angels_pic2.png">
   <figcaption>Fig2. - Charlie's angels deal with me on his behalf.</figcaption>
 </figure>
 
@@ -22,7 +28,7 @@ I scrutinized the movie data related to Denzel Washington to determine an approp
 Subsequently, I performed statistical analysis using Statsmodels package to understand if the gross domestic revenue generated per unit budget spent is higher for movies that cast Denzel washington than those without. As you can observe from the slope of the best linear regression fit line associated with the data points, the presence of Denzel washington does not necessarily bring in more revenue.
 
 <figure>
-               <img src="{{ site.baseurl }}/images/regression_plot_pic3.png">
+  <img src="{{ site.baseurl }}/images/regression_plot_pic3.png">
   <figcaption>Fig3. - The regression plot demonstrating that the gross revenue per unit budget is lower for
   Denzel's movies on an average than those of other Hollywood stars.</figcaption>
 </figure>
