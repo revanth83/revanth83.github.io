@@ -43,7 +43,7 @@ The subject may click on the relevant radio button in the legend to get their he
 </figure>
 
 
-<iframe src="{{ site.baseurl }}/images/indextest4.html" marginwidth="50" marginheight="50" scrolling="yes"></iframe>
+<iframe src="{{ site.baseurl }}/images/indextest4.html" width="800" height="800" scrolling="yes"></iframe>
 
 
 
