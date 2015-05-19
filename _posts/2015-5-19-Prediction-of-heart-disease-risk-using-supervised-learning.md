@@ -14,9 +14,14 @@ To build my prediction model, I used supervised machine learning classifiers suc
 
 The metrics of the model that I wanted to optimize are Precision and Recall. The Precision is the ratio of people that actually develop heart disease out of those the model says will. A precision of 25% means only quarter of those the model says will develop heart disease actually develop it. We need a high Precision in order to avoid predicting heart disease for healthy people!
 
-The recall is the ratio of those the model says will get heart disease out of those who actually will develop it. It essentially means ñ how successful are we at picking out those who will develop heart disease from the population. We need high Recall in order not to miss any diseased person!
+The recall is the ratio of those the model says will get heart disease out of those who actually will develop it. It essentially means how successful are we at picking out those who will develop heart disease from the population. We need high Recall in order not to miss any diseased person!
 
 I was able to achieve 80% + Precision and 80%+ Recall with various classification models.
+
+<figure>
+   <img src="{{ site.baseurl }}/images/mcnulty_roc_curves_for_various_models.png">
+  <figcaption>Fig1. - Receiver Operating Characteristic curves for various models.</figcaption>
+</figure>
 
 This project also gave me an opportunity to work with remote relational databases and to visualize my data using D3.js an interactive tool for flexible and attractive presentations of data.
 
@@ -26,10 +31,8 @@ The subject may click on the relevant radio button in the legend to get their he
 
 <figure>
    <img src="{{ site.baseurl }}/images/mcnulty_roc_curves_for_various_models.png">
-  <figcaption>Fig1. - ROC curves for various models.</figcaption>
+  <figcaption>Fig2. - Static version of Heart Disease Risk Predictor</figcaption>
 </figure>
-
-
 
 
 
