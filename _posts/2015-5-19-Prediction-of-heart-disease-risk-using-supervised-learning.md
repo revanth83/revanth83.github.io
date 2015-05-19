@@ -25,8 +25,8 @@ I was able to achieve 80% + Precision and 80%+ Recall with various classificatio
 
 This project also gave me an opportunity to work with remote relational databases and to visualize my data using D3.js an interactive tool for flexible and attractive presentations of data.
 
-My simplified version of interactive intelligent heart disease risk predictor based on d3 can provide heart disease risk prediction based on a person's age, family history, sex, smoking habits etc. The D3 visualization is available at this link 
-<!-- (<iframe src="{{ site.baseurl }}/images/indextest4.html" marginwidth="50" marginheight="50" scrolling="yes"></iframe>) -->.
+My simplified version of interactive intelligent heart disease risk predictor based on d3 can provide heart disease risk prediction based on a person's age, family history, sex, smoking habits etc. The D3 visualization is available at this link ().
+
 
 The subject may click on the relevant radio button in the legend to get their heart disease risk profile with respect to age. They can also visualise the comparison between their risk profile and a different subject's profile by selecting relevant radio buttons in the legend.  
 
@@ -36,7 +36,7 @@ The subject may click on the relevant radio button in the legend to get their he
 </figure>
 
 
-
+<iframe src="{{ site.baseurl }}/images/indextest4.html" marginwidth="50" marginheight="50" scrolling="yes"></iframe>
 
 
 
