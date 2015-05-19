@@ -39,7 +39,7 @@ The subject may click on the relevant radio button in the legend to get their he
 
 <figure>
    <img src="{{ site.baseurl }}/images/static_heart_disease_predictor.png">
-  <figcaption>Fig2. - Static version of Heart Disease Risk Predictor</figcaption>
+  <figcaption style="text-align:center;">Fig2. - Static version of Heart Disease Risk Predictor</figcaption>
 </figure>
 
 
