@@ -10,6 +10,7 @@ Title: Processing the MTA turnstile data!
    }
 </style>
 
+
 Analysis of the various risk factors associated with heart disease helps health care professionals to identify subjects with high risk of having heart disease. 
 The objective of this project is to develop an Intelligent Heart Disease Risk Prediction System that uses the patient's data to perform heart disease risk prediction.
 
@@ -39,5 +40,5 @@ The subject may click on the relevant radio button in the legend to get their he
 
 <iframe src="{{ site.baseurl }}/images/html/indextest4.html" width="800" height="800" scrolling="yes"></iframe>
 
-
+I have also hosted an interactive application (weblink: [link text](http://54.149.139.144/)) that computes heart disease risk using a slightly more simplified model on the remote machine on Amazon Web Services. 
 
