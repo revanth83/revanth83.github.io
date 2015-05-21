@@ -36,9 +36,12 @@ This project also gave me an opportunity to work with remote relational database
 My simplified version of interactive intelligent heart disease risk predictor based on d3 can provide heart disease risk prediction based on a person's age, family history, sex, smoking habits etc. The D3 visualization is available as follows:
 
 
-The subject may click on the relevant radio button in the legend to get their heart disease risk profile with respect to age. They can also visualise the comparison between their risk profile and a different subject's profile by selecting relevant radio buttons in the legend.  
+The subject may click on the relevant radio button in the legend to get their heart disease risk profile with respect to age. They can also visualise the comparison between their risk profile and a different subject's profile by selecting relevant radio buttons in the legend. 
 
+
+<figure>
 <iframe src="{{ site.baseurl }}/images/html/indextest4.html" width="800" height="800" scrolling="yes"></iframe>
-
+  <figcaption style="text-align:center;">Fig2. - Interactive visualization of heart disease risk prediction for various profiles.</figcaption>
+</figure>
 
 I have also hosted an interactive application that computes heart disease risk using a slightly more simplified model on a remote machine on Amazon Web Services. In the application, sex ID = 0 refers to Women and sex ID=1 refers to men (weblink: [interactive slider-based heart risk predictor](http://54.149.139.144/)).
