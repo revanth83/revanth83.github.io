@@ -40,7 +40,7 @@ Improvement in Quality of Care and Patient Care Management — Quick and accurat
 Operations.
 
 ###Challenge 2:
-Healthcare facilities experience fluctuating capacity. This can affect the availability of patient care as well as revenue opportunities. Underestimating demand for appointments and procedures can leave patients waiting, reducing satisfaction of care. Overestimating demand underutilizes clinical staff and increases costs. On the other hand, supply chain deficiencies of medical supplies and pharmaceuticals impact budgets and performance measurements. Business process analytics helps medical resource planners and operational managers to:
+Healthcare facilities experience fluctuating capacity. This can affect the availability of patient care as well as revenue opportunities. Underestimating demand for appointments and procedures can leave patients waiting, reducing satisfaction of care. Overestimating demand underutilizes clinical staff and increases costs. On the other hand, supply chain deficiencies of medical supplies and pharmaceuticals impact budgets and performance measurements. Data analytics helps medical resource planners and operational managers to:
 
 ###Solution 2:
 * Align material replenishment with actual usage.
@@ -49,7 +49,7 @@ Healthcare facilities experience fluctuating capacity. This can affect the avail
 * Improve patient flow and efficiency of admissions and discharges.
 
 ###Challenge 3:
-Finance, Billing and Regulations — rising operational costs and changing reimbursement methods, such as P4P, increase the urgency to improve revenue cycles. To optimize cost allocation, eliminate waste, and manage complex billing and regulatory requirements, healthcare financial and accounting professionals use business process analytics to:
+Finance, Billing and Regulations — rising operational costs and changing reimbursement methods, such as P4P, increase the urgency to improve revenue cycles. To optimize cost allocation, eliminate waste, and manage complex billing and regulatory requirements, healthcare financial and accounting professionals use Data analytics to:
 
 ###Solution 3:
 * Create an organization-wide view of spending and cash flow.
