@@ -29,7 +29,7 @@ The industry’s shift from a “fee for service” reimbursement system to Evid
 ##Typical challenges faced by the Health care organizations and proposed solutions:
 
 ###Challenge 1:
-Improvement in Quality of Care and Patient Care Management — Quick and accurate diagnosis can be a matter of life or death in some situations. In efforts to improve the safety and quality of patient care, reduce medical errors, and provide higher levels of transparency to comply with regulatory mandates, health care providers can use business process analytics to:
+Improvement in Quality of Care and Patient Care Management — Quick and accurate diagnosis can be a matter of life or death in some situations. In efforts to improve the safety and quality of patient care, reduce medical errors, and provide higher levels of transparency to comply with regulatory mandates, health care providers can use data analytics to:
 
 ###Solution 1:
 
