@@ -9,6 +9,8 @@ Title: Processing the MTA turnstile data!
    }
 </style>
 
+I split this post into 2 sections: One on Healthcare industry and the other on Health insurance industry.
+
 #Healthcare consulting industry and its data analytics needs
 
 Healthcare providers operate within highly specialised business processes from scheduling through to discharge. Rising costs, long revenue cycles, growing patient populations, and changing regulatory demands create very complex financial, clinical, and operational environments.
