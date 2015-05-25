@@ -77,14 +77,7 @@ Streamlining the claims and administration processes to lower costs, improve the
 Speeding new business response times by improving customer’s experience with the agent (external or internal underwriter) without compromising underwriting discipline.
 
 ###Solution 2:
-* Bring together cross-functional groups of frontline employees and experts to generate and test solutions (a Kaizen approach).
-* Document process steps and waste.
-* Eliminate non-value-add steps; develop standard work descriptions for value-add steps.
-* Provide customers quality experience in enrolling an insurance plan as provided by various
-  retailers (well-developed online sales) such as ebay.com or Amazon.com, in addition to cross- channel consistency (for example, between internet and telephone).
-
-*Improve systems for management of customer, regulatory and company policy information. This system must be convenient for all involved parties.
-
+* Improve systems for management of customer, regulatory and company policy information. This system must be convenient for all involved parties.
 * Train the agents on this system, together; and develop a scorecard to monitor/evaluate the quality and uniformity of the service rendered.
 
 ###Challenge 3:
