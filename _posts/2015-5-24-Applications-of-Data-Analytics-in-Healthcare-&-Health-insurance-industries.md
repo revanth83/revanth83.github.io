@@ -63,7 +63,8 @@ Leaders in health insurance segment need to develop competitive advantage throug
 
 ##Typical challenges faced by the Health insurance organizations and proposed solutions:
 
-###Challenge 1: Streamlining the claims and administration processes to lower costs, improve the beneficiary experience and driving new business. Lower technology, image and workflow spends without affecting the business.
+###Challenge 1:
+Streamlining the claims and administration processes to lower costs, improve the beneficiary experience and driving new business. Lower technology, image and workflow spends without affecting the business.
 ###Solution 1:
 * Bring together cross-functional groups of frontline employees and experts to generate and test solutions (a Kaizen approach).
 * Document process steps and waste.
@@ -71,31 +72,37 @@ Leaders in health insurance segment need to develop competitive advantage throug
 * Provide customers quality experience in enrolling an insurance plan as provided by various
   retailers (well-developed online sales) such as ebay.com or Amazon.com, in addition to cross- channel consistency (for example, between internet and telephone).
 
-###Challenge 2: Speeding new business response times by improving customer’s experience with the agent (external or internal underwriter) without compromising underwriting discipline.
+###Challenge 2:
+Speeding new business response times by improving customer’s experience with the agent (external or internal underwriter) without compromising underwriting discipline.
 *Improve systems for management of customer, regulatory and company policy information. This system must be convenient for all involved parties.
 * Train the agents on this system, together; and develop a scorecard to monitor/evaluate the quality and uniformity of the service rendered.
-###Challenge 3: Effectively and quickly managing insurer consolidations through improving process, technology and people.
+###Challenge 3:
+Effectively and quickly managing insurer consolidations through improving process, technology and people.
 ###Solution 3:
 *Redesign office arrangement to create small cross-functional (process-oriented) clusters (cells); each claim file now has a designated spot and is returned to that location after each use.
 *Address file tracking system, if it creates busy work without adding value to client.
 
-###Challenge 4: Mitigating the complexity and cost burden of operating with increased regulatory requirements. Growing profitability in an environment of increasing cost of care and declining reimbursement.
+###Challenge 4:
+Mitigating the complexity and cost burden of operating with increased regulatory requirements. Growing profitability in an environment of increasing cost of care and declining reimbursement.
 ###Solution 4:
 *Help patients achieve their health goals through less expensive means, that is, reducing reliance on emergency room services, improving prevention, and better managing chronic conditions such as high blood pressure and diabetes—which can bring down the overall health care costs.
 *This information on management of chronic conditions can be made available via the customers' preferred channels such as internet, phone etc.
 
-###Challenge 5: Improving information accuracy to subscribers, providers, and government agencies to build trust and loyalty.
+###Challenge 5:
+Improving information accuracy to subscribers, providers, and government agencies to build trust and loyalty.
 ###Solution 5:
 *Engage the customer/providers/government agencies early using various marketing strategies.
-* Support smarter decisions by customisation, that is, by providing online tools that enable
+*Support smarter decisions by customisation, that is, by providing online tools that enable
 estimation of the insurance cost and benefits.
 
-###Challenge 6: Reducing revenue leakage due to uncollected co-pays, coding errors and unidentified
+###Challenge 6:
+Reducing revenue leakage due to uncollected co-pays, coding errors and unidentified
 billing opportunities.
 ###Solution 6:
 *Eliminate wasted resources from duplication in billing systems due to the lack of an enterprise- billing platform capable of addressing the needs for multiple lines of business.
 * Solve these problems with a consolidated and flexible billing calculation, invoice presentment platform and collections solution.
-###Challenge 7: Bringing the overload of improvement projects under control.
+###Challenge 7:
+Bringing the overload of improvement projects under control.
 ###Solution 7:
 *Develop a system for better allocation of improvement resources.
 *Develop stronger criteria for evaluation; projects to be scored for their potential impact vs.
