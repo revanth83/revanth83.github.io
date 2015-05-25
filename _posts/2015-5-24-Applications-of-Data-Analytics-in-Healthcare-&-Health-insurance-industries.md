@@ -9,22 +9,15 @@ Title: Processing the MTA turnstile data!
    }
 </style>
 
-
-<figure>
-  <img src="{{ site.baseurl }}/images/train-people.png">
-  <figcaption style="text-align:center;">Fig1. - A crowded subway train on a typical day in New York.</figcaption>
-</figure>
-
-<figure>
-  <img src="{{ site.baseurl }}/images/bargraph-mta-data.png">
-  <figcaption style="text-align:center;">Fig2. - A bargraph of the foot traffic at top 5 stations.</figcaption>
-</figure>
-
-
 #Healthcare consulting industry and its data analytics needs
 
 Healthcare providers operate within highly specialised business processes from scheduling through to discharge. Rising costs, long revenue cycles, growing patient populations, and changing regulatory demands create very complex financial, clinical, and operational environments.
 The industry’s shift from a “fee for service” reimbursement system to Evidence-Based Medicine (EBM) and Pay for Performance (P4P) has changed how healthcare organizations operate. Now they not only need access to accurate information about patient medical history and diagnoses to deliver the best medical care, but also need tools to report on the organization’s performance and quality metrics.
+
+<figure>
+  <img src="{{ site.baseurl }}/images/healthacre_industry.jpg">
+  <figcaption style="text-align:center;">Fig1. - Various Healthcare industry segments.</figcaption>
+</figure>
 
 ##Typical challenges faced by the Health care organizations and proposed solutions:
 
@@ -62,6 +55,11 @@ Finance, Billing and Regulations — rising operational costs and changing reimb
 #Health insurance industry and its needs
 
 Leaders in health insurance segment need to develop competitive advantage through improved operations, reduced costs, optimal technology spending and better service delivery – all while dealing with the immediate pressures of daily survival. By focusing on delivery and cost excellence in various health insurance business processes from on-boarding new agents to member enrollment, new business underwriting(customer eligibility assessment), policy/member administration and claims processing, health insurance firms need help in developing and deploying a rapid plan that gives them an the edge they need to achieve operational excellence.
+
+<figure>
+  <img src="{{ site.baseurl }}/images/healthinsurance.gif">
+  <figcaption style="text-align:center;">Fig2. - Various stake holders of the Health insurance industry.</figcaption>
+</figure> 
 
 ##Typical challenges faced by the Health insurance organizations and proposed solutions:
 
