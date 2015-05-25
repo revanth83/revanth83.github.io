@@ -77,7 +77,9 @@ Streamlining the claims and administration processes to lower costs, improve the
 Speeding new business response times by improving customer’s experience with the agent (external or internal underwriter) without compromising underwriting discipline.
 
 ###Solution 2:
+
 *Improve systems for management of customer, regulatory and company policy information. This system must be convenient for all involved parties.
+
 * Train the agents on this system, together; and develop a scorecard to monitor/evaluate the quality and uniformity of the service rendered.
 
 ###Challenge 3:
@@ -85,6 +87,7 @@ Effectively and quickly managing insurer consolidations through improving proces
 
 ###Solution 3:
 *Redesign office arrangement to create small cross-functional (process-oriented) clusters (cells); each claim file now has a designated spot and is returned to that location after each use.
+
 *Address file tracking system, if it creates busy work without adding value to client.
 
 ###Challenge 4:
@@ -92,6 +95,7 @@ Mitigating the complexity and cost burden of operating with increased regulatory
 
 ###Solution 4:
 *Help patients achieve their health goals through less expensive means, that is, reducing reliance on emergency room services, improving prevention, and better managing chronic conditions such as high blood pressure and diabetes—which can bring down the overall health care costs.
+
 *This information on management of chronic conditions can be made available via the customers' preferred channels such as internet, phone etc.
 
 ###Challenge 5:
