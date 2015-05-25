@@ -28,7 +28,10 @@ The industry’s shift from a “fee for service” reimbursement system to Evid
 
 ##Typical challenges faced by the Health care organizations and proposed solutions:
 
-###Challenge 1: Improvement in Quality of Care and Patient Care Management — Quick and accurate diagnosis can be a matter of life or death in some situations. In efforts to improve the safety and quality of patient care, reduce medical errors, and provide higher levels of transparency to comply with regulatory mandates, health care providers can use business process analytics to:
+###Challenge 1:
+
+*Improvement in Quality of Care and Patient Care Management — Quick and accurate diagnosis can be a matter of life or death in some situations. In efforts to improve the safety and quality of patient care, reduce medical errors, and provide higher levels of transparency to comply with regulatory mandates, health care providers can use business process analytics to:
+
 ###Solution 1:
 
 * Visualise patient health history, treatments and prescriptions.
@@ -37,7 +40,8 @@ The industry’s shift from a “fee for service” reimbursement system to Evid
 * Perform analysis and report on clinical outcomes and EBM processes resource Planning and
 Operations.
 
-###Challenge 2: Healthcare facilities experience fluctuating capacity. This can affect the availability of patient care as well as revenue opportunities. Underestimating demand for appointments and procedures can leave patients waiting, reducing satisfaction of care. Overestimating demand underutilizes clinical staff and increases costs. On the other hand, supply chain deficiencies of medical supplies and pharmaceuticals impact budgets and performance measurements. Business process analytics helps medical resource planners and operational managers to:
+###Challenge 2:
+* Healthcare facilities experience fluctuating capacity. This can affect the availability of patient care as well as revenue opportunities. Underestimating demand for appointments and procedures can leave patients waiting, reducing satisfaction of care. Overestimating demand underutilizes clinical staff and increases costs. On the other hand, supply chain deficiencies of medical supplies and pharmaceuticals impact budgets and performance measurements. Business process analytics helps medical resource planners and operational managers to:
 
 ###Solution 2:
 * Align material replenishment with actual usage.
@@ -45,7 +49,8 @@ Operations.
 * Reduce staffing costs by matching staff schedules to patient census.
 * Improve patient flow and efficiency of admissions and discharges.
 
-###Challenge 3: Finance, Billing and Regulations — rising operational costs and changing reimbursement methods, such as P4P, increase the urgency to improve revenue cycles. To optimize cost allocation, eliminate waste, and manage complex billing and regulatory requirements, healthcare financial and accounting professionals use business process analytics to:
+###Challenge 3:
+*Finance, Billing and Regulations — rising operational costs and changing reimbursement methods, such as P4P, increase the urgency to improve revenue cycles. To optimize cost allocation, eliminate waste, and manage complex billing and regulatory requirements, healthcare financial and accounting professionals use business process analytics to:
 
 ###Solution 3:
 * Create an organization-wide view of spending and cash flow.
