@@ -9,7 +9,9 @@ Title: Processing the MTA turnstile data!
    }
 </style>
 
-I split this post into 2 sections: One on Healthcare industry and the other on Health insurance industry.
+I split this post into 2 sections: One on Healthcare industry and the other on Health insurance industry. I wrote this blog post to
+synthesize my understanding of the challenges faced by these two industries and possible solutions that was acquired after reading several
+white papers on these topics. 
 
 #Healthcare consulting industry and its data analytics needs
 
@@ -18,7 +20,7 @@ The industry’s shift from a “fee for service” reimbursement system to Evid
 
 <figure>
   <img src="{{ site.baseurl }}/images/healthacre_industry.jpg">
-  <figcaption style="text-align:center;">Fig1. - Various Healthcare industry segments.</figcaption>
+  <figcaption style="text-align:center;">Fig1. Various Healthcare industry segments.</figcaption>
 </figure>
 
 ##Typical challenges faced by the Health care organizations and proposed solutions:
@@ -60,7 +62,7 @@ Leaders in health insurance segment need to develop competitive advantage throug
 
 <figure>
   <img src="{{ site.baseurl }}/images/healthinsurance.gif">
-  <figcaption style="text-align:center;">Fig2. - Various stake holders of the Health insurance industry.</figcaption>
+  <figcaption style="text-align:center;">Fig2. Various stake holders of the Health insurance industry.</figcaption>
 </figure> 
 
 ##Typical challenges faced by the Health insurance organizations and proposed solutions:
