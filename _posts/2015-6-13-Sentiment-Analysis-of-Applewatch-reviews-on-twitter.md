@@ -11,8 +11,7 @@ Title: Processing the MTA turnstile data!
 
 My fourth data science project at Metis is about sentiment analysis of tweets related to Apple Watch.
 I used the twitter streaming API to pull 5000 tweets
-that are tagged with #Applewatch. Subsequently, I carried
-out sentiment analysis on each tweet using Text Blob python package.
+that were tagged with #Applewatch. Subsequently, I carried out sentiment analysis on each tweet using Text Blob python package.
 
 <figure>
   <img src="{{ site.baseurl }}/images/fletch_polarity.png">
