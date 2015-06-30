@@ -10,7 +10,7 @@ Title: Processing the MTA turnstile data!
 </style>
 
 I split this post into 2 sections: One on Healthcare industry and the other on Health insurance industry. I wrote this blog post to
-synthesize my understanding of the challenges faced by these two industries and possible solutions that was acquired after reading several
+synthesize my understanding of the challenges faced by these two industries and possible solutions, after reading several
 white papers on these topics. 
 
 #Healthcare consulting industry and its data analytics needs
@@ -75,7 +75,7 @@ Streamlining the claims and administration processes to lower costs, improve the
 * Document process steps and waste.
 * Eliminate non-value-add steps; develop standard work descriptions for value-add steps.
 * Provide customers quality experience in enrolling an insurance plan as provided by various
-  retailers (well-developed online sales) such as ebay.com or Amazon.com, in addition to cross- channel consistency (for example, between internet and telephone).
+  retailers (well-developed online sales) such as ebay.com or Amazon.com, in addition to cross-channel consistency (for example, between internet and telephone).
 
 ###Challenge 2:
 Speeding new business response times by improving customer’s experience with the agent (external or internal underwriter) without compromising underwriting discipline.
