@@ -9,7 +9,7 @@ Title: Processing the MTA turnstile data!
    }
 </style>
 
-<!-- **Problem statement**: Provide a brief report to the CEO of Samsung that includes only critical information regarding reviews of Samsung’s products retailed on Amazon.com.
+**Problem statement**: Provide a brief report to the CEO of Samsung that includes only critical information regarding reviews of Samsung’s products retailed on Amazon.com.
 
 
 <figure>
@@ -46,4 +46,4 @@ Title: Processing the MTA turnstile data!
   <img src="{{ site.baseurl }}/images/Slide7.tiff">
   <figcaption style="text-align:center;">Fig7. Summary of relevant reviews for 
   Samsung galaxy detachable Multi-Travel Charger.</figcaption>
-</figure>  -->
+</figure> 
