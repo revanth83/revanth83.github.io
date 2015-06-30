@@ -13,7 +13,7 @@ Title: Processing the MTA turnstile data!
 
 
 <figure>
-  <img src="{{ site.baseurl }}/images/Slide1.tiff">
+  <img src="{{ site.baseurl }}/images/Slide1.png">
   <figcaption style="text-align:center;">Fig1. Examples of Samsung's electronics products.</figcaption>
 </figure>
 
