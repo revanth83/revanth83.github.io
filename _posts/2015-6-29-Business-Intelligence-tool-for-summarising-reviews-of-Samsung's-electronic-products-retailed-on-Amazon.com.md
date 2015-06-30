@@ -25,7 +25,7 @@ The objective of this work is to develop a tool that could provide useful inform
   <figcaption style="text-align:center;">Fig 2. Essence of Business Intelligence.</figcaption>
 </figure> 
 
-Figure 3 illustrates the overall project plan. More than a quarter million reviews have been written regarding the 1000 products that Samsung sells on Amazon.com. In case, the chief executive would like to know whether any interesting trend was observed in the reviews related to any product and the reasons for such trends. 
+Figure 3 illustrates the overall project plan. More than a quarter million reviews have been written regarding the 1000 products that Samsung sells on Amazon.com. The chief executive would like to know whether any interesting trend was observed in the reviews related to any product and the reasons for such trends. 
 
 <figure>
   <img src="{{ site.baseurl }}/images/Slide3.png">
@@ -33,8 +33,7 @@ Figure 3 illustrates the overall project plan. More than a quarter million revie
 </figure> 
 
 
-Firstly, I define a sharpness index that records the number of spikes in the variation of average monthly rating. I also keep track of the total number of monthly reviews with respect to time to ensure that the observed variation in rating is an actual trend and not dominated by outliers. Based on the aforementioned criteria, I short list 20 products that have had an unusual degree of variation (either positive or negative) in their ratings. Subsequently, I plot the curves of variation in average rating per month and total number of reviews per month to obtain further clues regarding the trends in the reviews related to the short listed products. Once, I confirm that there is an interesting trend in the reviews related to the product, I carry out topic modeling of relevant reviews
-(documents) using latent dirichlet modeling to identify hidden topics and summarise them by identifying the document that is closest to the centroid of the documents dominated by a particular topc in the LDA space. 
+Firstly, I define a sharpness index that records the number of spikes in the variation of average monthly rating. I also keep track of the total number of monthly reviews with respect to time to ensure that the observed variation in rating is an actual trend and not dominated by outliers. Based on the aforementioned criteria, I short list 20 products that have had an unusual degree of variation (either positive or negative) in their ratings. Subsequently, I plot the variation in average rating per month and total number of reviews per month to obtain further clues regarding the trends in the reviews related to the short listed products. Once, I confirm that there is an interesting trend in the reviews, I carry out topic modeling using latent dirichlet modeling to identify hidden topics and summarise them (topics) by identifying the document that is closest to the centroid of the documents dominated by a particular each topic in the LDA space. 
 
 The plots of average rating and total number of monthly reviews for a particular product of interest are shown in Fig. 4 and Fig. 5. As it can be observed, the average rating undergoes plenty of ups and downs. But towards during 2013-2014 of the curve, i.e., more recent months, the values are generally lower than 3.5 on a more consistent basis. 
 
