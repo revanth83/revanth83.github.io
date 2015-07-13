@@ -45,4 +45,6 @@ The subject may click on the relevant radio button in the legend to get their he
 </figure>
 
 I have also hosted an interactive application that computes heart disease risk using a slightly more simplified model on a remote machine on Amazon Web Services. In the application, sex ID = 0 refers to Women and sex ID=1 refers to men (weblink: [interactive slider-based heart risk predictor](http://127.0.0.1:5000/)).
+
+
 <!-- http://54.149.139.144/ -->
