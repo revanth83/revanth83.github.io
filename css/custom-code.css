@@ -1,0 +1,35 @@
+/* Dark theme code block styling */
+
+.highlight pre, pre code {
+
+  background: #1e1e1e !important;
+
+  color: #f8f8f2 !important;
+
+  padding: 14px;
+
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+
+  line-height: 1.45;
+
+  overflow-x: auto;
+
+}
+
+
+
+/* Rouge syntax colors */
+
+.highlight .k  { color: #ff79c6; }   /* keywords */
+
+.highlight .o  { color: #ffb86c; }   /* operators */
+
+.highlight .n  { color: #f8f8f2; }   /* names */
+
+.highlight .s  { color: #f1fa8c; }   /* strings */
+
+.highlight .mi { color: #bd93f9; }   /* numbers */
+
+.highlight .c  { color: #6272a4; }   /* comments */
