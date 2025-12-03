@@ -287,3 +287,33 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+/* Improve readability of Jekyll Now default code */
+
+pre {
+
+  font-family: Consolas, Menlo, Courier, monospace !important;
+
+  font-size: 0.95rem !important;
+
+  line-height: 1.45;
+
+  background: #f5f5f5 !important;  /* soft grey */
+
+  border-radius: 6px;
+
+  padding: 12px 14px;
+
+  overflow-x: auto;
+
+  border: 1px solid #ddd;
+
+}
+
+
+
+code {
+
+  font-family: Consolas, Menlo, Courier, monospace !important;
+
+}
