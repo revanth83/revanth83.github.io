@@ -37,12 +37,13 @@ E[Y₁ − Y₀]  =  E[Y | T = 1] − E[Y | T = 0].
 6. **Assumptions are essential**: causal inference always relies on assumptions to connect causal quantities to estimators.
 
 
-
+{%raw%}
 ```python
 #!pip install pandas
 ```
+{%endraw%}
 
-
+{%raw%}
 ```python
 import numpy as np
 import pandas as pd
@@ -51,7 +52,7 @@ np.random.seed(42)
 
 pd.set_option("display.precision", 4)
 ```
-
+{%endraw%}
 ## 2. Simulating potential outcomes
 
 We start by simulating **potential outcomes** for each unit.
