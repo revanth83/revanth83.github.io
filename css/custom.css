@@ -1,0 +1,23 @@
+/* Modern dark-themed code blocks */
+
+.highlight pre,
+.highlight code,
+pre code {
+  background: #1e1e1e;       /* dark background */
+  color: #f8f8f2;            /* light text */
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  overflow-x: auto;          /* scroll for long lines */
+  line-height: 1.45;
+}
+
+/* Remove old borders */
+.highlight {
+  border: none;
+}
+
+/* Optional: adjust spacing between code blocks and text */
+pre {
+  margin-bottom: 1.2rem;
+}
