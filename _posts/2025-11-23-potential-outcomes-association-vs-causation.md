@@ -1,4 +1,4 @@
-# Potential Outcomes, Association vs Causation – A Minimal Demo in Python
+# A Minimal Demo in Python
 
 **Author:** Revanth  
 **Context:** Inspired by Chapter 1 of Matheus Facure’s _Causal Inference in Python_.  
@@ -319,18 +319,3 @@ In this small synthetic example, we:
 
 This is minimal demo of the core ideas from the first chapter of Facure’s book, and as the conceptual
 foundation for more applied causal modeling in marketing (uplift models, propensity scores, etc.).
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
