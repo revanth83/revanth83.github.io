@@ -1,4 +1,4 @@
-# Chapter 2 — Randomized Experiments, Hypothesis Testing & Power  
+
 ### Email Subject Line Experiment (Facure Ch2 Style, with Interpretation)
 
 This notebook applies **Facure Chapter 2 concepts** to a real(ish) email campaign dataset
