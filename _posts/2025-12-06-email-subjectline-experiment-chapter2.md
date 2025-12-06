@@ -1,5 +1,5 @@
 
-### Email Subject Line Experiment inspired from Facure Chapter 2:Randomized Experiments and Stats Review 
+### Email Subject Line Experiment applying concepts from Facure Chapter 2:Randomized Experiments and Stats Review 
 
 This notebook applies **Facure Chapter 2 concepts** to a real(ish) email campaign dataset
 with multiple subject lines.
