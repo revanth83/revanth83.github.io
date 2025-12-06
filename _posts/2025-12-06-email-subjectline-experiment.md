@@ -3,7 +3,7 @@
 
 This notebook applies concepts from **Facure Chapter 2: Randomized Experiments & Stats review** to a real(ish) email campaign dataset.
 
-We assume three CSV files in the same folder:
+The data for this notebook could be downloaded from https://www.kaggle.com/datasets/aristotelisch/playground-mock-email-campaign?resource=download.        We assume three CSV files in the same folder:
 
 - `sent_emails.csv`  — when and to whom each email was sent (includes `Customer_ID`, `SubjectLine_ID`)  
 - `responded.csv`    — which customers responded (includes `Customer_ID`)  
