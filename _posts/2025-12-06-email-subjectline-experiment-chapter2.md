@@ -1,7 +1,7 @@
 
 ### Email Subject Line Experiment 
 
-This notebook applies **Facure Chapter 2 concepts** to a real(ish) email campaign dataset
+This notebook applies **Facure Chapter 2:Randomized Experiments and Stats Review concepts** to a real(ish) email campaign dataset
 with multiple subject lines.
 
 We assume three CSV files in the same folder:
