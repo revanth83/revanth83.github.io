@@ -1,7 +1,7 @@
 
-# Applying concepts from Facure Chapter 2: Randomized Experiments and Stats Review 
+# Randomized Experiments and Stats Review
 
-This notebook applies **Facure Chapter 2 concepts** to a real(ish) email campaign dataset.
+This notebook applies concepts from **Facure Chapter 2: Randomized Experiments & Stats review** to a real(ish) email campaign dataset.
 
 We assume three CSV files in the same folder:
 
