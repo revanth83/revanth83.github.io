@@ -743,8 +743,6 @@ plt.show()
   - How **backdoor paths** create confounding and how to fix it with adjustment.  
   - How **selection bias** arises by conditioning on colliders (like survey responders), even in randomized experiments.
 
-You can now safely reuse this notebook in your blog and adapt the stories to marketing, credit cards, telecom, etc.
-
 
 
 ```python
