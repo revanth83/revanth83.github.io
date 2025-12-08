@@ -730,9 +730,8 @@ plt.legend()
 plt.show()
 ```
 
+ ![Bar Plot for Causal Graph Example](/images/output_43_0.png)
 
-    
-![png](output_43_0.png)
     
 
 
