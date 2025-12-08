@@ -729,10 +729,10 @@ plt.title("Baseline satisfaction among responders by feature flag")
 plt.legend()
 plt.show()
 ```
-
- ![Bar Plot for Causal Graph Example](/images/output_43_0.png)
-
-    
+<figure>
+  <img src="{{ site.baseurl }}/images/output_43_0.png">
+  <figcaption style="text-align:center;">Fig1. Bar Plot for Causal Graph Example. </figcaption>
+</figure>
 
 
 ## 7. Summary
