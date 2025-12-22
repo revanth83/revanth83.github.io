@@ -1,11 +1,4 @@
 
----
-layout: post
-title: "Causal Inference with Linear Regression (Facure Ch.4) — Bank Marketing"
-date: 2025-12-16
-categories: causal-inference marketing
----
-
 ## Dataset (links + download options)
 
 **UCI (official):** https://archive.ics.uci.edu/dataset/222/bank+marketing  
