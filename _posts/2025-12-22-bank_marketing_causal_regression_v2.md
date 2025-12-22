@@ -1,4 +1,4 @@
-# Chapter 4 — Linear Regression for Causal Inference  
+# Linear Regression for Causal Inference  
 ## Bank Marketing Case Study
 
 This notebook illustrates **Chapter 4 of Matheus Facure’s _Causal Inference in Python_**
