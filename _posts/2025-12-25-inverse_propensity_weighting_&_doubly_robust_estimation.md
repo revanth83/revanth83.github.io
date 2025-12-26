@@ -496,12 +496,11 @@ plt.show()
 
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_11_0.png">
+  <figcaption style="text-align:center;">Fig1.Propensity score overlap. </figcaption>
+</figure>
     
-![png](output_11_0.png)
-    
-
-
 
 ## Step 3 — IPW (Inverse Propensity Weighting)
 
