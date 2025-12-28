@@ -378,13 +378,6 @@ print("ATE:", effect_binary(bank_scored))
 
 ```
 
-    C:\Users\revan\minicondanew\Lib\site-packages\sklearn\datasets\_openml.py:328: UserWarning: Multiple active versions of the dataset matching the name bank-marketing exist. Versions may be fundamentally different, returning version 1. Available versions:
-    - version 1, status: active
-      url: https://www.openml.org/search?type=data&id=1461
-    - version 2, status: active
-      url: https://www.openml.org/search?type=data&id=1558
-    
-      warn(warning_msg)
     
 
     Bank data source: openml
@@ -405,12 +398,10 @@ A strong `cate_score` should show a clearer upward trend than `rand_score`.
 plot_effect_by_quantile(bank_scored, title="Bank — Effect by score quantile")
 
 ```
-
-
-    
-![png](output_16_0.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_16_0.png">
+  <figcaption style="text-align:left;">Fig1.Effect by quantile. </figcaption>
+</figure>
 
 
 ## A2) Cumulative effect & gain (marketing)
@@ -428,17 +419,16 @@ bank_aucs
 
 ```
 
-
     
-![png](output_18_0.png)
+<figure>
+  <img src="{{ site.baseurl }}/images/output_18_0.png">
+  <figcaption style="text-align:left;">Fig2.Cumulative effect curve. </figcaption>
+</figure>
     
-
-
-
-    
-![png](output_18_1.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_18_1.png">
+  <figcaption style="text-align:left;">Fig3.Normalized cumulative gain. </figcaption>
+</figure>
 
 
 
@@ -497,24 +487,23 @@ credit_aucs = plot_cumulative_gain(credit_scored, title="Credit — Normalized c
 credit_aucs
 
 ```
-
+    
+<figure>
+  <img src="{{ site.baseurl }}/images/output_21_0.png">
+  <figcaption style="text-align:left;">Fig4.Effect by score Quantile for credit data. </figcaption>
+</figure>
 
     
-![png](output_21_0.png)
-    
-
-
-
-    
-![png](output_21_1.png)
-    
-
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_21_1.png">
+  <figcaption style="text-align:left;">Fig5.Cumulative effect curve for credit data. </figcaption>
+</figure>
 
     
-![png](output_21_2.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_21_2.png">
+  <figcaption style="text-align:left;">Fig5.Normalized Cumulative gain for credit data. </figcaption>
+</figure>
 
 
 
