@@ -1,5 +1,5 @@
 # 📘 CATE & Treatment Heterogeneity  
-## Marketing + Credit Demonstration with Explanations & **Clear Figures**
+## Marketing + Credit Demonstration with comments
 
 This notebook mirrors the ideas from the chapter 5 of Facure's Causal analytics book:
 
