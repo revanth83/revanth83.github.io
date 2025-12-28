@@ -1,4 +1,4 @@
-# 📘 Conditional Average Treatment Error (CATE) & Treatment Heterogeneity  
+# 📘 Which group is more sensitive to treatment? Conditional Average Treatment Error (CATE) & Treatment Heterogeneity  
 ## Demonstration with Marketing & Credit data, including comments
 
 This notebook mirrors the ideas from the chapter 5 of Facure's Causal analytics book:
