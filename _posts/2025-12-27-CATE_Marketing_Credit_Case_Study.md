@@ -1,5 +1,5 @@
-# 📘 CATE & Treatment Heterogeneity  
-## Marketing + Credit Demonstration with comments
+# 📘 Conditional Average Treatment Error (CATE) & Treatment Heterogeneity  
+## Demonstration with Marketing & Credit data, including comments
 
 This notebook mirrors the ideas from the chapter 5 of Facure's Causal analytics book:
 
