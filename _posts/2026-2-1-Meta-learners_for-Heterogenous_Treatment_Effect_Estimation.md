@@ -855,7 +855,7 @@ Then:
 **Strength:** cannot ignore treatment  
 **Weakness:** each model sees less data → can be noisy when sample sizes are small or imbalanced.
 
-### X‑Learner (5 models)
+### X‑Learner (5 models including treatment propensity model)
 
 X‑Learner is designed to work well under **treatment/control imbalance**.
 
