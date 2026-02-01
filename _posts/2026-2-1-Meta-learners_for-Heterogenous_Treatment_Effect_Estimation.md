@@ -1,4 +1,4 @@
-# Towards application of Meta‑Learners(S/T/X) for evaluation of Hetergeneous Treatment Effect 
+# Towards application of Meta‑Learners(S/T/X)
 
 ### Notebook on a public dataset (RAND Health Insurance Experiment via `statsmodels`)
 
