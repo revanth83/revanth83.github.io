@@ -1,4 +1,4 @@
-# Molak Chapter 7 — DoWhy + EconML + Refutation Tests + GCM API (end-to-end)
+# End-to-End approach for building Causal Models using— DoWhy + EconML + Refutation Tests + GCM API 
 
 This notebook demonstrates the **main ideas and libraries used in Chapter 7 of Molak**:
 
