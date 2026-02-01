@@ -528,11 +528,11 @@ print("PS range treated:", (ps_test[T_test==1].min(), ps_test[T_test==1].max()))
 
 ```
 
-
     
-![png](output_14_0.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_14_0.png">
+  <figcaption style="text-align:center;">Fig1. Distribution of expected propensity score for test split. </figcaption>
+</figure>
 
     PS range control: (np.float64(0.06305527698131999), np.float64(0.967711808907784))
     PS range treated: (np.float64(0.14956967160707563), np.float64(0.984931041276022))
