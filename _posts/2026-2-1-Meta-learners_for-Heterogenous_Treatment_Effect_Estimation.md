@@ -531,7 +531,7 @@ print("PS range treated:", (ps_test[T_test==1].min(), ps_test[T_test==1].max()))
     
 <figure>
   <img src="{{ site.baseurl }}/images/output_14_0.png">
-  <figcaption style="text-align:center;">Fig1. Distribution of expected propensity score for test split. </figcaption>
+  <figcaption style="text-align:center;">Fig1. Distribution of estimated propensity scores in the test split for overlap check. </figcaption>
 </figure>
 
     PS range control: (np.float64(0.06305527698131999), np.float64(0.967711808907784))
