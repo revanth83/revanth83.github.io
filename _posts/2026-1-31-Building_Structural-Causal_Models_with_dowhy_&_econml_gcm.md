@@ -322,11 +322,10 @@ model.view_model()
     }
     
 
-
-    
-![png](output_9_1.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_9_1.png">
+  <figcaption style="text-align:center;">Fig1. Plot of the Causal Graph. </figcaption>
+</figure>
 
 ## 3) DoWhy Step 2 — Identify the estimand
 
@@ -552,13 +551,11 @@ nx.draw(G, pos, with_labels=True)
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_23_0.png">
+  <figcaption style="text-align:center;">Fig2. Plot of the Causal Structure generated using NetworkX. </figcaption>
+</figure>
     
-![png](output_23_0.png)
-    
-
-
-
 ```python
 from dowhy import gcm
 from sklearn.linear_model import LinearRegression
