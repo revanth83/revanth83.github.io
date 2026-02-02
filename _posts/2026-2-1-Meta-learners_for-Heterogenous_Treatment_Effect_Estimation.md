@@ -834,7 +834,7 @@ Fit one model for the outcome:
 Then predict:
 
 \[
-	au(x) = $\mu$(x,1) - $\mu$(x,0)
+	au(x) = &micro;(x,1) - &micro;(x,0)
 \]
 
 **Risk:** the model can “ignore” `T` if the signal is weak relative to `X`.
@@ -843,13 +843,13 @@ Then predict:
 
 Fit two separate models:
 
-- \($\mu$_1(x) ~ E[Y |X=x, T=1]\)
-- \($\mu$_0(x) ~ E[Y |X=x, T=0]\)
+- \(&micro;_1(x) ~ E[Y |X=x, T=1]\)
+- \(&micro;_0(x) ~ E[Y |X=x, T=0]\)
 
 Then:
 
 \[
-	au(x) = $\mu$_1(x) - $\mu$_0(x)
+	au(x) = &micro;_1(x) - &micro;_0(x)
 \]
 
 **Strength:** cannot ignore treatment  
@@ -860,7 +860,7 @@ Then:
 X‑Learner is designed to work well under **treatment/control imbalance**.
 
 High level idea:
-1. Fit \($\mu$_0, $\mu$_1\) (like T‑Learner)
+1. Fit \(&micro;_0, &micro;_1\) (like T‑Learner)
 2. Create **imputed effects** for treated and control units
 3. Learn those imputed effects with second‑stage models
 4. Blend them using propensity score weights (trust the better‑trained side more)
