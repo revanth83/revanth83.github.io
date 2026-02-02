@@ -828,7 +828,7 @@ Example: the effect might be larger for low‑income individuals than high‑inc
 Fit one model for the outcome:
 
 \[
-$$\mu$$(x,t) ~ E[Y |X=x, T=t]
+&micro;(x,t) ~ E[Y |X=x, T=t]
 \]
 
 Then predict:
