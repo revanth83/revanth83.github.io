@@ -1,7 +1,7 @@
 # 📘 Which group is more sensitive to treatment? Conditional Average Treatment Error (CATE) & Treatment Heterogeneity  
 ## Demonstration with Marketing & Credit data, including comments
 
-This notebook mirrors the ideas from the chapter 5 of Facure's Causal analytics book:
+This notebook mirrors the ideas from the chapter 6 of Facure's Causal analytics book:
 
 - **Effect heterogeneity**: different units respond differently to the same intervention.
 - **CATE**: treatment effect conditional on context/features.
