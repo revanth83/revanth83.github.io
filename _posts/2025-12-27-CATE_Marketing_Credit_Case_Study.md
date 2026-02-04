@@ -38,6 +38,90 @@ producing all evaluation figures.
 
 We use `fetch_openml` (scikit-learn) for stable public data access + caching.
 
+# Heterogeneous Treatment Effects
+
+This notebook follows the conceptual flow of Chapter 6 of Facure exactly.
+
+The chapter introduces a fundamental shift:
+
+Average Treatment Effect → Individual Treatment Effect Structure
+
+Instead of asking:
+Does treatment work on average?
+
+We ask:
+How does treatment effect change across individuals?
+
+The main quantity we want to approximate is:
+
+τ(x) = E[Y(1) − Y(0) | X = x]
+
+This represents how treatment impact changes with customer characteristics.
+
+
+## 1. Why Average Effects Are Not Enough
+
+Even if treatment is beneficial on average, it may:
+• Help some customers a lot  
+• Have zero effect on others  
+• Even hurt some segments  
+
+Chapter message:
+Causal decision making should focus on **who benefits most**, not just whether treatment works overall.
+
+
+## 2. Potential Outcomes View of Heterogeneity
+
+For each individual:
+
+Y(1) → Outcome if treated  
+Y(0) → Outcome if untreated  
+
+Individual treatment effect:
+τ_i = Y_i(1) − Y_i(0)
+
+Since we only observe one outcome per person, we must estimate the missing counterfactual using models.
+
+HTE estimation is fundamentally a **counterfactual reconstruction problem**.
+
+
+## 3. Learning Outcome Functions
+
+Instead of trying to learn treatment effect directly, we learn:
+
+μ₁(x) = Expected outcome if treated  
+μ₀(x) = Expected outcome if untreated  
+
+Then:
+
+τ(x) = μ₁(x) − μ₀(x)
+
+This is the central modeling idea in Chapter 6.
+
+
+## 4. How We Evaluate Heterogeneous Effects
+
+We cannot observe true individual treatment effect.
+
+So we evaluate usefulness via **ranking quality**:
+
+If predicted τ(x) is meaningful:
+Higher predicted τ(x) → Higher observed treatment benefit
+
+This is why we analyze:
+• Effect across score buckets  
+• Effect among top-ranked customers
+
+
+### Code Context — Environment Setup
+
+This prepares tools needed for:
+• Data processing  
+• Modeling  
+• Visualization  
+
+HTE estimation is built using standard machine learning tools applied in a causal framework.
+
 
 
 ```python
@@ -60,18 +144,11 @@ plt.rcParams["figure.figsize"] = (9, 5)
 
 ```
 
+### Effect Diagnostics
 
-## 1) Helper functions (chapter evaluation tools)
+These functions measure whether model scores successfully separate customers by treatment benefit.
 
-Key chapter constraint:
-> Individual treatment effects are unobservable, so evaluation must be group-based.
-
-We implement:
-- effect within a group (difference in means)
-- effect-by-quantile
-- cumulative effect
-- cumulative gain + AUC
-- pseudo-outcome + weighted MSE
+Since individual treatment effect is unobserved, we evaluate whether predicted ranking aligns with observed group-level treatment differences.
 
 
 
@@ -128,15 +205,13 @@ def weighted_mse(y_true, y_pred, w):
 
 ```
 
+### Code Context — Dataset Preparation
 
-## 2) Load OpenML datasets (or fallback)
-
-If OpenML fails, we generate a synthetic dataset that still supports:
-- categorical + numeric columns
-- a binary label
-- realistic prevalence
-
-This ensures the notebook runs even without internet.
+HTE methods require:
+• Covariates (X)  
+• Treatment indicator (T)  
+• Outcome (Y)  
+HTE estimation works on both experimental and observational data if assumptions hold.
 
 
 
@@ -145,7 +220,7 @@ This ensures the notebook runs even without internet.
 def load_openml_or_fallback(name: str, fallback_n: int = 20000, seed: int = 0):
     rng = np.random.default_rng(seed)
     try:
-        data = fetch_openml(name=name, as_frame=True)
+        data = fetch_openml(name=name, as_frame=True, version=1)
         X = data.data.copy()
         y_raw = data.target.copy()
         return X, y_raw, "openml"
@@ -173,15 +248,12 @@ def load_openml_or_fallback(name: str, fallback_n: int = 20000, seed: int = 0):
 
 ```
 
+### Constructing a Heterogeneous Treatment World
 
-## 3) Simulate treatment + heterogeneous effect + observed outcome
-
-We simulate a realistic observational setting:
-- treatment is targeted using a propensity e(x)
-- true effect tau(x) varies across feature profiles
-- observed outcome shifts due to treatment by tau(x)
-
-This creates a clean environment to test the chapter’s evaluation curves.
+This step simulates:
+• Treatment assignment  
+• Individual-level treatment heterogeneity  
+If treatment effect were constant, heterogeneity modeling would collapse to average effect estimation.
 
 
 
@@ -251,12 +323,16 @@ def simulate_uplift_problem(X: pd.DataFrame, y_raw_binary: pd.Series, seed: int 
 
 ```
 
+### Estimating Counterfactual Outcome Functions
 
-## 4) Build scores: Random vs Outcome vs CATE (T-learner)
+Models are trained to approximate:
 
-- `rand_score`: a placebo baseline
-- `y_score`: predicts the outcome Y (not effect)
-- `cate_score`: predicts uplift via two models (treated vs control)
+Expected outcome if treated  
+Expected outcome if untreated  
+
+Their difference produces an estimate of heterogeneous treatment effect.
+
+Outcome modeling is the core computational strategy for estimating heterogeneous effects.
 
 
 
@@ -300,8 +376,11 @@ def add_scores(df: pd.DataFrame, seed: int = 0):
 
 ```
 
+### Visualization of Heterogeneous Effect Quality
 
-## 5) Plotting functions (clear figures)
+Plots evaluate whether predicted heterogeneous effects produce meaningful treatment separation.
+
+HTE usefulness is measured through decision quality, not prediction accuracy alone.
 
 
 
@@ -349,15 +428,12 @@ def plot_cumulative_gain(df, title):
 
 ```
 
+### End-to-End HTE Estimation
 
-# PART A — MARKETING (Bank Marketing)
+Pipeline steps:
+Data → Treatment → Outcome → Counterfactual outcome estimation → Effect ranking
 
-We now run the full pipeline:
-1) load dataset (real or fallback)
-2) convert label to 0/1
-3) simulate treatment + heterogeneity
-4) compute scores
-5) evaluate with chapter plots
+This operationalizes heterogeneous effect estimation in practice.
 
 
 
@@ -378,18 +454,17 @@ print("ATE:", effect_binary(bank_scored))
 
 ```
 
-    
-
     Bank data source: openml
     Outcome rate: 0.8868638163278848
     Treatment rate: 0.4281037800535268
     ATE: 0.06168106138306939
     
 
+### Bucketed Effect Visualization
 
-## A1) Effect by quantile (marketing)
+Shows whether customers with higher predicted effect truly exhibit higher observed treatment benefit.
 
-A strong `cate_score` should show a clearer upward trend than `rand_score`.
+If model captures heterogeneity correctly, treatment effect should increase across predicted effect buckets.
 
 
 
@@ -398,16 +473,19 @@ A strong `cate_score` should show a clearer upward trend than `rand_score`.
 plot_effect_by_quantile(bank_scored, title="Bank — Effect by score quantile")
 
 ```
+
 <figure>
   <img src="{{ site.baseurl }}/images/output_16_0.png">
   <figcaption style="text-align:left;">Fig1.Effect by quantile. </figcaption>
 </figure>
+    
 
 
-## A2) Cumulative effect & gain (marketing)
+### Targeting Curve Interpretation
 
-- Cumulative effect: “If I treat top p%, what uplift do I get among those treated?”
-- Cumulative gain: downweights tiny p% slices and yields a stable AUC metric.
+Shows expected benefit when targeting top predicted effect customers.
+
+HTE modeling is primarily used for treatment allocation decisions.
 
 
 
@@ -419,6 +497,7 @@ bank_aucs
 
 ```
 
+
     
 <figure>
   <img src="{{ site.baseurl }}/images/output_18_0.png">
@@ -429,6 +508,8 @@ bank_aucs
   <img src="{{ site.baseurl }}/images/output_18_1.png">
   <figcaption style="text-align:left;">Fig3.Normalized cumulative gain. </figcaption>
 </figure>
+    
+
 
 
 
@@ -439,10 +520,11 @@ bank_aucs
 
 
 
+### Repeating Analysis on New Data
 
-# PART B — CREDIT (German Credit / credit-g)
+Validates whether heterogeneous effect structure generalizes across datasets.
 
-Same pipeline, different domain.
+Heterogeneous effect estimation should not be dataset specific.
 
 
 
@@ -463,20 +545,18 @@ print("ATE:", effect_binary(credit_scored))
 
 ```
 
-    C:\Users\revan\minicondanew\Lib\site-packages\sklearn\datasets\_openml.py:328: UserWarning: Multiple active versions of the dataset matching the name credit-g exist. Versions may be fundamentally different, returning version 1. Available versions:
-    - version 1, status: active
-      url: https://www.openml.org/search?type=data&id=31
-    - version 2, status: active
-      url: https://www.openml.org/search?type=data&id=44096
-    
-      warn(warning_msg)
-    
-
     Credit data source: openml
     Outcome rate: 0.753
     Treatment rate: 0.564
     ATE: 0.11511809486628932
     
+
+### Final Comparative Visualization
+
+Compares different scoring strategies in terms of treatment separation ability.
+
+Best model is the one that best ranks customers by true treatment impact.
+
 
 
 ```python
@@ -487,7 +567,11 @@ credit_aucs = plot_cumulative_gain(credit_scored, title="Credit — Normalized c
 credit_aucs
 
 ```
+
+
     
+
+
 <figure>
   <img src="{{ site.baseurl }}/images/output_21_0.png">
   <figcaption style="text-align:left;">Fig4.Effect by score Quantile for credit data. </figcaption>
@@ -502,8 +586,10 @@ credit_aucs
     
 <figure>
   <img src="{{ site.baseurl }}/images/output_21_2.png">
-  <figcaption style="text-align:left;">Fig5.Normalized Cumulative gain for credit data. </figcaption>
+  <figcaption style="text-align:left;">Fig6.Normalized Cumulative gain for credit data. </figcaption>
 </figure>
+    
+
 
 
 
@@ -514,10 +600,11 @@ credit_aucs
 
 
 
+### Proxy Diagnostics for Treatment Effect Signal
 
-# PART C — Target transformation (pseudo-outcome) + weighted MSE
+Uses proxy outcomes to approximate treatment effect alignment.
 
-We compute a pseudo-outcome and use it to get a weighted MSE score for each model.
+Since individual causal effect is unobserved, proxy diagnostics help evaluate signal quality.
 
 
 
@@ -548,12 +635,17 @@ print("Credit pseudo-outcome weighted MSE:", pseudo_outcome_wmse_report(credit_s
     Credit pseudo-outcome weighted MSE: {'rand_score': np.float64(4.3827211075593295), 'y_score': np.float64(3.8825831197706777), 'cate_score': np.float64(3.4307246359223136)}
     
 
+## Chapter 6 Key Takeaways
 
-# Final recap
+Heterogeneous Treatment Effect modeling enables:
 
-You now have a single notebook that:
-- Uses **marketing + credit** contexts
-- Implements **all evaluation plots** from the chapter 6 of Facure
-- Is **runnable even if OpenML is blocked**
-- Provides **clear figures + interpretation**
+• Personalized decision making  
+• Efficient resource allocation  
+• Better causal policy design  
+
+Core conceptual takeaway:
+Treatment impact is not constant across populations.  
+Estimating how treatment effect changes with features enables better decisions than using average effects.
+
+
 
