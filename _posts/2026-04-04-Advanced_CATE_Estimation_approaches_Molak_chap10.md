@@ -563,9 +563,11 @@ plt.legend()
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_14_0_2.png">
+  <figcaption style="text-align:center;">Fig1.Randomization check: model accuracy vs random baseline. </figcaption>
+</figure>
     
-![png](output_14_0.png)
     
 
 
@@ -798,9 +800,11 @@ plt.title("Relative compute cost across CATE estimators")
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_23_0_2.png">
+  <figcaption style="text-align:center;">Fig2.Relative compute cost across CATE estimators. </figcaption>
+</figure>
     
-![png](output_23_0.png)
     
 
 
@@ -969,15 +973,16 @@ plot_uplift_by_decile(example_train, "XLearner — uplift by decile (train)")
 plot_uplift_by_decile(example_test, "XLearner — uplift by decile (test)")
 ```
 
+<figure>
+  <img src="{{ site.baseurl }}/images/output_29_0_2.png">
+  <figcaption style="text-align:center;">Fig3a.XLearner — uplift by decile (train). </figcaption>
+</figure>
 
-    
-![png](output_29_0.png)
-    
+<figure>
+  <img src="{{ site.baseurl }}/images/output_29_1_2.png">
+  <figcaption style="text-align:center;">Fig3b.XLearner — uplift by decile (test). </figcaption>
+</figure>
 
-
-
-    
-![png](output_29_1.png)
     
 
 
@@ -1008,11 +1013,11 @@ plt.tight_layout()
 plt.show()
 ```
 
-
-    
-![png](output_31_0.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_31_0_2.png">
+  <figcaption style="text-align:center;">Fig4.Compare — uplift by decile. </figcaption>
+</figure>
+        
 
 ## 9. Expected response (binary-treatment version)
 
@@ -1146,9 +1151,11 @@ plt.title("Policy value comparison on the test set")
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_35_0_2.png">
+  <figcaption style="text-align:center;">Fig5.Policy value comparison on the test set. </figcaption>
+</figure>
     
-![png](output_35_0.png)
     
 
 
@@ -1204,11 +1211,11 @@ plt.ylabel("Estimated treatment effect")
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_39_0_2.png">
+  <figcaption style="text-align:center;">Fig5.LinearDML: point estimates with 95% confidence intervals. </figcaption>
+</figure>
     
-![png](output_39_0.png)
-    
-
 
 ### Optional targeting rule
 A very practical rule is:
