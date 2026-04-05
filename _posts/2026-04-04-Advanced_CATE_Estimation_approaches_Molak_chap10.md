@@ -1031,7 +1031,8 @@ For each person:
 Because we only observe the outcome under the **actually assigned treatment**, we estimate how good the policy is with an **inverse-propensity-weighted policy value**:
 
  Expected Response = E[ Y × I(T = a(X)) / P(T | X) ]
- Where I(T = a(X))= 1, when T = a(X)
+    
+    Where I(T = a(X)) is equal to 1, when treatment is actually assigned, else 0. 
 In a randomized experiment with roughly constant assignment probability, this becomes straightforward to compute.
 
 
