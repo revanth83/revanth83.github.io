@@ -914,7 +914,7 @@ This is one of the chapter's main ideas.
 2. Sort from highest predicted uplift to lowest.
 3. Split into 10 bins (deciles).
 4. Inside each decile, estimate the **observed uplift**:
-Observed uplift = E[Y | T = 1] − E[Y | T = 0]
+ Observed uplift = E[Y | T = 1] − E[Y | T = 0]
 5. A good model should show **higher observed uplift in top deciles** than in lower deciles.
 
 
@@ -1030,7 +1030,7 @@ For each person:
 
 Because we only observe the outcome under the **actually assigned treatment**, we estimate how good the policy is with an **inverse-propensity-weighted policy value**:
 
-Expected Response = E[ Y × I(T = π(X)) / P(T | X) ]
+ Expected Response = E[ Y × I(T = π(X)) / P(T | X) ]
 
 In a randomized experiment with roughly constant assignment probability, this becomes straightforward to compute.
 
