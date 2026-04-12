@@ -691,8 +691,11 @@ plt.show()
     
 
 
-    
-![png](output_19_1.png)
+<figure>
+  <img src="{{ site.baseurl }}/images/output_19_1_b.png">
+  <figcaption style="text-align:center;">Fig1.Prior predictive implied conversion probabilities. </figcaption>
+</figure>    
+
     
 
 
@@ -988,9 +991,11 @@ print("Observed conversion rate:", round(observed_rate, 5))
 
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_28_0_b.png">
+  <figcaption style="text-align:center;">Fig2.Posterior predictive check: overall conversion rate. </figcaption>
+</figure> 
     
-![png](output_28_0.png)
     
 
 
@@ -1557,9 +1562,12 @@ plt.show()
 
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_41_0_b.png">
+  <figcaption style="text-align:center;">Fig3.Posterior probability that email effect is positive, by segment. </figcaption>
+</figure>
     
-![png](output_41_0.png)
+
     
 
 
@@ -1716,9 +1724,11 @@ plt.ylabel("History segment")
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_44_0_b.png">
+  <figcaption style="text-align:center;">Fig4.Posterior treatment effect by segment on log-odds scale. </figcaption>
+</figure>
     
-![png](output_44_0.png)
     
 
 
@@ -1937,11 +1947,10 @@ plt.legend()
 plt.show()
 ```
 
-
-    
-![png](output_47_0.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_47_0_b.png">
+  <figcaption style="text-align:center;">Fig5.Posterior predicted conversion by segment. </figcaption>
+</figure>
 
 Rather than ranking segments purely on treatment effect coefficient size or raw observed lift, I convert posterior segment effects into expected conversion under treatment and control. This makes the output directly useful for decisioning: it tells me not only whether a segment is likely to benefit, but also how much incremental conversion I should expect if I target it.
 
@@ -1977,9 +1986,10 @@ plt.ylabel("History segment")
 plt.show()
 ```
 
-
-    
-![png](output_50_0.png)
+<figure>
+  <img src="{{ site.baseurl }}/images/output_50_0_b.png">
+  <figcaption style="text-align:center;">Fig6.Posterior expected uplift by segment. </figcaption>
+</figure>
     
 
 
