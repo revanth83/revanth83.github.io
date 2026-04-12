@@ -1,14 +1,14 @@
 # Applying Bayesian Models to Real Campaign Data
 ## Uncertainty-aware personalization with practical decisioning
 
-This notebook is written as a blog-style artifact for employers and practitioners.
+This notebook is written as a blog-style artifact for practitioners.
 
-Its purpose is simple:
+Its purpose is show how to:
 
-- show that I can apply Bayesian ideas from Chapters 1–4 in practice
-- show that I can validate the model instead of blindly trusting it
-- show that I can interpret results correctly
-- show that I can translate model output into decisioning
+- apply Bayesian ideas from Chapters 1–4 in practice
+- validate the model instead of blindly trusting it
+- interpret results correctly
+- translate model output into decisioning
 
 **Business question**
 
