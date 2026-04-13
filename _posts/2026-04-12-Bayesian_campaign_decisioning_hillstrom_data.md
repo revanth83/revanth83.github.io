@@ -5,7 +5,7 @@ This notebook is written as a blog-style artifact for practitioners.
 
 Its purpose is show how to:
 
-- apply Bayesian ideas from Chapters 1–4 in practice
+- apply Bayesian ideas from Chapters 1–4 of Oswaldo Martin in practice
 - validate the model instead of blindly trusting it
 - interpret results correctly
 - translate model output into decisioning
