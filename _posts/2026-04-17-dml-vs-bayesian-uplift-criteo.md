@@ -1011,10 +1011,12 @@ plt.show()
 
 ```
 
+<figure>
+  <img src="{{ site.baseurl }}/images/output_25_0_C.png">
+  <figcaption style="text-align:center;">Fig1. Prior predictive distribution of average conversion. </figcaption>
+</figure> 
+    
 
-    
-![png](output_25_0.png)
-    
 
 
 **Interpretation**
@@ -1358,11 +1360,11 @@ print("Observed average conversion:", round(observed_rate, 6))
 
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_34_0_C.png">
+  <figcaption style="text-align:center;">Fig2. Posterior predictive check: average conversion rate. </figcaption>
+</figure> 
     
-![png](output_34_0.png)
-    
-
 
     Observed average conversion: 0.003217
     
@@ -1655,11 +1657,10 @@ plt.show()
 
 ```
 
-
-    
-![png](output_40_0.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_40_0_C.png">
+  <figcaption style="text-align:center;">Fig3. Bayesian posterior expected uplift by DML decile. </figcaption>
+</figure> 
 
 ## 15. Visualize Bayesian confidence that uplift is positive
 
@@ -1691,11 +1692,11 @@ plt.show()
 
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_42_0_C.png">
+  <figcaption style="text-align:center;">Fig4. Bayesian posterior probability uplift is positive. </figcaption>
+</figure> 
     
-![png](output_42_0.png)
-    
-
 
 **Interpretation**
 
