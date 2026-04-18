@@ -1,4 +1,3 @@
-yaml
 ---
 layout: post
 title: "Double Machine Learning Finds segments. Bayesian Decides Which Ones to Trust "
