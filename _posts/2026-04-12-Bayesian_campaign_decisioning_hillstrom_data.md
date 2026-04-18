@@ -1,6 +1,9 @@
-# Applying Bayesian Models to Real Campaign Data
+---
+layout: post
+title: "Applying Bayesian Models to Real Campaign Data"
+date: 2026-04-12 12:00:00 -0500
+---
 ## Uncertainty-aware personalization with practical decisioning
-
 This notebook is written as a blog-style artifact for practitioners.
 
 Its purpose is show how to:
