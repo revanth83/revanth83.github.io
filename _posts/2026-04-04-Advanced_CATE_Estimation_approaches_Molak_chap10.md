@@ -1,5 +1,8 @@
-# From Uplift Modeling to Counterfactual Explanations on a Public Experimental Dataset
-
+---
+layout: post
+title: "Advanced CATE Estimation Approaches: From Uplift Modeling to Counterfactual Explanations"
+date: 2026-04-04 12:00:00 -0500
+---
 This notebook recreates the **main ideas and code patterns from Chapter 10 of *Causal Inference and Machine Learning* by Aleksander Molak**, but on a **different public dataset**.
 
 Instead of the Hillstrom email dataset used in the book, we will use the **LaLonde job-training experiment**, a classic randomized dataset that is publicly available. The goal is the same:
