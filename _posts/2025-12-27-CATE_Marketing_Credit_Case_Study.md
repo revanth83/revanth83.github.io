@@ -1,126 +1,65 @@
-# 📘 Which group is more sensitive to treatment? Conditional Average Treatment Error (CATE) & Treatment Heterogeneity  
-## Demonstration with Marketing & Credit data, including comments
+---
+layout: post
+title: "Which Customers Respond to Treatment? A CATE Approach on Marketing & Credit Data"
+date: 2026-04-04 12:00:00 -0500
+---
 
-This notebook mirrors the ideas from the chapter 6 of Facure's Causal analytics book:
+## Abstract
 
-- **Effect heterogeneity**: different units respond differently to the same intervention.
-- **CATE**: treatment effect conditional on context/features.
-- **Evaluation when you can’t observe individual effects**:
-  - **Effect-by-quantile** plots
-  - **Cumulative effect** curves
-  - **Cumulative gain** curves (+ AUC)
-- **Ordering vs calibration**: ranking is often what matters for decisions.
-- **Target transformation / pseudo-outcomes**: an MSE-like comparison tool.
-- **Decision-making**: treat top‑K/top‑p% where benefit is largest.
+Understanding whether a treatment works on average is often insufficient for real-world decision-making. In many applications, the key question is which individuals or segments benefit most from an intervention.  
+
+This post explores **Conditional Average Treatment Effect (CATE)** estimation, focusing on practical modeling approaches, evaluation under unobserved individual effects, and how uplift-based ranking translates into actionable targeting decisions. The emphasis is on bridging causal estimation with real-world deployment considerations.
 
 ---
 
-Because OpenML access can fail (firewall/outage), this notebook has two paths:
+## Understanding Treatment Sensitivity with CATE
 
-### Path A — Real public datasets (requires internet)
-Loads via `sklearn.datasets.fetch_openml`:
-- `bank-marketing` (marketing)
-- `credit-g` (credit)
+In many real-world decision problems, the key question is not whether an intervention works on average, but **who it works for**.
 
-### Path B — Automatic fallback (no internet required)
-If download fails, it generates a **synthetic mixed-type dataset** and still runs end‑to‑end,
-producing all evaluation figures.
+In marketing and credit risk settings, the same treatment can:
+- significantly improve outcomes for some customers  
+- have no measurable impact on others  
+- or even lead to negative effects in certain segments  
+
+This makes **heterogeneous treatment effects** central to effective decision-making.
+
+This post focuses on estimating **Conditional Average Treatment Effects (CATE)** to identify which groups are most responsive to a given intervention.
+
+We explore:
+
+- how treatment effects vary across customer segments  
+- how to estimate CATE using standard machine learning approaches  
+- how to evaluate models when true individual effects are unobservable  
+- how ranking-based evaluation supports practical targeting decisions  
+
+The goal is not just to estimate effects, but to understand how these estimates translate into **actionable decisions**.
 
 ---
 
-## Public dataset references
-- Bank Marketing (OpenML): https://www.openml.org/search?type=data&status=active&id=1461  
-- German Credit / credit-g (OpenML): https://www.openml.org/d/31
+## Data
 
+We use publicly available datasets to ensure reproducibility:
 
+- **Bank Marketing (OpenML)** — marketing response prediction  
+- **German Credit (OpenML)** — credit risk classification  
 
-## 0) Imports and stable data loading
+If external access fails (e.g., firewall or network issues), a **synthetic dataset** is generated to preserve the full modeling and evaluation pipeline.
 
-We use `fetch_openml` (scikit-learn) for stable public data access + caching.
+---
 
-# Heterogeneous Treatment Effects
+## Practical Setup
 
-This notebook follows the conceptual flow of Chapter 6 of Facure exactly.
+- Standard machine learning pipelines for outcome modeling  
+- Ranking-based evaluation to assess treatment effect usefulness  
+- Focus on deployment-oriented interpretation rather than theoretical optimality  
 
-The chapter introduces a fundamental shift:
+---
 
-Average Treatment Effect → Individual Treatment Effect Structure
+## References
 
-Instead of asking:
-Does treatment work on average?
-
-We ask:
-How does treatment effect change across individuals?
-
-The main quantity we want to approximate is:
-
-τ(x) = E[Y(1) − Y(0) | X = x]
-
-This represents how treatment impact changes with customer characteristics.
-
-
-## 1. Why Average Effects Are Not Enough
-
-Even if treatment is beneficial on average, it may:
-• Help some customers a lot  
-• Have zero effect on others  
-• Even hurt some segments  
-
-Chapter message:
-Causal decision making should focus on **who benefits most**, not just whether treatment works overall.
-
-
-## 2. Potential Outcomes View of Heterogeneity
-
-For each individual:
-
-Y(1) → Outcome if treated  
-Y(0) → Outcome if untreated  
-
-Individual treatment effect:
-τ_i = Y_i(1) − Y_i(0)
-
-Since we only observe one outcome per person, we must estimate the missing counterfactual using models.
-
-HTE estimation is fundamentally a **counterfactual reconstruction problem**.
-
-
-## 3. Learning Outcome Functions
-
-Instead of trying to learn treatment effect directly, we learn:
-
-μ₁(x) = Expected outcome if treated  
-μ₀(x) = Expected outcome if untreated  
-
-Then:
-
-τ(x) = μ₁(x) − μ₀(x)
-
-This is the central modeling idea in Chapter 6.
-
-
-## 4. How We Evaluate Heterogeneous Effects
-
-We cannot observe true individual treatment effect.
-
-So we evaluate usefulness via **ranking quality**:
-
-If predicted τ(x) is meaningful:
-Higher predicted τ(x) → Higher observed treatment benefit
-
-This is why we analyze:
-• Effect across score buckets  
-• Effect among top-ranked customers
-
-
-### Code Context — Environment Setup
-
-This prepares tools needed for:
-• Data processing  
-• Modeling  
-• Visualization  
-
-HTE estimation is built using standard machine learning tools applied in a causal framework.
+- Facure, M. (2022). *Causal Inference for the Brave and True*  
+- OpenML datasets (Bank Marketing, German Credit)  
+- scikit-learn documentation
 
 
 
