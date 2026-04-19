@@ -1,13 +1,57 @@
-# Towards application of Meta‑Learners(S/T/X)
+---
+layout: post
+title: "Meta-Learners for Heterogeneous Treatment Effects: From Estimation to Practical Application"
+date: 2026-02-01 12:00:00 -0500
+---
 
-### Notebook on a public dataset (RAND Health Insurance Experiment via `statsmodels`)
+## From Meta-Learners to Practical CATE Estimation
 
-### Similar to Chapter 9 of Molak, you’ll see:
-- ATE vs CATE/HTE
-- Propensity scores + overlap checks
-- ATE via propensity score matching (PSM) and IPTW
-- CATE via S‑Learner, T‑Learner, X‑Learner
-- Diagnostics + lightweight refutations (placebo / random covariate)
+### Abstract
+
+This post explores meta-learners (S-, T-, and X-learners) for estimating heterogeneous treatment effects (CATE) on a public experimental dataset. The focus is not just on implementation, but on understanding how these methods behave in practice, how they compare to classical approaches, and when they provide reliable insights for decision-making.
+
+---
+
+This analysis examines how meta-learners can be used to estimate treatment effects at the individual and segment level.
+
+Rather than treating these models as black-box estimators, the goal is to understand:
+
+- how different learners capture heterogeneity  
+- how they compare to traditional ATE estimation approaches  
+- when their estimates are stable and interpretable  
+- what diagnostics are necessary before trusting the results  
+
+---
+
+## Data and setup
+
+We use the RAND Health Insurance Experiment dataset (via `statsmodels`), a well-known experimental dataset that allows clean evaluation of treatment effects under randomized assignment.
+
+The analysis includes:
+
+- ATE vs CATE estimation  
+- propensity score modeling and overlap checks  
+- matching (PSM) and weighting (IPTW)  
+- meta-learners (S-, T-, and X-learners)  
+- diagnostic checks and validation tests  
+
+---
+
+## Framing
+
+The goal is not to compare models in isolation, but to understand how different approaches behave when used for estimating and interpreting heterogeneous treatment effects.
+
+In particular:
+
+- when simpler methods are sufficient  
+- when meta-learners provide additional insight  
+- how to validate whether estimated heterogeneity is meaningful  
+
+---
+
+## Core question
+
+> When estimating heterogeneous treatment effects, how do meta-learners compare to classical approaches, and when can their results be trusted in practice?
 
 
 ## 0) Setup
