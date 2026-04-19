@@ -21,7 +21,7 @@ In marketing and credit risk settings, the same treatment can:
 - have no measurable impact on others  
 - or even lead to negative effects in certain segments  
 
-This makes **heterogeneous treatment effects** central to effective decision-making.
+This makes **heterogeneous treatment effects**(HTE) central to effective decision-making.
 
 This post focuses on estimating **Conditional Average Treatment Effects (CATE)** to identify which groups are most responsive to a given intervention.
 
