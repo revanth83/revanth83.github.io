@@ -1745,22 +1745,27 @@ Each row says something like:
 Again, this is an explanation of the **policy model**, not a guarantee about the real world.
 That is exactly the spirit of the final section in Molak's chapter.
 
+Again, this section is meant to explain **model behavior under the learned policy**, not to make a claim about ground-truth causal effects in the real world.
+
 ## 13. Practical takeaways
 
-### What this notebook reproduced from the chapter
-- randomized-experiment sanity checks,
-- S / T / X / DR / LinearDML / CausalForestDML estimators,
-- fit-time comparison,
-- uplift-by-decile evaluation,
-- expected response / policy value,
-- confidence intervals,
-- counterfactual explanations.
+This analysis brings together several complementary pieces of modern CATE estimation:
 
-### What changed from the chapter
-- We used a **different public dataset** (LaLonde, not Hillstrom).
-- The setup is **binary treatment** rather than multi-treatment.
-- The final counterfactual section explains the **recommendation model**, which is the cleanest way to mirror the chapter on this dataset.
+- randomized-experiment sanity checks  
+- S-, T-, X-, DR-, LinearDML-, and CausalForestDML-based estimators  
+- fit-time comparison  
+- uplift-by-decile evaluation  
+- expected response / policy value  
+- confidence intervals  
+- counterfactual-style explanations  
 
+The key practical differences in this setting are:
+
+- we use a **public randomized dataset** (LaLonde) rather than a marketing campaign dataset  
+- the setup is **binary treatment** rather than multi-treatment  
+- the final interpretation section focuses on explaining the **learned recommendation policy** in this simpler setting  
+
+Overall, the goal is not to reproduce a template, but to understand how these methods behave under a clean experimental design and what they offer for decision-making in practice.
 
 
 
