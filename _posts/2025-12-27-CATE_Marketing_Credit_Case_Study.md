@@ -57,7 +57,7 @@ If external access fails (e.g., firewall or network issues), a **synthetic datas
 
 ## References
 
-- Causal Inference in Python: Applying Causal Inference in the Tech Industry by Facure, M. 
+- Causal Inference in Python: Applying Causal Inference in the Tech Industry by Facure, Matheus 
 - OpenML datasets (Bank Marketing, German Credit)  
 - scikit-learn documentation
 
