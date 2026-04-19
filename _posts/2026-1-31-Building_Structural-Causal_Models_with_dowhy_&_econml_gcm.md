@@ -730,20 +730,31 @@ print(cf[["X", "Y"] + confounders])
     0  0.272287 -0.077256  1.297088  0.459841  0.418531  0.8005 -0.929746
     
 
-## 7) What you should take away (Chapter 7 in one page)
+## 7) Key takeaways
 
-- **DoWhy** gives you a clean 4-step causal workflow:
-  1) graph → 2) estimand → 3) estimate → 4) refute
-- **EconML** lets you plug in modern estimators like **DML** when you need ML flexibility.
-- **Refutation tests** are your “validation set” for causal claims (they try to break the result).
-- **GCM** lets you move into structural models and ask counterfactual questions.
+- **DoWhy** provides a structured causal workflow: define assumptions (graph) → identify the estimand → estimate the effect → refute the result  
+- **EconML** enables flexible estimation using modern methods like DML when linear models are insufficient  
+- **Refutation tests** act as validation checks for causal claims by stress-testing the estimated effect  
+- **Structural causal models (GCM)** extend the analysis to counterfactual reasoning  
 
-### Practical advice
-In real marketing/personalization work, a solid minimum deliverable is:
-- DAG + explanation of assumptions
-- at least one backdoor estimator (linear or DML)
-- refutation suite (subset, placebo, random common cause)
-- sensitivity check (if possible)
+---
+
+## Practical guidance
+
+In real-world marketing and personalization settings, a robust minimum workflow should include:
+
+- a clearly defined **causal graph (DAG)** with explicit assumptions  
+- at least one **identified estimator** (e.g., backdoor with linear model or DML)  
+- a **refutation suite** (subset, placebo, random common cause)  
+- a **sensitivity check** where feasible  
+
+---
+
+## Final takeaway
+
+Causal modeling is not just about estimating effects—it is about making assumptions explicit, validating them rigorously, and understanding how conclusions change under stress.
+
+Without these steps, estimated effects can be misleading even when models appear to perform well.
 
 
 ```python
