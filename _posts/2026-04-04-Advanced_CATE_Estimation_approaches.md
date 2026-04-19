@@ -1,32 +1,53 @@
 ---
 layout: post
-title: "Advanced CATE Estimation Approaches"
+title: "Advanced CATE Estimation: From Uplift Modeling to Counterfactual Explanations"
 date: 2026-04-04 12:00:00 -0500
 ---
+
 ## From Uplift Modeling to Counterfactual Explanations
-This notebook recreates the **main ideas and code patterns from Chapter 10 of *Causal Inference and Machine Learning* by Aleksander Molak**, but on a **different public dataset**.
 
-Instead of the Hillstrom email dataset used in the book, we will use the **LaLonde job-training experiment**, a classic randomized dataset that is publicly available. The goal is the same:
+### Abstract
+This post evaluates advanced CATE (Conditional Average Treatment Effect) estimation approaches on a public experimental dataset, with a focus on how different methods balance flexibility, interpretability, and decision usefulness. While many models can recover heterogeneous effects, their behavior differs significantly when used for segment-level targeting and counterfactual reasoning.
 
-- verify randomization,
-- fit several CATE / uplift estimators,
-- compare compute cost,
-- evaluate models with uplift-by-decile and expected response,
-- extract confidence intervals,
-- finish with a small section on **counterfactual explanations**.
+---
 
-## Why this notebook is slightly adapted
-The original chapter uses:
-- a **multi-treatment** marketing dataset,
-- and some code patterns tailored to that setup.
+This post explores advanced CATE estimation approaches on the LaLonde job training experiment, a well-known randomized dataset, focusing on how methods move beyond uplift ranking toward interpretable counterfactual effects.
 
-The LaLonde data is:
-- a **binary treatment** experiment (`treat` vs `control`),
-- with a **continuous outcome** (`re78`, earnings in 1978).
+The emphasis is not just on estimation accuracy, but on how these approaches differ in stability, interpretability, and practical usefulness for decision-making. In particular, we examine how model choice influences which segments appear actionable and how reliable those signals are.
 
-So the notebook mirrors the chapter's workflow, but simplifies a few formulas to the binary-treatment case.
+We focus on:
 
-> **Important:** the final counterfactual section explains **model behavior**, not ground-truth causality. That is also the key message in Molak's chapter.
+- how different methods capture heterogeneous treatment effects  
+- trade-offs between flexibility and interpretability  
+- stability of estimates across segments  
+- how uncertainty influences decision-making  
+- when counterfactual explanations add value beyond uplift ranking  
+
+---
+
+## Framing and deviations from standard setups
+
+Most illustrative examples of CATE estimation focus on structured marketing datasets and specific modeling pipelines.
+
+Here, we instead use a randomized experimental dataset to examine how these methods behave under cleaner identification conditions, and to highlight differences that are often less visible in more curated setups.
+
+The LaLonde data consists of:
+- a **binary treatment** setting (`treat` vs `control`)  
+- a **continuous outcome** (`re78`, earnings in 1978)
+
+The analysis follows a standard causal ML workflow, but is adapted to emphasize practical behavior, model trade-offs, and decision-relevant insights across methods.
+
+> **Important:** the final counterfactual section is intended to illustrate model behavior and interpretation, not to recover ground-truth causal effects. This distinction is central to how these methods should be used in practice.
+
+---
+
+## Background and references
+
+This work is informed by standard approaches to CATE estimation in the causal inference literature. In particular, ideas related to uplift modeling and counterfactual reasoning are discussed in:
+
+- Molak, A. *Causal Inference and Discovery in Python*
+
+The analysis here extends these ideas to a different dataset and focuses on practical behavior and decision-making implications.
 
 
 ```python
