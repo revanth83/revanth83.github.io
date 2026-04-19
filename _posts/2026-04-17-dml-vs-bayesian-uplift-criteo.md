@@ -1,61 +1,66 @@
 ---
 layout: post
-title: "Double Machine Learning Finds segments. Bayesian Decides Which Ones to Trust "
+title: "Double Machine Learning Finds Segments. Bayesian Decides Which Ones to Trust"
 date: 2026-04-17 12:00:00 -0500
 ---
+
 ## From uplift ranking to uncertainty-aware decisions on the Criteo dataset
 
-This notebook is the follow-up to my Bayesian campaign decisioning post built on the Hillstrom dataset.
+### Abstract
 
-The Hillstrom post showed that Bayesian hierarchical models can be useful when:
+This post compares Bayesian uplift modeling with Double Machine Learning (DML) on the Criteo dataset, focusing on how each approach supports decision-making under uncertainty. While DML provides strong uplift estimation and ranking capabilities, Bayesian methods offer explicit uncertainty quantification that becomes critical in sparse or noisy segments. The analysis highlights when each approach is sufficient and when uncertainty-aware modeling provides a meaningful advantage.
 
-- segment-level treatment effects are noisy
-- uncertainty should influence targeting decisions
-- raw uplift can be misleading in sparse segments
+---
+
+This post builds on the earlier Bayesian campaign decisioning analysis on the Hillstrom dataset, extending the discussion to compare Bayesian uplift workflows with modern causal ML approaches.
+
+The central question is not just how to estimate uplift, but how to make reliable targeting decisions when segment-level effects are noisy and uncertain. In practice, many segments that appear highly valuable based on point estimates are also the least stable, making uncertainty an essential part of the decision process.
 
 A natural next question is:
 
-> How does a Bayesian uplift workflow compare to a modern causal ML approach like Double Machine Learning (DML)?
-
-This notebook answers that question on the **Criteo uplift dataset**.
-
-The goal is not to force a winner.
-
-The goal is to understand what each approach is actually good at.
+> How does a Bayesian uplift workflow compare to a modern causal ML approach like Double Machine Learning (DML), particularly when decisions must be made under uncertainty?
 
 ---
 
-## What this notebook tries to demonstrate
+This analysis answers that question using the **Criteo uplift dataset**.
+
+The goal is not to declare a single winner, but to understand where each approach is reliable and what it enables from a decision-making perspective.
+
+---
+
+## What this analysis demonstrates
 
 ### From the DML side
-- debiased treatment-effect estimation with flexible nuisance models
-- practical individualized uplift estimation at scale
-- strong default choice when the main objective is causal estimation
+
+- debiased treatment-effect estimation with flexible nuisance models  
+- practical individualized uplift estimation at scale  
+- strong default choice when the primary objective is causal estimation  
 
 ### From the Bayesian side
-- explicit uncertainty quantification
-- hierarchical shrinkage for noisy personalization slices
-- posterior predictive validation
-- more natural decision support under uncertainty
+
+- explicit uncertainty quantification  
+- hierarchical shrinkage for noisy personalization segments  
+- posterior predictive validation  
+- more natural decision support under uncertainty  
 
 ---
 
 ## Core business question
 
-> If I want to personalize treatment decisions, when is DML enough, and when does a Bayesian uplift model give me something meaningfully better?
+> If I want to personalize treatment decisions, when is DML sufficient, and when does a Bayesian uplift model provide a meaningful advantage?
 
 ---
 
 ## Practical framing
 
-I do **not** treat these methods as ideological alternatives.
+These methods are not treated as ideological alternatives.
 
-A more mature question is:
+A more relevant question is:
 
-- When do I need **robust causal estimation**?
-- When do I need **stable, uncertainty-aware targeting decisions**?
+- When is robust causal estimation sufficient?  
+- When are stable, uncertainty-aware targeting decisions necessary?  
 
-That is the focus in this notebook.
+That is the focus of this analysis.
 
 
 
