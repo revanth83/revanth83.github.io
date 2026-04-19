@@ -1,23 +1,59 @@
-# End-to-End approach for building Causal Models using— DoWhy + EconML + Refutation Tests + GCM API 
+---
+layout: post
+title: "Building Structural Causal Models: An End-to-End Workflow with DoWhy, EconML, and Refutation Tests"
+date: 2026-01-31 12:00:00 -0500
+---
 
-This notebook demonstrates the **main ideas and libraries used in Chapter 7 of Molak**:
+## From Assumptions to Counterfactuals: A Practical Causal Modeling Workflow
 
-1. **DoWhy**: the 4-step causal workflow
-   - Step 1: encode assumptions (a causal graph)
-   - Step 2: identify the estimand (what needs to be computed)
-   - Step 3: estimate the effect (linear regression, Double ML)
-   - Step 4: refute the estimate (robustness / stress tests)
-2. **EconML**: using **Double Machine Learning (DML)** as a causal estimator
-3. **DoWhy GCM API**: building a **structural causal model** and generating **counterfactuals**
+### Abstract
 
-## Dataset choice (public + offline)
-To keep this notebook runnable without external downloads, we use `sklearn.datasets.load_diabetes()` (ships with scikit-learn).
-We then **simulate a treatment** and an **outcome** so we *know the true causal effect* and can sanity-check the tooling.
+This post presents an end-to-end workflow for building and validating causal models using DoWhy, EconML, and structural causal modeling concepts. The focus is not just on estimating treatment effects, but on making assumptions explicit, validating identification, and stress-testing conclusions through refutation and counterfactual analysis.
 
-> Why simulate treatment/outcome?
-> - Real public datasets rarely contain *true randomized treatment*.
-> - Chapter 7’s goal is to learn the ecosystem + workflow.
+---
 
+This analysis demonstrates how to move from a causal question to a fully specified and validated causal model.
+
+Rather than treating causal estimation as a single modeling step, the workflow emphasizes:
+
+- explicitly encoding assumptions through a causal graph  
+- identifying the estimand before estimation  
+- using flexible models (e.g., Double Machine Learning) for effect estimation  
+- validating results through refutation and robustness checks  
+- generating counterfactual insights using structural models  
+
+---
+
+## Data and setup
+
+To keep the workflow self-contained and reproducible, we use a public dataset (`sklearn.datasets.load_diabetes`) and simulate treatment and outcome variables. This allows us to work in a setting where the causal structure is known, making it easier to validate each step of the pipeline.
+
+---
+
+## Framing
+
+The goal is not just to estimate a treatment effect, but to demonstrate how causal reasoning, modeling, and validation fit together into a coherent workflow.
+
+In particular:
+
+- how assumptions influence what can be estimated  
+- how identification differs from estimation  
+- why refutation tests are critical before trusting results  
+- how structural models enable counterfactual reasoning  
+
+---
+
+## Core question
+
+> How do we move from a causal question to a validated model that supports reliable counterfactual reasoning?
+
+## Background and references
+
+This workflow is informed by standard causal inference frameworks and tooling, including approaches implemented in DoWhy and EconML.
+
+- Molak, A. *Causal Inference and Discovery in Python*
+
+The focus here is on applying these ideas in an end-to-end workflow and examining their practical implications.
 ## 0) Setup
 We try to import `dowhy` and `econml`. If they are missing, install them.
 
