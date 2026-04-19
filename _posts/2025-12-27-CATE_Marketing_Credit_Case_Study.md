@@ -192,7 +192,7 @@ def load_openml_or_fallback(name: str, fallback_n: int = 20000, seed: int = 0):
 This step simulates:
 • Treatment assignment  
 • Individual-level treatment heterogeneity  
-Treatment is assigned via a learned propensity model, while heterogeneous effects are injected through a nonlinear transformation of features, creating a controlled but confounded uplift setting.
+Treatment is assigned via a learned propensity model, while heterogeneous effects are injected through a nonlinear transformation of features, creating a controlled but confounded uplift setting. 
 
 
 ```python
