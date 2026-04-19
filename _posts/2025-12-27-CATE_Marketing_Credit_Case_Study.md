@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Which Customers Respond to Treatment? "
+title: "Finding Who Actually Responds: CATE-Based Targeting in Marketing & Credit"
 date: 2026-04-04 12:00:00 -0500
 ---
-## Application of Conditional Average Treatment Effect (CATE) based targeting on Marketing & Credit Data using basic T-learner
+## Evaluating uplift models using ranking-based metrics across real datasets
 ## Abstract
 
 Understanding whether a treatment works on average is often insufficient for real-world decision-making. In many applications, the key question is which individuals or segments benefit most from an intervention.  
