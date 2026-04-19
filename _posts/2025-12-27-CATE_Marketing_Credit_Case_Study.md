@@ -57,7 +57,7 @@ If external access fails (e.g., firewall or network issues), a **synthetic datas
 
 ## References
 
-- Facure, M. (2022). *Causal Inference for the Brave and True*  
+- Causal Inference in Python: Applying Causal Inference in the Tech Industry by Facure, M. 
 - OpenML datasets (Bank Marketing, German Credit)  
 - scikit-learn documentation
 
@@ -574,17 +574,39 @@ print("Credit pseudo-outcome weighted MSE:", pseudo_outcome_wmse_report(credit_s
     Credit pseudo-outcome weighted MSE: {'rand_score': np.float64(4.3827211075593295), 'y_score': np.float64(3.8825831197706777), 'cate_score': np.float64(3.4307246359223136)}
     
 
-## Chapter 6 Key Takeaways
+## Key Takeaways
 
-Heterogeneous Treatment Effect modeling enables:
+Heterogeneous Treatment Effect (HTE) modeling shows that treatment impact is not evenly distributed across customers, and that this variation can be exploited for better decisions.
 
-• Personalized decision making  
-• Efficient resource allocation  
-• Better causal policy design  
+From the results in this post:
 
-Core conceptual takeaway:
-Treatment impact is not constant across populations.  
-Estimating how treatment effect changes with features enables better decisions than using average effects.
+- **CATE-based ranking consistently outperforms naive alternatives**  
+  Across both the marketing and credit datasets, `cate_score` produces stronger cumulative effect and gain curves than either random ranking or outcome-based scoring.
 
+- **Most of the treatment value is concentrated in top-ranked segments**  
+  In both datasets, the cumulative effect curves show that a relatively small fraction of customers captures a disproportionate share of the treatment benefit.
 
+- **Outcome-based ranking is not a good substitute for uplift modeling**  
+  The `y_score` baseline performs near random and, in some cases, worse than random, showing that predicting outcomes is not the same as ranking treatment responsiveness.
 
+- **The heterogeneity signal is real, but not equally stable everywhere**  
+  The effect-by-quantile plots show that uplift signal is present in both datasets, but it is concentrated and noisy rather than smooth. This means the ranking is useful, even when individual bucket-level estimates are unstable.
+
+- **Context matters**  
+  The strength and shape of the uplift pattern differ between marketing and credit data, which suggests that heterogeneous treatment effects should be validated within each application rather than assumed to generalize uniformly.
+
+---
+
+### Practical implication
+
+In real-world applications:
+
+- use CATE models to **rank and prioritize customers**, rather than to estimate precise individual effects  
+- validate ranking quality using **cumulative effect and gain curves**  
+- compare against **random and outcome-based baselines** before trusting the model  
+- expect heterogeneity to be **concentrated, noisy, and domain-specific**
+
+The main lesson is:
+
+> **Average treatment effects tell you whether something works overall.  
+CATE tells you where the value is — and that is what drives targeting decisions.**
