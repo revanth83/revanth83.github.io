@@ -1402,26 +1402,38 @@ print("Augmented IPTW ATE (with random noise covariate):", ate_aug)
     Augmented IPTW ATE (with random noise covariate): 0.5368559807542961
     
 
-## 12) Wrap‑up 
+## 12) Wrap-up
 
 ### The big picture
 
-- **Propensity scores** are your gateway to diagnosing whether causal estimation is even plausible (overlap).
-- **Matching / weighting** target **ATE** (one average number).
-- **Meta‑learners** target **HTE/CATE** (who benefits more).
+- **Propensity scores** are essential for diagnosing whether causal estimation is even plausible (overlap).  
+- **Matching and weighting** primarily target ATE (a single average effect).  
+- **Meta-learners** are designed for HTE/CATE, enabling segment-level and individual-level insights.  
 
-### What we learned in this notebook
+---
 
-- **S‑Learner** is simple and often strong, but can under‑use treatment if the model decides `T` is unimportant.
-- **T‑Learner** forces treatment separation, but can be noisy because each model sees fewer samples.
-- **X‑Learner** tries to get the best of both worlds by:
-  - using both outcome models
-  - creating imputed effects
-  - weighting/blending based on propensity (trust the side with better information)
+### Key takeaways
 
-### When to use what (practical cheat sheet)
+- **S-Learner** is simple and often a strong baseline, but may under-utilize treatment information if the model deprioritizes the treatment signal.  
+- **T-Learner** enforces treatment separation, but can become unstable when sample sizes are limited.  
+- **X-Learner** balances both approaches by:
+  - leveraging outcome models from both groups  
+  - imputing treatment effects  
+  - weighting estimates based on propensity (favoring the side with stronger signal)  
 
-- Start with **S‑Learner** if you want a baseline quickly.
-- Consider **T‑Learner** if treated/control sizes are similar and you have plenty of data.
-- Consider **X‑Learner** if treatment is rare/common or you suspect strong heterogeneity.
+---
+
+### When to use what (practical guide)
+
+- Use **S-Learner** for a fast and reliable baseline  
+- Use **T-Learner** when treated and control groups are well-balanced and sufficiently large  
+- Use **X-Learner** when treatment is rare/common or when strong heterogeneity is expected  
+
+---
+
+### Final takeaway
+
+Meta-learners are not just alternative estimators—they provide a practical framework for moving from average treatment effects to meaningful heterogeneity.
+
+However, their outputs require careful validation. Without proper diagnostics and overlap checks, estimated heterogeneity can reflect model artifacts rather than true causal structure.
 
