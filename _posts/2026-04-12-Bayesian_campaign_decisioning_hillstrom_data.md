@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bayesian Models for Campaign Decisioning: Handling Uncertainty in Real Data"
-date: 2026-04-03 12:00:00 -0500
+date: 2026-04-12 12:00:00 -0500
 ---
 ## Uncertainty-aware personalization with practical decisioning
 
