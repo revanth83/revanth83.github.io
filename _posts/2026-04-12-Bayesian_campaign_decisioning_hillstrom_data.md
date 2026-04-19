@@ -1,25 +1,40 @@
----
-layout: post
-title: "Applying Bayesian Models to Real Campaign Data"
-date: 2026-04-12 12:00:00 -0500
----
 ## Uncertainty-aware personalization with practical decisioning
-This notebook is written as a blog-style artifact for practitioners.
 
-Its purpose is show how to:
+### Abstract
+This post applies Bayesian modeling to real campaign data to understand how uncertainty affects targeting decisions. While traditional approaches rely on point estimates, Bayesian methods provide a distribution over outcomes, enabling more reliable decisions in sparse and noisy customer segments.
 
-- apply Bayesian ideas from Chapters 1–4 of Oswaldo Martin in practice
-- validate the model instead of blindly trusting it
-- interpret results correctly
-- translate model output into decisioning
+---
 
-**Business question**
+This post explores how Bayesian models can be used to move from prediction to decisioning in real campaign settings.
+
+The focus is not just on estimating treatment effects, but on how uncertainty should influence which customer segments are actually targeted. In practice, segments with the highest estimated uplift are often the least reliable, and ignoring uncertainty can lead to suboptimal decisions.
+
+We focus on:
+
+- estimating treatment effects under noisy and sparse data conditions  
+- understanding how uncertainty varies across customer segments  
+- comparing point-estimate vs distribution-aware decision strategies  
+- translating model outputs into actionable targeting decisions  
+
+---
+
+## Business question
 
 > What is the effect of sending an email on conversion, and how should we target when some customer segments are sparse and noisy?
 
-This notebook uses the public Hillstrom / MineThatData email campaign dataset.
+---
 
+We use the public Hillstrom (MineThatData) email campaign dataset to evaluate how Bayesian approaches behave in a realistic marketing setting.
 
+---
+
+## Background and references
+
+This analysis is informed by Bayesian modeling approaches in applied causal inference literature, including:
+
+- Martin, O. *Bayesian Modeling and Computation in Python*
+
+The focus here is on applying these ideas to real data and understanding their implications for decision-making under uncertainty.
 
 ```python
 #!pip install arviz
