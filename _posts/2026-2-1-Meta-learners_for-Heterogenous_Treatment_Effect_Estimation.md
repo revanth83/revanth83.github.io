@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Meta-Learners for Heterogeneous Treatment Effects: From Estimation to Practical Application"
+title: "Meta-Learners for Heterogeneous Treatment Effects"
 date: 2026-02-01 12:00:00 -0500
 ---
 
-## From Meta-Learners to Practical CATE Estimation
+## From Estimation to Practical Application
 
 ### Abstract
 
