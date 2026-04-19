@@ -2164,35 +2164,36 @@ In this notebook, that leads to a simple action map:
 
 ## 19. Final takeaways
 
-This notebook ends up making a more useful point than a simple “Bayesian vs DML” contest.
+This analysis leads to a more useful conclusion than a simple “Bayesian vs DML” comparison.
 
-The two methods are solving different parts of the same business problem.
+The two approaches address different parts of the same decision problem.
 
-### What the results say here
+### Interpreting the results
 
-- **Decile 9** is the cleanest success case: DML ranked it highest, and the Bayesian layer strongly confirmed that it has real positive uplift.
-- The rest of the DML ranking is much less compelling once uncertainty is introduced.
-- **Decile 8** and **decile 7** looked attractive on the DML side, but Bayesian validation does not support confident action there.
-- **Decile 0** is the most interesting segment in the notebook: DML ranked it worst, while Bayesian modeling estimates positive uplift with near certainty in the sampled data.
+- **Decile 9** is the clearest success case: DML ranked it highest, and the Bayesian layer confirms strong positive uplift with high confidence.  
+- The rest of the DML ranking becomes less compelling once uncertainty is introduced.  
+- **Decile 8 and decile 7** appear attractive under DML, but Bayesian validation does not support confident action.  
+- **Decile 0** is the most interesting segment: DML ranked it worst, while Bayesian modeling estimates positive uplift with near certainty in the sampled data.  
 
-That means the Bayesian layer is not just “adding uncertainty” in the abstract. It is materially changing the deployment conversation.
+This shows that the Bayesian layer is not just “adding uncertainty” in the abstract—it materially changes how decisions should be made.
 
-Instead of treating the DML ranking as a finished answer, I now have a more realistic segmentation:
+Rather than treating the DML ranking as a final answer, this leads to a more actionable segmentation:
 
 1. **Deploy with confidence** → decile 9  
-2. **Investigate because the disagreement is too important to ignore** → decile 0  
-3. **Treat as weak / low-priority for now** → most other deciles  
+2. **Investigate disagreements** → decile 0  
+3. **Deprioritize for now** → remaining deciles  
 
-### My practical conclusion
+---
 
-I would not deploy the raw DML ranking as-is.
+## Practical conclusion
 
-I would use:
+The raw DML ranking should not be deployed as-is.
 
-- **DML** to generate candidate uplift segments
-- **Bayesian validation** to determine which of those segments are credible, which are weak, and which deserve deeper investigation
+A more robust approach is:
 
-That is the main lesson from this notebook:
+- **DML** to generate candidate uplift segments  
+- **Bayesian validation** to determine which segments are credible, which are weak, and which require deeper investigation  
 
-> point estimates are useful for discovery, but uncertainty is what makes a ranking deployable.
+The key takeaway is:
 
+> Point estimates are useful for discovery, but uncertainty is what makes a ranking deployable.
