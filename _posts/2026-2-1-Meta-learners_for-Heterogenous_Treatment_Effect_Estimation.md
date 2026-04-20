@@ -52,7 +52,10 @@ In particular:
 ## Core question
 
 > When estimating heterogeneous treatment effects, how do meta-learners compare to classical approaches, and when can their results be trusted in practice?
+## References
 
+- Molak, A. *Causal Inference and Discovery in Python*. Packt Publishing.
+- RAND Health Insurance Experiment dataset (via `statsmodels`)
 
 ## 0) Setup
 
