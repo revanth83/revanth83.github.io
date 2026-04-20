@@ -732,21 +732,27 @@ print(cf[["X", "Y"] + confounders])
 
 ## 7) Key takeaways
 
-- **DoWhy** provides a structured causal workflow: define assumptions (graph) → identify the estimand → estimate the effect → refute the result  
-- **EconML** enables flexible estimation using modern methods like DML when linear models are insufficient  
-- **Refutation tests** act as validation checks for causal claims by stress-testing the estimated effect  
-- **Structural causal models (GCM)** extend the analysis to counterfactual reasoning  
+- **DoWhy** provides a structured causal workflow: define assumptions (graph) → identify the estimand → estimate the effect → refute the result.  
+- **EconML** enables flexible estimation using modern methods (e.g., DML) when linear models are insufficient.  
+- **Refutation tests** act as validation checks by stress-testing the estimated effect (e.g., placebo treatment, random common cause).  
+- **Structural causal models (GCM)** extend the analysis beyond estimation to counterfactual reasoning under interventions.
 
 ---
 
 ## Practical guidance
 
-In real-world marketing and personalization settings, a robust minimum workflow should include:
+In real-world settings (e.g., marketing, personalization), a robust minimum causal workflow should include:
 
-- a clearly defined **causal graph (DAG)** with explicit assumptions  
-- at least one **identified estimator** (e.g., backdoor with linear model or DML)  
-- a **refutation suite** (subset, placebo, random common cause)  
-- a **sensitivity check** where feasible  
+- A clearly defined **causal graph (DAG)** with explicit assumptions  
+- At least one **identified estimand** (e.g., backdoor adjustment using regression or DML)  
+- A **refutation suite**:
+  - placebo treatment  
+  - random common cause  
+  - subset validation (when feasible)  
+- Basic **sensitivity checks** to understand how conclusions change under perturbations  
+
+Crucially, estimation alone is not sufficient.  
+If a result does not hold under simple refutations, it should not be trusted—regardless of model complexity.
 
 ---
 
@@ -754,9 +760,10 @@ In real-world marketing and personalization settings, a robust minimum workflow 
 
 Causal modeling is not just about estimating effects—it is about making assumptions explicit, validating them rigorously, and understanding how conclusions change under stress.
 
-Without these steps, estimated effects can be misleading even when models appear to perform well.
+In practice, tools like DoWhy and EconML provide a structured framework, but their outputs are only as reliable as the assumptions behind them. Refutation tests and sensitivity checks are essential for distinguishing real causal signal from modeling artifacts.
 
+More importantly, the goal is not just to estimate an average effect, but to support **decision-making under intervention**. Whether through policy changes, targeting strategies, or counterfactual analysis, the value of causal models lies in how they inform actions—not just how well they fit data.
 
-```python
+Without this discipline, even sophisticated models can produce confident but misleading conclusions.
 
-```
+Ultimately, better causal models don’t just answer questions—they change decisions.
