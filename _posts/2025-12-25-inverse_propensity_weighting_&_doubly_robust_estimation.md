@@ -1,90 +1,98 @@
-# Propensity Scores in Practice 
-## A fully commented, marketing-focused notebook
+---
+layout: post
+title: "Propensity Scores in Practice"
+subtitle: "Correcting Selection Bias with IPW and Doubly Robust Estimation"
+date: 2026-12-25 12:00:00 -0500
+categories: [causal-inference, marketing-analytics]
+tags: [propensity-score, ipw, doubly-robust, causal-inference, uplift-modeling]
+---
 
-**Goal of this notebook**
+## Propensity Scores in Practice  
+### Correcting Selection Bias with IPW and Doubly Robust Estimation
 
-This notebook is designed to *teach* Chapter 5 of **Matheus Facure – Causal Inference in Python**, not just run code.
+## Abstract
 
-You will see:
-- **Why naive analysis is biased**
-- **How propensity scores fix selection bias**
-- **When IPW breaks**
-- **Why Doubly Robust (DR) is safer**
-- **How Double Machine Learning fits conceptually**
-- **How to explain results to business / MRM stakeholders**
+Estimating causal effects from observational data is challenging due to selection bias in treatment assignment. In marketing settings, customers who receive interventions are often systematically different from those who do not, leading to misleading conclusions under naive comparisons.
 
-We use a **public marketing dataset** (Hillstrom email campaign) so the ideas map directly to real-world marketing analytics
+This post explores practical approaches to correcting this bias using propensity score methods, including Inverse Propensity Weighting (IPW) and Doubly Robust estimation. The focus is on understanding how these methods behave in realistic settings and how they support reliable decision-making.
 
-📊 Hillstrom (MineThatData) Email Marketing Dataset
+---
 
-Direct download (CSV):
-https://raw.githubusercontent.com/W-Tran/uplift-modelling/master/data/hillstrom/Kevin_Hillstrom_MineThatData_E-MailAnalytics_DataMiningChallenge_2008.03.20.csv
+### The problem
 
-You can:
+In real-world marketing, we often want to answer a causal question:
 
-Open this link directly in a browser
+> **Does sending a marketing email actually increase customer spend or conversion?**
 
-Or use it in Python with pd.read_csv(url)
+This is not the same as:
 
-🔗 Original source (background & documentation)
-
-MineThatData – Email Analytics Challenge (Kevin Hillstrom):
-https://www.minethatdata.com/data-mining-challenge/
-
-
-
-## Big Picture (context)
-
-We want to answer a *causal* question:
-
-> **Does sending a marketing email cause higher customer spend / conversion?**
-
-This is *not* the same as:
 > “Do customers who receive emails spend more?”
 
-Why?
-- Marketing emails are **not sent at random**
-- Better / more engaged customers are more likely to be targeted
-- That creates **selection bias**
+Because email targeting is **not random**:
+- More engaged customers are more likely to be targeted  
+- That creates **selection bias**  
+- Naive comparisons will overstate impact  
 
-Chapter 5 is about how to remove that bias.
+---
 
+### What this analysis does
 
+This analysis walks through how to correct that bias using practical causal methods.
 
-## Methods we will compare
+We compare multiple approaches—from simple to robust—to understand:
 
-We will implement and compare **four approaches**:
+- how each method adjusts for selection bias  
+- when it works well  
+- when it breaks  
 
-1. **Naive regression** – shows the bias
-2. **IPW (Inverse Propensity Weighting)** – design-based correction
-3. **Outcome regression** – model-based correction
-4. **Doubly Robust (AIPW)** – combines both
-5. **Conceptual Double ML** – how DR extends to ML safely
+---
 
-For each method, we answer:
-- *What assumption does it rely on?*
-- *When does it work?*
-- *When does it fail?*
+### Methods covered
 
+We implement and compare:
 
+1. **Naive regression** — illustrates bias  
+2. **Inverse Propensity Weighting (IPW)** — reweights data to simulate randomization  
+3. **Outcome regression** — model-based correction  
+4. **Doubly Robust (AIPW)** — combines both for stability  
+5. **Conceptual Double ML** — extends DR to ML settings  
 
-## Dataset: Hillstrom Email Marketing (Public)
+For each method, we focus on:
 
-This dataset comes from a well-known marketing challenge.
+- underlying assumptions  
+- practical behavior  
+- failure modes  
 
-**Interpretation of columns**
-- Each row = one customer
-- `segment` = which email (if any) the customer received
-- Customer attributes = recency, history, channel, etc.
-- Outcomes = spend and conversion
+---
 
-**Treatment definition**
-- `T = 1` → customer received *any* email
-- `T = 0` → customer received no email
+### Dataset
 
-This mirrors real-world campaign targeting.
+We use the **Hillstrom (MineThatData) Email Marketing dataset**, a public benchmark that closely mirrors real-world targeting scenarios.
 
+- Each row = customer  
+- Treatment = received email (1) or not (0)  
+- Outcomes = spend and conversion  
+- Features = customer history, recency, channel behavior  
 
+---
+
+### Why this matters
+
+In practice, decisions like:
+- who to target  
+- how to allocate budget  
+- which campaigns to scale  
+
+depend on **causal impact—not correlation**.
+
+The goal is not just to estimate effects, but to build intuition for when those estimates can be trusted.
+
+---
+
+## References
+
+- Facure, M. *Causal Inference for the Brave and True*  
+  https://matheusfacure.github.io/python-causality-handbook/
 
 ```python
 
