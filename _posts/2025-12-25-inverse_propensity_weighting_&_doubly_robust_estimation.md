@@ -678,28 +678,53 @@ print("Doubly Robust ATE:", ate_dr)
     
 
 
-## Step 6 — Where Double Machine Learning fits
-
-Double ML builds on DR ideas but adds:
-- Cross-fitting
-- Orthogonalization
-- Safe use of ML models
-
-Conceptually:
-- DR = robustness to misspecification
-- Double ML = robustness + protection against ML overfitting
-
-We explain this conceptually (implementation is similar but heavier).
-
-
-
 ## Final Summary (what to remember)
 
-- **Regression** trusts the outcome model
-- **IPW** trusts the assignment mechanism
-- **DR** trusts *either one*
-- **Double ML** lets you use ML safely
+- **Naive comparison** overstates the effect due to selection bias  
+- **Outcome regression** provides a model-based correction but can be sensitive to misspecification  
+- **IPW** reweights the data to simulate randomization and performs well when overlap is good  
+- **Doubly Robust (DR)** combines both approaches and remains consistent if either model is correct  
 
-In observational marketing data:
-> **Doubly Robust is almost always the right baseline choice.**
+### What we observed in this dataset
 
+- Naive estimate: ~0.59  
+- Outcome regression: ~0.56  
+- IPW: ~0.69  
+- Doubly Robust: ~0.69  
+
+Two important insights emerge:
+
+1. **IPW and DR agree closely**, suggesting the propensity model is reliable  
+2. **Regression differs**, indicating potential outcome model misspecification  
+
+Additionally:
+
+- Propensity AUC is ~0.49 → treatment assignment is only weakly predictable  
+- Overlap is strong → IPW weights remain stable  
+- Effective sample size is high → no dominance from extreme weights  
+
+### Practical takeaway
+
+> **Doubly Robust is the safest default in observational settings**—but diagnostics matter.
+
+Even when DR works well:
+
+- Check overlap  
+- Inspect weight stability  
+- Compare across methods  
+
+**When treatment assignment is weakly predictable and overlap is strong, IPW and DR tend to converge—providing a useful internal consistency check.**
+
+Consistency across estimators is often the strongest signal that your causal estimate is trustworthy.
+
+### Where Double ML fits
+
+Double ML builds on DR by:
+
+- allowing flexible ML models  
+- reducing overfitting via cross-fitting  
+- improving robustness in high-dimensional settings  
+
+Think of it as:
+
+> **DR + modern ML, done carefully**
