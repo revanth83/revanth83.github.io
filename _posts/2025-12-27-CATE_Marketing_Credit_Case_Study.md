@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Finding Who Actually Responds: CATE-Based Targeting in Marketing & Credit"
-date: 2025-12-27 12:00:00 -0500
+date: 2025-01-27 12:00:00 -0500
 ---
 ## Evaluating uplift models using ranking-based metrics across real datasets
 ## Abstract
