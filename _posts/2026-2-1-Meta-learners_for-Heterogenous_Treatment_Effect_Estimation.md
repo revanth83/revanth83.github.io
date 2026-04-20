@@ -1454,5 +1454,3 @@ In real-world applications, a simpler model with stable and interpretable uplift
 Ultimately, the value of CATE modeling lies in **improving targeting decisions**, not in maximizing statistical fit.
 
 ---
-
-*Written on February 1, 2026*
