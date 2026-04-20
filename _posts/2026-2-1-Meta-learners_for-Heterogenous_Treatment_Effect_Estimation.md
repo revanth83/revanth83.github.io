@@ -1409,20 +1409,20 @@ print("Augmented IPTW ATE (with random noise covariate):", ate_aug)
 
 ### The big picture
 
-- **Propensity scores** are essential for diagnosing whether causal estimation is even plausible (overlap).  
-- **Matching and weighting** primarily target ATE (a single average effect).  
-- **Meta-learners** are designed for HTE/CATE, enabling segment-level and individual-level insights.  
+- **Propensity scores** are essential—not just for estimation, but for diagnosing whether causal inference is even plausible (overlap).
+- **Matching and weighting** primarily target average effects (ATE), and may miss meaningful heterogeneity.
+- **Meta-learners** extend this by modeling heterogeneous treatment effects—but their real value lies in enabling **targeting decisions through uplift-based ranking**, not just estimating effects.
 
 ---
 
 ### Key takeaways
 
-- **S-Learner** is simple and often a strong baseline, but may under-utilize treatment information if the model deprioritizes the treatment signal.  
-- **T-Learner** enforces treatment separation, but can become unstable when sample sizes are limited.  
+- **S-Learner** is a strong baseline and often surprisingly competitive, but can under-utilize treatment signal if the model prioritizes outcome prediction over treatment separation.
+- **T-Learner** enforces treatment-control separation, which can better capture heterogeneity, but may become unstable when sample sizes are small or imbalanced.
 - **X-Learner** balances both approaches by:
   - leveraging outcome models from both groups  
   - imputing treatment effects  
-  - weighting estimates based on propensity (favoring the side with stronger signal)  
+  - weighting estimates using propensity (favoring the side with stronger signal)
 
 ---
 
@@ -1432,11 +1432,27 @@ print("Augmented IPTW ATE (with random noise covariate):", ate_aug)
 - Use **T-Learner** when treated and control groups are well-balanced and sufficiently large  
 - Use **X-Learner** when treatment is rare/common or when strong heterogeneity is expected  
 
+Regardless of the method, the most important check is whether the model produces a **stable and meaningful uplift ranking**, since this directly drives targeting decisions.
+
 ---
 
 ### Final takeaway
 
-Meta-learners are not just alternative estimators—they provide a practical framework for moving from average treatment effects to meaningful heterogeneity.
+The goal of CATE modeling is not to estimate treatment effects perfectly at the individual level, but to **identify segments where treatment changes decisions**.
 
-However, their outputs require careful validation. Without proper diagnostics and overlap checks, estimated heterogeneity can reflect model artifacts rather than true causal structure.
+In practice, what matters is whether the model produces a **useful ranking of individuals by expected uplift**. Across experiments, this ranking quality (as seen in uplift curves and top-k slices) is often more actionable than pointwise accuracy of treatment effect estimates.
 
+Meta-learners provide a flexible way to capture heterogeneity, but their outputs should not be taken at face value. Diagnostics such as:
+- propensity overlap checks  
+- placebo tests  
+- uplift-based sanity checks  
+
+are essential to distinguish real signal from modeling artifacts.
+
+In real-world applications, a simpler model with stable and interpretable uplift patterns is often preferable to a more complex model with unstable estimates.
+
+Ultimately, the value of CATE modeling lies in **improving targeting decisions**, not in maximizing statistical fit.
+
+---
+
+*Written on February 1, 2026*
