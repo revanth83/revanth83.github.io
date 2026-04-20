@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Advanced CATE Estimation: From Uplift Modeling to Counterfactual Explanations"
+title: "Advanced CATE Estimation methods"
 date: 2026-04-04 12:00:00 -0500
 ---
 
