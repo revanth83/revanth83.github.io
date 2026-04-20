@@ -2,7 +2,7 @@
 layout: post
 title: "Propensity Scores in Practice"
 subtitle: "Correcting Selection Bias with IPW and Doubly Robust Estimation"
-date: 2026-12-25 12:00:00 -0500
+date: 2025-12-25 12:00:00 -0500
 categories: [causal-inference, marketing-analytics]
 tags: [propensity-score, ipw, doubly-robust, causal-inference, uplift-modeling]
 ---
