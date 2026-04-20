@@ -7,9 +7,6 @@ categories: [causal-inference, marketing-analytics]
 tags: [propensity-score, ipw, doubly-robust, causal-inference, uplift-modeling]
 ---
 
-## Propensity Scores in Practice  
-### Correcting Selection Bias with IPW and Doubly Robust Estimation
-
 ## Abstract
 
 Estimating causal effects from observational data is challenging due to selection bias in treatment assignment. In marketing settings, customers who receive interventions are often systematically different from those who do not, leading to misleading conclusions under naive comparisons.
