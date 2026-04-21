@@ -50,52 +50,7 @@ In practice, mistakes arise not from computing metrics, but from **misinterpreti
 
 We build a minimal synthetic example to illustrate the key ideas:
 
-1. **Potential outcomes framework**
-   - Each unit has two potential outcomes:
-     - \( Y_0 \): outcome without treatment  
-     - \( Y_1 \): outcome with treatment  
-
-2. **Observed outcome as a switch**
-   - We only observe one outcome depending on treatment:
-     \[
-     Y = (1 - T) \cdot Y_0 + T \cdot Y_1
-     \]
-
-3. **Selection bias**
-   - When treated and untreated groups differ systematically:
-     \[
-     E[Y_0 \mid T = 1] \neq E[Y_0 \mid T = 0]
-     \]
-   - Naive comparisons become biased
-
-4. **Randomization / ignorability**
-   - When treatment is independent of potential outcomes:
-     \[
-     (Y_0, Y_1) \perp T
-     \]
-   - Then:
-     \[
-     E[Y_1 - Y_0] = E[Y \mid T = 1] - E[Y \mid T = 0]
-     \]
-
-5. **SUTVA (Stable Unit Treatment Value Assumption)**
-   - No interference between units  
-   - A single version of treatment  
-
-6. **Role of assumptions**
-   - Causal conclusions rely on assumptions connecting theory to data
-
----
-
-## Reference
-
-This analysis builds on standard concepts in causal inference, particularly the potential outcomes framework popularized in:
-
-- Matheus Facure — *Causal Inference for the Brave and True*
-
-All examples and interpretations here are **original and tailored to practical intuition-building**.
 1. **Potential outcomes**: each unit has two outcomes –
-**Potential Outcomes**
 
 - `Y0` → outcome if NOT treated (control)
 - `Y1` → outcome if treated
@@ -119,6 +74,17 @@ E[Y₁ − Y₀]  =  E[Y | T = 1] − E[Y | T = 0].
    - One unit’s treatment does not affect another’s outcome.
    - There is only one “version” of treatment.
 6. **Assumptions are essential**: causal inference always relies on assumptions to connect causal quantities to estimators.
+
+---
+
+## Reference
+
+This analysis builds on standard concepts in causal inference, particularly the potential outcomes framework popularized in:
+
+- Matheus Facure — *Causal Inference for the Brave and True*
+
+All examples and interpretations here are **original and tailored to practical intuition-building**.
+
 import numpy as np
 import pandas as pd
 
