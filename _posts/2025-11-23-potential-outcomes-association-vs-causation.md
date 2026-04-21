@@ -94,7 +94,31 @@ This analysis builds on standard concepts in causal inference, particularly the 
 - Matheus Facure — *Causal Inference for the Brave and True*
 
 All examples and interpretations here are **original and tailored to practical intuition-building**.
+1. **Potential outcomes**: each unit has two outcomes –
+**Potential Outcomes**
 
+- `Y0` → outcome if NOT treated (control)
+- `Y1` → outcome if treated
+
+
+2. **Realized outcome as a switch**:  
+If Tᵢ = 0  →  Yᵢ = Y₀ᵢ          (control outcome)
+If Tᵢ = 1  →  Yᵢ = Y₁ᵢ          (treated outcome)
+
+General form (switching equation):
+Yᵢ = (1 − Tᵢ) × Y₀ᵢ  +  Tᵢ × Y₁ᵢ
+
+3. **Selection bias**: when treated and untreated units differ for reasons beyond treatment,  
+ E[Y₀ | T = 1]  ≠  E[Y₀ | T = 0],  
+   so simple comparisons are biased.
+4. **Randomization / ignorability**: when treatment is independent of potential outcomes,  
+  (Y₀, Y₁)  independent of  T,  
+   then True causal effect:
+E[Y₁ − Y₀]  =  E[Y | T = 1] − E[Y | T = 0].
+5. **SUTVA** (Stable Unit Treatment Value Assumption):
+   - One unit’s treatment does not affect another’s outcome.
+   - There is only one “version” of treatment.
+6. **Assumptions are essential**: causal inference always relies on assumptions to connect causal quantities to estimators.
 import numpy as np
 import pandas as pd
 
