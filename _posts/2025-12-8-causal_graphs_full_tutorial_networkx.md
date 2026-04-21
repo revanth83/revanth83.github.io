@@ -1,19 +1,81 @@
-# Causal Graphs, Confounding, Colliders, and Selection Bias  
-### A Practical Tutorial Inspired by Chapter 3 (with Original Examples)
+---
+layout: post
+title: "Causal Graphs, Confounding, Colliders, and Selection Bias"
+subtitle: "A Practical Tutorial Inspired by Chapter 3 (with Original Examples)"
+date: 2025-12-24 12:00:00 -0500
+categories: [causal-inference, marketing-analytics]
+tags: [causal-graphs, dags, confounding, colliders, selection-bias, d-separation, networkx]
+---
 
-This notebook is **inspired by Chapter 3** of Matheus Facure's *Causal Inference in Python*,  
-but uses **different stories, variables, and numbers** so it stands on its own and is safe to share.
+# Causal Graphs, Confounding, Colliders, and Selection Bias
+
+## Abstract
+
+This tutorial builds practical intuition for causal graphs and how they help us reason about bias in observational data. Using original examples from marketing and product analytics, it shows how confounding, colliders, and selection bias can create misleading conclusions even before any model is fit.
+
+The goal is not just to explain DAGs mechanically, but to show how they help answer a practical question: **what should we control for, and what should we avoid controlling for, if we want a causal interpretation?**
+
+---
+
+## Introduction
+
+This tutorial is inspired by Chapter 3 of Matheus Facure’s *Causal Inference in Python*, but uses **original examples, variables, and business scenarios** so that each concept stands on its own.
+
+The focus is on **practical intuition** — understanding how confounding, colliders, and selection bias arise in real-world data, and how causal graphs help avoid incorrect conclusions.
+
+In practice, many analytical mistakes come not from the model, but from **conditioning on the wrong variables**.
 
 We will cover:
 
-1. **Three basic graphical patterns** (chain, fork, collider) and how association flows.  
-2. A more complex **product analytics DAG** and d-separation using a custom helper on `networkx`.  
-3. **Backdoor paths and confounding** with a **marketing email & revenue** example.  
-4. **The adjustment formula** with a small toy dataset.  
-5. **Selection bias** in a **feature rating survey**, showing how even A/B tests can lie.  
+1. **Three basic graphical patterns** — chain, fork, and collider  
+2. A more complex **product analytics DAG** and d-separation using a custom helper on `networkx`  
+3. **Backdoor paths and confounding** with a marketing email and revenue example  
+4. The **adjustment formula** with a small toy dataset  
+5. **Selection bias** in a feature-rating survey, showing how even A/B-style analyses can lie  
 
-We avoid `pgmpy` completely and implement a small, general-purpose `is_d_separated` helper using `networkx` only,  
-so the notebook is robust to library version issues.
+We avoid `pgmpy` completely and implement a lightweight `is_d_separated` helper using `networkx`, so the tutorial stays simple and robust to library issues.
+
+---
+
+## Why This Matters
+
+In real-world analytics, it is easy to confuse:
+
+- correlation with causation  
+- a useful predictor with a valid control variable  
+- a filtered sample with an unbiased sample  
+
+Causal graphs help prevent these mistakes by making assumptions explicit.
+
+A good DAG does not guarantee a correct answer, but it makes it much easier to see:
+
+- where bias comes from  
+- which paths should be blocked  
+- which variables should **not** be adjusted for  
+
+---
+
+## Core Question
+
+The central question in this tutorial is:
+
+> When does conditioning remove bias, and when does it create bias?
+
+That question sits underneath a lot of practical business problems, such as:
+
+- Does sending a marketing email increase revenue?  
+- Does a product intervention improve engagement?  
+- Should we control for a variable because it is predictive, or leave it out because it is post-treatment or a collider?  
+
+---
+
+## Reference
+
+Facure, Matheus. *Causal Inference for the Brave and True*  
+https://matheusfacure.github.io/python-causality-handbook/
+
+---
+
 
 
 ## 1. Setup and d-separation helper
