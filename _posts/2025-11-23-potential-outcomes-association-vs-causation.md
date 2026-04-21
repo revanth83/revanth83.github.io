@@ -351,11 +351,20 @@ These assumptions are what allow us to go from the **causal quantity we care abo
 
 In this small synthetic example, we:
 
-- Defined **potential outcomes** Y0 and Y1 for each unit.
-- Used the **switch function** Yᵢ = (1 − Tᵢ) × Y0ᵢ  +  Tᵢ × Y1ᵢ to build observed outcomes.
-- Saw how **biased treatment assignment** (non-random) leads to a **biased estimate** of the treatment effect.
-- Showed that with a **randomized experiment**, the simple difference in means recovers the **true ATE**.
-- Made explicit the role of **assumptions** (SUTVA, independence, consistency) in causal inference.
+- Defined **potential outcomes** Y0 and Y1 for each unit  
+- Used the **switch function** Y_i = (1 − T_i) × Y0_i + T_i × Y1_i to build observed outcomes  
+- Saw how **biased treatment assignment** (non-random) leads to a **biased estimate** of the treatment effect  
+- Showed that with a **randomized experiment**, the simple difference in means recovers the **true ATE**  
+- Made explicit the role of **assumptions** (SUTVA, independence, consistency) in causal inference  
 
-This is minimal demo of the core ideas from the first chapter of Facure’s book, and as the conceptual
-foundation for more applied causal modeling in marketing (uplift models, propensity scores, etc.).
+This example captures the core intuition behind causal inference:  
+we are trying to estimate quantities that are fundamentally **unobservable at the unit level**, and can only be recovered under the right assumptions.
+
+In practice, this distinction is critical in applied settings such as marketing and product analytics.  
+Observed differences in outcomes (e.g., conversion rates) are often driven by **selection effects**, not true causal impact.
+
+Without careful experimental design or valid assumptions, models can confidently learn patterns that are fundamentally **non-causal**.
+
+This is why **randomized experiments**—and more generally, causal inference frameworks—are essential for making reliable decisions.
+
+At its core, causal inference is not about better models—it is about asking the **right questions under the right assumptions**.
