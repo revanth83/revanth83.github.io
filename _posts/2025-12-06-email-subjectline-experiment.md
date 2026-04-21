@@ -1,4 +1,13 @@
-# Email Subjectline Experiment  
+---
+layout: post
+title: "Email Subject Line Experiment"
+subtitle: "A/B Testing, Statistical Inference, and Power Analysis in Practice"
+date: 2025-12-06
+author: "Revanth Garlapati"
+tags: [A/B Testing, Experimentation, Statistics, Marketing Analytics]
+categories: [Data Science, Experimentation]
+description: "A practical walkthrough of analyzing an email subject line A/B test using difference in means, confidence intervals, hypothesis testing, and power analysis."
+---
 ### Randomized Experiments and Statistical Review
 
 ---
@@ -601,27 +610,89 @@ This is exactly the warning in Chapter 2 that **“absence of evidence is not ev
 
 ## 7. Final Summary (for Marketing / Product Stakeholders)
 
-Using the email subject line experiment, we have:
+Using the email subject line experiment, we evaluated two treatments against a control:
 
-- Treated the experiment as **two separate randomized comparisons**:  
-  - SubjectLine 2 vs SubjectLine 1  
-  - SubjectLine 3 vs SubjectLine 1  
-- Computed the **uplift in response rate** for each comparison.  
-- Quantified **uncertainty** using standard errors and 95% confidence intervals.  
-- Performed **hypothesis tests** and examined p-values for statistical significance.  
-- Used a simple **power and sample size** formula to check whether the experiment was
-  adequately sized to detect a 1 percentage point uplift.  
+- SubjectLine 2 vs SubjectLine 1  
+- SubjectLine 3 vs SubjectLine 1  
 
-From an experimentation and causal inference perspective, the key takeaways are:
+### What the data shows
 
-1. **Randomized experiments** allow causal interpretation of differences in response rates,
-   assuming customers were randomly assigned to subject lines.  
-2. **Confidence intervals** are as important as point estimates; they visually encode uncertainty.  
-3. Failing to achieve statistical significance does not prove “no effect”—especially if the
-   experiment is underpowered.  
-4. Planning experiments with **power and minimum detectable effect in mind** is crucial for
-   making reliable business decisions.  
+- **SubjectLine 2 vs 1**
+  - Uplift: ~ +0.05 percentage points  
+  - 95% CI includes 0  
+  - p-value ≈ 0.52  
+  → **No statistically significant difference**
 
-You can now adapt this notebook to any binary outcome experiment in marketing:  
-new creatives, pricing tests, cross-sell offers, or personalization strategies.
+- **SubjectLine 3 vs 1**
+  - Uplift: ~ –0.72 percentage points  
+  - 95% CI entirely below 0  
+  - p-value ≈ 0.00  
+  → **Statistically significant decrease in performance**
+
+---
+
+### Business interpretation
+
+- There is **no evidence that SubjectLine 2 improves performance** over the control.  
+- There is **strong evidence that SubjectLine 3 performs worse** than the control.  
+
+**Decision:**
+- Keep SubjectLine 1 (baseline)
+- SubjectLine 2 is neutral → no reason to roll out
+- SubjectLine 3 should be **rejected**
+
+---
+
+### Was the experiment reliable?
+
+- Required sample size (for detecting ~1pp effect): ~38K per group  
+- Actual sample size: ~824K per group  
+
+→ The experiment is **well-powered**, meaning:
+- Lack of significance for SubjectLine 2 is **not due to low sample size**
+- The null result is **credible**
+
+---
+
+### Key takeaways (Causal + Experimentation)
+
+1. **Randomization enables causal interpretation**  
+   Differences observed here can be interpreted as true treatment effects.
+
+2. **Statistical significance matters — but direction matters too**  
+   Not all treatments fail equally:
+   - Some show *no effect* (SubjectLine 2)
+   - Some show *negative impact* (SubjectLine 3)
+
+3. **Confidence intervals are more informative than p-values alone**  
+   They show both magnitude and uncertainty of the effect.
+
+4. **Underpowered vs well-powered experiments must be distinguished**  
+   Here, large sample sizes ensure conclusions are reliable.
+
+5. **Absence of lift ≠ missed opportunity**  
+   It often means the variant truly does not improve performance.
+
+---
+
+### Practical takeaway
+
+In real marketing experiments:
+
+- Focus on **both statistical significance and business impact**
+- Avoid rolling out variants with:
+  - Insignificant uplift
+  - Negative impact (even if small)
+- Use **power calculations upfront** to ensure experiments are conclusive
+
+---
+
+This framework can be directly applied to:
+
+- Subject line testing  
+- Creative optimization  
+- Pricing experiments  
+- Personalization strategies  
+
+Any setting where decisions depend on small but meaningful differences in response rates.
 
