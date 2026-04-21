@@ -8,13 +8,13 @@ tags: [A/B Testing, Experimentation, Statistics, Marketing Analytics]
 categories: [Data Science, Experimentation]
 description: "A practical walkthrough of analyzing an email subject line A/B test using difference in means, confidence intervals, hypothesis testing, and power analysis."
 ---
-### Randomized Experiments and Statistical Review
+## Randomized Experiments and Statistical Review
 
 ---
 
 ## Abstract
 
-This tutorial builds practical intuition for randomized experiments and how to correctly interpret treatment effects in real-world settings.
+This analysis builds practical intuition for randomized experiments and how to correctly interpret treatment effects in real-world settings.
 
 Using a realistic email campaign example, we analyze how different subject lines impact customer response rates. Beyond computing differences, the focus is on understanding **uncertainty, statistical significance, and whether observed effects are actually meaningful**.
 
@@ -112,7 +112,7 @@ The notebook is structured as follows:
 
 ## Reference
 
-This tutorial builds on standard concepts from:
+This analysis builds on standard concepts in randomized experiments from:
 
 - Matheus Facure — *Causal Inference for the Brave and True* (Chapter 2: Randomized Experiments)
 
@@ -255,7 +255,7 @@ print(df['SubjectLine_ID'].value_counts())
 
 ## 2. Define Control and Treatment Groups
 
-We follow the Chapter 2 structure:
+We follow the below structure:
 
 - Control group: customers who received **SubjectLine_ID = 1**  
 - Treatment A: customers who received **SubjectLine_ID = 2**  
@@ -310,7 +310,7 @@ computes:
 - t-statistic under H0: delta = 0  
 - Two-sided p-value  
 
-This mirrors the logic in Chapter 2: a simple difference in means test between treatment
+This mirrors the logic in standard literature: a simple difference in means test between treatment
 and control in a randomized experiment.
 
 
@@ -483,7 +483,7 @@ print(f"p-value:                 {r['p_value']:.4f}")
 - The **p-value** is the probability of seeing a difference at least as extreme as this one,
   if the true delta were actually 0 (no effect).  
 
-**Practical rule of thumb (aligned with Chapter 2):**
+**Practical rule of thumb (following standard A/B testing interpretation):**
 
 - If `p_value < 0.05`, we say the effect is *statistically significant* at the 5% level.  
 - If `p_value >= 0.05`, we say “we do not have enough evidence to reject no effect.”  
@@ -536,7 +536,7 @@ From a marketing standpoint, you would typically pick the subject line that is:
 
 ## 6. Power and Sample Size (Facure’s Rule of Thumb)
 
-Chapter 2 introduces a simple and very useful approximation for planning experiment size.
+A commonly used approximation for planning experiment is:
 
 If we want:
 
@@ -606,7 +606,7 @@ print(f"Actual n (treatment, 3): {n_3}")
   - Failing to find a statistically significant effect does **not** mean there is no effect.  
   - It may simply mean the sample size is too small to reliably detect the effect you care about.  
 
-This is exactly the warning in Chapter 2 that **“absence of evidence is not evidence of absence.”**
+This is exactly the warning in the standard literature that **“absence of evidence is not evidence of absence.”**
 
 ## 7. Final Summary (for Marketing / Product Stakeholders)
 
