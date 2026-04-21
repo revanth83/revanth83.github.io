@@ -2,7 +2,7 @@
 layout: post
 title: "Causal Graphs, Confounding, Colliders, and Selection Bias"
 subtitle: "A Practical Tutorial Inspired by Chapter 3 (with Original Examples)"
-date: 2025-12-24 12:00:00 -0500
+date: 2025-12-08 12:00:00 -0500
 categories: [causal-inference, marketing-analytics]
 tags: [causal-graphs, dags, confounding, colliders, selection-bias, d-separation, networkx]
 ---
