@@ -10,9 +10,11 @@ My recent work focuses on experimentation & measurement, incrementality analysis
 
 Across roles, I’ve delivered impact at scale, including:
 
-◼️ Driving multi-million-dollar annualized value through experimentation-led personalization and portfolio optimization initiatives
-◼️ Improving marketing addressability and response through propensity and cross-sell models, expanding eligible customer populations by double-digit percentages
-◼️ Supporting regulatory-facing analytics and model monitoring for large consumer credit portfolios, partnering with business and risk teams to address audit and compliance requirements
+> Driving multi-million-dollar annualized value through experimentation-led personalization and portfolio optimization initiatives
+
+> Improving marketing addressability and response through propensity and cross-sell models, expanding eligible customer populations by double-digit percentages
+
+> Supporting regulatory-facing analytics and model monitoring for large consumer credit portfolios, partnering with business and risk teams to address audit and compliance requirements
 
 I’ve led and mentored teams, collaborated closely with product and engineering, and helped organizations move from intuition-driven decisions to experiment-validated strategies grounded in clear metrics and causal reasoning.
 
