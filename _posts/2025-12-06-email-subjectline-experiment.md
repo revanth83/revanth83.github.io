@@ -1,29 +1,115 @@
+# Email Subjectline Experiment  
+### Randomized Experiments and Statistical Review
 
-# Randomized Experiments and Stats Review
+---
 
-This notebook applies concepts from **Facure Chapter 2: Randomized Experiments & Stats review** to a real(ish) email campaign dataset.
+## Abstract
 
-The data for this notebook could be downloaded from https://www.kaggle.com/datasets/aristotelisch/playground-mock-email-campaign?resource=download.        We assume three CSV files in the same folder:
+This tutorial builds practical intuition for randomized experiments and how to correctly interpret treatment effects in real-world settings.
 
-- `sent_emails.csv`  — when and to whom each email was sent (includes `Customer_ID`, `SubjectLine_ID`)  
-- `responded.csv`    — which customers responded (includes `Customer_ID`)  
-- `userbase.csv`     — customer-level attributes (not strictly needed for Chapter 2, but available)  
+Using a realistic email campaign example, we analyze how different subject lines impact customer response rates. Beyond computing differences, the focus is on understanding **uncertainty, statistical significance, and whether observed effects are actually meaningful**.
 
-We will:
+The goal is to answer a practical question:
 
-1. Build a binary outcome `responded` (1 if customer appears in `responded.csv`, else 0).  
-2. Define **control** and **two treatments**:  
-   - Control: `SubjectLine_ID = 1`  
-   - Treatment A: `SubjectLine_ID = 2` vs control  
-   - Treatment B: `SubjectLine_ID = 3` vs control  
-3. For each treatment vs control comparison, compute:  
-   - Difference in mean response rates (treatment effect)  
-   - Standard error (SE)  
-   - 95% confidence interval  
-   - t-statistic and p-value  
-4. Use Facure’s sample-size rule-of-thumb:  
-   - `n ≈ 16 * sigma^2 / delta^2` for 95% significance and 80% power.  
-5. **Interpret the results** in business / marketing terms for each comparison.
+**When we see a lift in an A/B test, how do we know if it is real, reliable, and worth acting on?**
+
+---
+
+## Introduction
+
+Randomized experiments are the gold standard for measuring causal effects. When implemented correctly, they allow us to isolate the impact of an intervention from noise and confounding factors.
+
+In practice, however, many mistakes arise not from running experiments, but from **incorrect interpretation of results** — overreacting to noise, misreading statistical significance, or ignoring practical impact.
+
+This tutorial focuses on **building intuition**, not just formulas.
+
+We use a simple but realistic marketing example — an email campaign — to walk through how to:
+
+- Compare treatment vs control groups  
+- Quantify uncertainty using standard errors and confidence intervals  
+- Evaluate statistical significance  
+- Interpret results in a business context  
+
+---
+
+## Data Source
+
+The dataset used in this analysis is publicly available on Kaggle:
+
+https://www.kaggle.com/datasets/aristotelisch/playground-mock-email-campaign
+
+It simulates a real-world email marketing campaign with randomized subject lines and customer responses.
+
+---
+
+## Dataset
+
+The analysis uses three datasets:
+
+- **sent_emails.csv** — when and to whom each email was sent  
+  *(includes Customer_ID, SubjectLine_ID)*  
+
+- **responded.csv** — which customers responded  
+  *(includes Customer_ID)*  
+
+- **userbase.csv** — customer-level attributes  
+  *(not required for this analysis, but available)*  
+
+---
+
+## Experiment Setup
+
+We construct a randomized experiment with one control and two treatments:
+
+- **Control:** SubjectLine_ID = 1  
+- **Treatment A:** SubjectLine_ID = 2 vs control  
+- **Treatment B:** SubjectLine_ID = 3 vs control  
+
+The outcome variable is:
+
+- **responded = 1** if the customer appears in responded.csv, else **0**
+
+---
+
+## What We Will Do
+
+For each treatment vs control comparison, we will compute:
+
+- Difference in mean response rates (**treatment effect**)  
+- Standard Error (**SE**)  
+- 95% Confidence Interval  
+- t-statistic and p-value  
+
+We will also:
+
+- Apply a simple **sample size rule-of-thumb**  
+- Interpret results in **business terms** (not just statistical terms)  
+
+---
+
+## Layout of the Analysis
+
+The notebook is structured as follows:
+
+1. Load and merge datasets  
+2. Construct experiment groups  
+3. Compute treatment effects  
+4. Estimate uncertainty (SE and confidence intervals)  
+5. Perform hypothesis testing  
+6. Evaluate statistical vs practical significance  
+7. Summarize key takeaways  
+
+---
+
+## Reference
+
+This tutorial builds on standard concepts from:
+
+- Matheus Facure — *Causal Inference for the Brave and True* (Chapter 2: Randomized Experiments)
+
+However, all examples, datasets, and interpretations are **original and tailored to practical marketing use cases**.
+
+---
 
 
 ## 1. Load and Merge the Datasets
