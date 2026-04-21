@@ -1,96 +1,157 @@
-# Chapter 4 — Linear Regression for Causal Inference  
+---
+layout: post
+title: "Bank Marketing — Causal Linear Regression"
+date: 2025-12-22
+categories: [causal-inference, marketing-analytics]
+tags: [causal-inference, regression, uplift-modeling, experimentation]
+---
+## Estimating Treatment Effects with Linear Regression
+## Abstract
+
+Estimating causal effects from observational data is challenging due to non-random treatment assignment.  
+In this post, we use a real-world bank marketing dataset to illustrate how linear regression can be used for causal inference under key assumptions such as conditional ignorability and overlap.
+
+We contrast predictive vs causal modeling, highlight common pitfalls (e.g., selection bias and post-treatment controls), and provide practical diagnostics to assess whether regression estimates can be interpreted causally.  
+The goal is not just estimation, but building intuition for when such estimates are trustworthy.
+
+---
+
 ## Bank Marketing Case Study
 
-This notebook illustrates **Chapter 4 of Matheus Facure’s _Causal Inference in Python_**
-using the **Bank Marketing** dataset.
+This notebook illustrates **Chapter 4 of Matheus Facure’s _Causal Inference in Python_** using the Bank Marketing dataset.
 
-**Causal question:**  
-Does contacting customers by **cellular** instead of **telephone** increase the probability
-of subscribing to a term deposit?
+### Causal question
 
-- Treatment `T`: contact = cellular (1) vs telephone (0)  
-- Outcome `Y`: subscription = yes (1) vs no (0)
+> Does contacting customers by **cellular** instead of **telephone** increase the probability of subscription?
 
+- **Treatment (T)**: contact = cellular (1) vs telephone (0)  
+- **Outcome (Y)**: subscription = yes (1) vs no (0)
 
-## Dataset (links + download options)
+---
 
-We use the **Bank Marketing** dataset (Portuguese bank direct marketing campaigns).
+## Dataset (links + context)
 
-### Official source (UCI Machine Learning Repository)
-- Dataset page: https://archive.ics.uci.edu/dataset/222/bank+marketing  
-  (Direct downloadable files are linked on that page.)
+We use the **Bank Marketing dataset** (Portuguese bank campaigns).
 
-### Kaggle mirror (CSV download; requires Kaggle login)
-- https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset
+- Official source (UCI):  
+  https://archive.ics.uci.edu/dataset/222/bank+marketing
 
-### Which file should you use?
-- Kaggle typically provides `bank-full.csv` / `bank.csv`
-- The UCI dataset provides multiple formats; this notebook loads from UCI via `ucimlrepo`
+Each row = customer  
+- Features = demographics, history, campaign behavior  
+- Treatment = contact channel  
+- Outcome = subscription
 
+---
 
-# 📘 Causal Linear Regression — Blog Interpretation Layer
+## Interpretation Layer
 
-## What problem are we solving?
-We are trying to estimate the **causal effect of a treatment variable** on an outcome variable using linear regression under causal assumptions.
+### What problem are we solving?
+
+We are estimating the **causal effect of a treatment variable** on an outcome using regression under causal assumptions.
+
+---
 
 ## Predictive vs Causal Regression
-Predictive regression answers:
+
+**Predictive regression asks:**
+
 > If X changes, how does Y move in historical data?
 
-Causal regression answers:
-> If we *intervene* and change Treatment, how does Y change?
+**Causal regression asks:**
 
-Required assumptions:
-- No unobserved confounding (Conditional Ignorability)
-- Correct functional form (or good approximation)
-- No post-treatment leakage
-- Sufficient overlap between treated and control populations
+> If we intervene and change Treatment, how does Y change?
+
+This distinction is critical.
+
+---
+
+## Required Assumptions
+
+To interpret regression causally:
+
+- **No unobserved confounding** (Conditional Ignorability)  
+- **Correct functional form** (or reasonable approximation)  
+- **No post-treatment leakage**  
+- **Sufficient overlap between treated and control populations**
+
+---
 
 ## Business Interpretation
+
 In marketing / fintech:
-- Treatment coefficient ≈ Incremental lift
-- Positive → treatment helps
-- Negative → treatment hurts
-- Near zero → no incremental value
 
+- Treatment coefficient ≈ **incremental lift**
+- Positive → treatment helps  
+- Negative → treatment hurts  
+- Near zero → no incremental value  
 
+---
 
-## ⚠️ Key Causal Assumptions Being Used Here
+## Key Causal Assumptions Being Used
 
-### 1️⃣ Conditional Ignorability
-After controlling for covariates X:
-Treatment ⟂ Potential Outcomes
+### 1. Conditional Ignorability
 
-If violated → biased effect estimate
+After controlling for X:
 
-### 2️⃣ Overlap (Positivity)
-Every user has some probability of treatment and control
+> Treatment ⟂ Potential Outcomes
+
+If violated → biased estimates
+
+---
+
+### 2. Overlap (Positivity)
+
+Every user must have a non-zero probability of both treatment and control.
 
 If violated:
-- Extrapolation risk
-- Unstable coefficients
 
-### 3️⃣ No Post-Treatment Controls
-Do NOT include variables influenced by treatment
-This creates collider bias or blocks part of the treatment effect
+- Extrapolation risk  
+- Unstable estimates  
 
+---
 
+### 3. No Post-Treatment Controls
 
-## 🧪 Diagnostics — Causal Meaning
+Do **NOT** include variables affected by treatment.
 
-Residual Diagnostics:
-- Random residuals → Model specification reasonable
-- Patterned residuals → Possible nonlinearity or missing confounder
+This creates:
+- Collider bias  
+- Underestimation of treatment effect  
 
-Coefficient Stability:
-- Large swings across specs → weak identification or collinearity
+---
 
-Overlap Checks:
-If treated and control covariate distributions differ heavily:
-→ Model extrapolates → causal estimate fragile
+## Diagnostics — Causal Meaning
 
+### Residual Diagnostics
 
+- Random residuals → model specification reasonable  
+- Patterned residuals → possible nonlinearity or missing confounders  
 
+---
+
+### Coefficient Stability
+
+- Large swings across specs → weak identification or collinearity  
+
+---
+
+### Overlap Checks
+
+If treated/control covariates differ heavily:
+
+> Model extrapolates → causal estimate becomes fragile
+
+---
+
+Linear regression can estimate causal effects—but only when assumptions hold.  
+The real skill is not fitting the model, but validating those assumptions.
+
+---
+
+## References
+
+- Facure, M. *Causal Inference for the Brave and True*  
+  https://matheusfacure.github.io/python-causality-handbook/
 ```python
 
 import numpy as np
