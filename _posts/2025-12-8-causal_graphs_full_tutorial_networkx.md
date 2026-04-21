@@ -794,21 +794,28 @@ plt.show()
 </figure>
 
 
-## 7. Summary
+## 7. Final thoughts
 
-- We implemented a **version-agnostic d-separation checker** using only `networkx`.  
+- We implemented a version-agnostic d-separation checker using only networkx.
+
 - We used it to demonstrate:
-  - **Chains, forks, colliders** and how association flows.  
-  - How **backdoor paths** create confounding and how to fix it with adjustment.  
-  - How **selection bias** arises by conditioning on colliders (like survey responders), even in randomized experiments.
 
+  - **Chains, forks, and colliders** — and how statistical association flows (or gets blocked) in each case.
 
+  - **Backdoor paths and confounding** — where ignoring a common cause (like revenue_prev) can severely bias estimates, and how simple adjustment (stratification) recovers the correct effect.
 
-```python
+  - **Selection bias via colliders** — even in a randomized A/B test:
+    - True effect: **0.300**
+    - Full data estimate: **~0.295 (accurate)**
+    - Responders-only estimate: **~0.154 (biased)**
+    
+    Conditioning on response introduces a collider, distorting the causal estimate.
 
-```
+- The key takeaway:
 
+  > Most analytical errors do not come from the model — they come from conditioning on the wrong variables.
 
-```python
-
-```
+- Causal graphs provide a simple but powerful framework to:
+  - Decide **what to control for**
+  - Avoid **spurious correlations**
+  - Ensure **valid causal interpretation**
