@@ -1,48 +1,100 @@
-# A Minimal Demo in Python
-
-**Author:** Revanth  
-**Context:** Inspired by Chapter 1 of Matheus Facure’s _Causal Inference in Python_.  
-**Goal:** Show, with code, why **association is not causation** and how **potential outcomes** help us reason about causal effects.
+---
+layout: post
+title: "Association vs Causation: A Minimal Potential Outcomes Demo"
+date: 2025-11-23
+categories: [Causal Inference, Experimentation]
+---
 
 ---
 
-## 1. What this notebook demonstrates
+## Abstract
 
-We’ll build a tiny synthetic example that illustrates all the core ideas:
+This analysis builds intuition for one of the most fundamental ideas in causal inference: **why association is not causation**.
 
-1. **Potential outcomes**: each unit has two outcomes –
-**Potential Outcomes**
+Using a simple synthetic example, we illustrate how naive comparisons between treated and untreated groups can be misleading due to **selection bias**, and how the **potential outcomes framework** clarifies what we can and cannot learn from data.
 
-- `Y0` → outcome if NOT treated (control)
-- `Y1` → outcome if treated
+Beyond the mechanics, the focus is on understanding:
+- What causal effects actually mean
+- Why they are not directly observable
+- How assumptions like randomization enable valid estimation
 
+The goal is to answer a practical question:
 
-2. **Realized outcome as a switch**:  
-If Tᵢ = 0  →  Yᵢ = Y₀ᵢ          (control outcome)
-If Tᵢ = 1  →  Yᵢ = Y₁ᵢ          (treated outcome)
+**When we observe differences in outcomes, when can we interpret them as causal effects?**
 
-General form (switching equation):
-Yᵢ = (1 − Tᵢ) × Y₀ᵢ  +  Tᵢ × Y₁ᵢ
+---
 
-3. **Selection bias**: when treated and untreated units differ for reasons beyond treatment,  
- E[Y₀ | T = 1]  ≠  E[Y₀ | T = 0],  
-   so simple comparisons are biased.
-4. **Randomization / ignorability**: when treatment is independent of potential outcomes,  
-  (Y₀, Y₁)  independent of  T,  
-   then True causal effect:
-E[Y₁ − Y₀]  =  E[Y | T = 1] − E[Y | T = 0].
-5. **SUTVA** (Stable Unit Treatment Value Assumption):
-   - One unit’s treatment does not affect another’s outcome.
-   - There is only one “version” of treatment.
-6. **Assumptions are essential**: causal inference always relies on assumptions to connect causal quantities to estimators.
+## Introduction
 
+In many real-world problems, we observe correlations and are tempted to interpret them as causal relationships. However, without careful reasoning, these conclusions are often incorrect.
 
+The core challenge is that for any individual unit, we can never observe both:
+- the outcome **with treatment**, and  
+- the outcome **without treatment**
 
-```python
-#!pip install pandas
-```
+This missing data problem is at the heart of causal inference.
 
-```python
+The **potential outcomes framework** provides a clean way to reason about this:
+- It defines causal effects at the unit level
+- Separates what is observable from what is not
+- Makes explicit the assumptions required for valid inference
+
+In practice, mistakes arise not from computing metrics, but from **misinterpreting comparisons**:
+- Confusing correlation with causation  
+- Ignoring selection bias  
+- Failing to recognize required assumptions  
+
+---
+
+## What this analysis demonstrates
+
+We build a minimal synthetic example to illustrate the key ideas:
+
+1. **Potential outcomes framework**
+   - Each unit has two potential outcomes:
+     - \( Y_0 \): outcome without treatment  
+     - \( Y_1 \): outcome with treatment  
+
+2. **Observed outcome as a switch**
+   - We only observe one outcome depending on treatment:
+     \[
+     Y = (1 - T) \cdot Y_0 + T \cdot Y_1
+     \]
+
+3. **Selection bias**
+   - When treated and untreated groups differ systematically:
+     \[
+     E[Y_0 \mid T = 1] \neq E[Y_0 \mid T = 0]
+     \]
+   - Naive comparisons become biased
+
+4. **Randomization / ignorability**
+   - When treatment is independent of potential outcomes:
+     \[
+     (Y_0, Y_1) \perp T
+     \]
+   - Then:
+     \[
+     E[Y_1 - Y_0] = E[Y \mid T = 1] - E[Y \mid T = 0]
+     \]
+
+5. **SUTVA (Stable Unit Treatment Value Assumption)**
+   - No interference between units  
+   - A single version of treatment  
+
+6. **Role of assumptions**
+   - Causal conclusions rely on assumptions connecting theory to data
+
+---
+
+## Reference
+
+This analysis builds on standard concepts in causal inference, particularly the potential outcomes framework popularized in:
+
+- Matheus Facure — *Causal Inference for the Brave and True*
+
+All examples and interpretations here are **original and tailored to practical intuition-building**.
+
 import numpy as np
 import pandas as pd
 
