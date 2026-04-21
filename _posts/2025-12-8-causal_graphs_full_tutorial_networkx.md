@@ -5,7 +5,7 @@ date: 2025-12-08 12:00:00 -0500
 categories: [causal-inference, marketing-analytics]
 tags: [causal-graphs, dags, confounding, colliders, selection-bias, d-separation, networkx]
 ---
-
+## Practical intuition for avoiding biased conclusions in observational and experimental data
 ## Abstract
 
 This tutorial builds practical intuition for causal graphs and how they help us reason about bias in observational data. Using original examples from marketing and product analytics, it shows how confounding, colliders, and selection bias can create misleading conclusions even before any model is fit.
