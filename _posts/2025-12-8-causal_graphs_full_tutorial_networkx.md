@@ -1,13 +1,10 @@
 ---
 layout: post
 title: "Causal Graphs, Confounding, Colliders, and Selection Bias"
-subtitle: "A Practical Tutorial Inspired by Chapter 3 (with Original Examples)"
 date: 2025-12-08 12:00:00 -0500
 categories: [causal-inference, marketing-analytics]
 tags: [causal-graphs, dags, confounding, colliders, selection-bias, d-separation, networkx]
 ---
-
-# Causal Graphs, Confounding, Colliders, and Selection Bias
 
 ## Abstract
 
@@ -19,7 +16,7 @@ The goal is not just to explain DAGs mechanically, but to show how they help ans
 
 ## Introduction
 
-This tutorial is inspired by Chapter 3 of Matheus Facure’s *Causal Inference in Python*, but uses **original examples, variables, and business scenarios** so that each concept stands on its own.
+This tutorial builds on standard causal inference concepts and uses **original examples, variables, and business scenarios** so that each concept stands on its own.
 
 The focus is on **practical intuition** — understanding how confounding, colliders, and selection bias arise in real-world data, and how causal graphs help avoid incorrect conclusions.
 
