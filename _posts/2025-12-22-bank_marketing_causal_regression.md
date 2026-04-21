@@ -43,6 +43,11 @@ Each row = customer
 
 ---
 
+## 📚 Reference
+
+Facure, Matheus. *Causal Inference for the Brave and True*.  
+https://matheusfacure.github.io/python-causality-handbook/
+
 ## Interpretation Layer
 
 ### What problem are we solving?
@@ -752,32 +757,87 @@ m_inter.summary().tables[1]
 
 
 
-## Key takeaways
+## 🧠 What the Results Actually Show
 
-- Regression = adjusted comparison  
-- Month fixed effects remove seasonality bias  
-- FWL explains why controls work  
-- Interactions show when marketing works better  
+Across specifications, the estimated treatment effect remains **positive but modest**:
 
+- Naive regression: ~0.015  
+- Fully adjusted model: ~0.04  
+- FWL residual regression: ~0.035–0.04  
+- Interaction model: heterogeneous but directionally consistent  
 
+👉 This stability is important.
 
-## 🧠 When Linear Regression Works Well for Causal Inference
+It suggests that:
+- The initial bias in naive estimates is **not extreme**
+- Adding controls and fixed effects **refines** rather than overturns the result
+- The treatment effect is **real but relatively small**
 
-✅ Large sample size  
-✅ Good overlap  
-✅ Strong confounder coverage  
-✅ Approximately linear effect  
+Additionally, the increase from naive to adjusted estimates suggests the presence of **negative selection bias** in treatment assignment.
 
-## 🚫 When It Struggles
+---
 
-❌ Strong nonlinear HTE  
-❌ Hidden confounders  
-❌ Extreme treatment imbalance  
-❌ Post-treatment variable leakage  
+## 🔑 Key Takeaways
 
-## 🔄 Bridge to Meta-Learners and Forests
-If linear model struggles:
-→ S-Learner / T-Learner  
-→ X-Learner  
-→ Causal Forests  
+- **Regression = adjusted comparison, not causality by default**
+- **Controls matter** → effect size increases after adjustment (bias correction)
+- **Month fixed effects matter** → seasonality was confounding the estimate
+- **FWL confirms equivalence** → partialling out yields consistent estimates
+- **Heterogeneity exists** → treatment effectiveness varies across months
 
+---
+
+## 📊 Business Interpretation
+
+- Estimated lift ≈ **3–4 percentage points**
+- Effect is **statistically significant but economically modest**
+- Not a “silver bullet” channel — but **directionally beneficial**
+
+👉 Translation:  
+**Cellular contact improves conversion, but its impact depends on timing and context.**
+
+---
+
+## ⚠️ When Should You Trust This?
+
+Linear regression works well here because:
+
+- ✅ Large sample size  
+- ✅ Reasonable overlap between treated and control groups  
+- ✅ Rich covariates capturing key confounders  
+- ✅ Effects approximately linear  
+
+---
+
+## ❌ When This Would Break
+
+Be cautious if:
+
+- Hidden confounders exist (e.g., targeting based on unobserved intent)
+- Strong nonlinear effects dominate
+- Treatment assignment is highly selective
+- Post-treatment variables are included as controls
+
+---
+
+## 🔗 Where This Fits in the Bigger Picture
+
+Linear regression is the **starting point** for causal inference:
+
+- If assumptions hold → simple, interpretable, and fast  
+- If assumptions weaken → move to:
+  - Inverse Propensity Weighting (IPW)  
+  - Doubly Robust methods  
+  - Meta-learners (S / T / X learners)  
+  - Causal forests  
+
+---
+
+## 🎯 Final Takeaway
+
+Linear regression can recover meaningful causal effects in observational marketing data —  
+but its reliability comes not from the model itself, but from:
+
+> **the validity of assumptions and the consistency of estimates across specifications.**
+
+---
