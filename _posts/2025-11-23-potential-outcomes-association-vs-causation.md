@@ -336,7 +336,7 @@ To make sense of this framework, we quietly relied on some important assumptions
 
 2. **Ignorability / Independence**
    - In the randomized case, treatment is independent of potential outcomes:  
-     (Y0, Y1) are independent of T.  
+     (Y0, Y1).  
      This is what makes simple differences in averages unbiased.
 
 3. **Consistency**
