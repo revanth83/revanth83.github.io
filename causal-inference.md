@@ -1,10 +1,8 @@
 ---
 layout: page
-title: Causal Inference
+title: Causal Inference in Practice
 permalink: /causal-inference/
 ---
-
-## Causal Inference in Practice
 
 This page organizes my work on causal inference — from foundational concepts to applied modeling in marketing, experimentation, and decisioning.
 
