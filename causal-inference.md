@@ -62,7 +62,7 @@ Incorporating uncertainty into decision-making.
 
 Moving from treatment-effect estimation toward mechanism-level reasoning and counterfactual analysis.
 
-- [Building Structural Causal Models: An End-to-End Workflow with DoWhy, EconML, and Refutation Tests]({% post_url 2026-1-31-Building_Structural-Causal_Models_with_dowhy_&_ecoml_gcm %})
+- [Building Structural Causal Models: An End-to-End Workflow with DoWhy, EconML, and Refutation Tests]({% post_url 2026-1-31-Building_Structural-Causal_Models_with_dowhy_&_econml_gcm %})
 
 **Key ideas:**
 - Moving beyond average effect estimation  
