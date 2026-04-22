@@ -3,7 +3,7 @@ layout: page
 title: Causal Inference in Practice
 permalink: /causal-inference/
 ---
-
+## Overview
 This page organizes my work on causal inference — from foundational concepts to applied modeling in marketing, experimentation, and decisioning.
 
 The focus is on **estimating causal effects, understanding heterogeneity, and making better decisions under uncertainty**.
