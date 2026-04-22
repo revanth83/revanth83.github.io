@@ -56,7 +56,6 @@ Incorporating uncertainty into decision-making.
 - [Double Machine Learning Finds Segments, Bayesian Decides Which Ones to Trust]({% post_url 2026-04-17-dml-vs-bayesian-uplift-criteo %})
 
 ---
----
 
 ## Structural Causal Models
 
