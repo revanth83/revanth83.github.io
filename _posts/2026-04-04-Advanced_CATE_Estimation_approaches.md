@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Advanced CATE Estimation methods"
+title: "Advanced CATE Estimation:"
 date: 2026-04-04 12:00:00 -0500
 ---
 
