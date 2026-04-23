@@ -153,7 +153,7 @@ The real skill is not fitting the model, but validating those assumptions.
 
 ---
 
-
+```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
