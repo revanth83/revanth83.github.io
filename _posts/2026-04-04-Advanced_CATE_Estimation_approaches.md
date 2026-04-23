@@ -95,7 +95,7 @@ df = pd.read_csv(url)
 # Keep only the useful columns
 df = df.drop(columns=["rownames"], errors="ignore")
 
-# Treatment and outcome naming consistent with the chapter
+# Treatment and outcome naming made clearer
 df = df.rename(columns={"treat": "treatment", "re78": "outcome"})
 
 df.head()
@@ -499,7 +499,7 @@ X.head()
 
 ## 3. Randomization sanity check
 
-Just like in the chapter, we first ask:
+ We first ask:
 
 > Can observed covariates predict treatment?
 
@@ -601,7 +601,7 @@ the observed covariates do not strongly predict treatment, which is what we hope
 
 ## 4. Train / test split for uplift modeling
 
-Following the chapter, we create a separate train and test split.
+We create a separate train and test split.
 Because experimental datasets can still be small in terms of **effective signal**, it is useful to keep a large test set.
 
 
@@ -625,7 +625,7 @@ print("Treatment rate test :", T_test.mean().round(4))
 
 ## 5. Helper functions and model definitions
 
-We now recreate the same family of estimators used in the chapter:
+We now implement a standard set of CATE estimators to compare them:
 
 - S-Learner
 - T-Learner
@@ -705,7 +705,7 @@ models = {
 
 ## 6. Fit all models and compare training time
 
-This mirrors the timing comparison in the chapter. Exact times will vary by machine, but relative ordering is the main idea.
+ Exact run times will vary by machine, but relative ordering is the main idea.
 
 
 ```python
@@ -932,7 +932,7 @@ pd.DataFrame({k: np.asarray(v).ravel()[:5] for k, v in cate_test.items()})
 
 ## 8. Uplift by decile
 
-This is one of the chapter's main ideas.
+This is one of the main ideas of the analysis.
 
 ### Intuition
 1. Score each unit by predicted uplift.
@@ -1046,7 +1046,7 @@ plt.show()
 
 ## 9. Expected response (binary-treatment version)
 
-In the chapter, expected response is used as a more decision-oriented metric.
+In this work, expected response is used as a more decision-oriented metric.
 
 ### Intuition
 For each person:
@@ -1187,7 +1187,7 @@ plt.show()
 
 ## 10. Confidence intervals with Linear DML
 
-One nice feature highlighted in the chapter is that `LinearDML` can provide confidence intervals directly.
+One nice feature of `LinearDML` is that it can provide confidence intervals directly.
 
 
 ```python
@@ -1366,7 +1366,7 @@ comparison
 
 ## 12. Extra: counterfactual explanations
 
-The chapter ends with a short section on **counterfactual explanations**.
+The work ends with a short section on **counterfactual explanations**.
 
 ### Key idea
 This is **not** about estimating the true causal effect in the world.
@@ -1374,7 +1374,7 @@ It is about asking:
 
 > *What small change to the input would flip the model's decision?*
 
-To demonstrate this in a way that is close to the chapter, we will:
+To demonstrate this we build on the uplift estimates from linear DML model:
 1. take the estimated uplift from `LinearDML`,
 2. convert it into a simple recommendation label:
    - `1` if the model recommends treatment,
@@ -1742,8 +1742,7 @@ Each row says something like:
 
 > “If this person's features changed in these small ways, the **recommendation model** would flip from 'do not treat' to 'treat'.”
 
-Again, this is an explanation of the **policy model**, not a guarantee about the real world.
-That is exactly the spirit of the final section in Molak's chapter.
+This is an explanation of the **policy model**, not a guarantee about the real world.
 
 Again, this section is meant to explain **model behavior under the learned policy**, not to make a claim about ground-truth causal effects in the real world.
 
