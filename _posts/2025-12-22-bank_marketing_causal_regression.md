@@ -153,11 +153,6 @@ The real skill is not fitting the model, but validating those assumptions.
 
 ---
 
-## References
-
-- Facure, M. *Causal Inference for the Brave and True*  
-  https://matheusfacure.github.io/python-causality-handbook/
-```python
 
 import numpy as np
 import pandas as pd
