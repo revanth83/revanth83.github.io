@@ -266,8 +266,7 @@ We will treat each comparison separately:
 1. SubjectLine 2 vs SubjectLine 1  
 2. SubjectLine 3 vs SubjectLine 1  
 
-This is equivalent to running two two-arm experiments that share the same control group
-(very similar to *no_email vs short* and *no_email vs long* in Facure's cross-sell example).
+This is equivalent to running two two-arm experiments that share the same control group.
 
 
 ```python
