@@ -46,7 +46,6 @@ Each row = customer
 ## 📚 Reference
 
 Facure, Matheus. *Causal Inference in Python: Applying Causal Inference in the Tech Industry*.  
-https://matheusfacure.github.io/python-causality-handbook/
 
 ## Interpretation Layer
 
