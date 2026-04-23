@@ -1768,6 +1768,4 @@ Overall, the goal is not to reproduce a template, but to understand how these me
 
 
 
-```python
 
-```
