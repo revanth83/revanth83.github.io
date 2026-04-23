@@ -100,7 +100,7 @@ Then we create:
 - **Treatment `X`**: depends on some covariates (confounding)
 - **Outcome `Y`**: depends on `X` + covariates
 
-We choose a **true causal effect** of `X → Y` to be **about 0.7** (like the chapter’s synthetic example).
+We choose a **true causal effect** of `X → Y` to be **about 0.7**.
 
 
 ```python
@@ -122,7 +122,7 @@ n = len(W_scaled)
 u = rng.normal(0, 1, size=n)
 
 # Treatment X depends on covariates (confounding)
-# (Continuous treatment to match the chapter’s DML regression example)
+
 X = (
     0.6 * W_scaled["bmi"].to_numpy() +
     0.3 * W_scaled["bp"].to_numpy() +
@@ -407,7 +407,7 @@ print(estimand)
 
 ## 4) DoWhy Step 3 — Estimate the effect
 
-We estimate the causal effect using two estimators (like the chapter):
+We estimate the causal effect using two estimators:
 
 1. **Linear regression** (simple baseline)
 2. **Double ML (DML)** via **EconML** (more flexible, ML-based)
@@ -467,7 +467,7 @@ print("True effect:", TRUE_ATE)
 
 Refutation tests try to **break** your causal result.
 
-We’ll run the same style of tests used in the chapter:
+We’ll run a standard set of robustness tests to stress-test the causal estimate:
 
 1. **Data subset refuter** (invariant transformation)
 2. **Random common cause** (invariant transformation)
