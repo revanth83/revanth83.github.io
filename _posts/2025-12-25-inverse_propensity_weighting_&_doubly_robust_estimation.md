@@ -94,7 +94,7 @@ The goal is not just to estimate effects, but to build intuition for when those 
 
 # === Standard imports ===
 # We keep models simple and interpretable on purpose.
-# Chapter 5 is about *causality*, not model tuning.
+# This analysis is about *causality*, not model tuning.
 
 import numpy as np
 import pandas as pd
@@ -425,7 +425,7 @@ print("Naive conversion difference:", naive_conv[1] - naive_conv[0])
     
 
 
-## Step 2 — Propensity Scores (the key idea of Chapter 5)
+## Step 2 — Propensity Scores 
 
 The **propensity score** is:
 
@@ -596,8 +596,6 @@ print("ESS stabilized:", ess(w_stab))
 
 
 ## Step 5 — Doubly Robust Estimation (AIPW)
-
-This is the **main takeaway** of Chapter 5.
 
 Doubly Robust combines:
 1. A **propensity model** (design-based)
