@@ -18,7 +18,7 @@ The goal is not just estimation, but building intuition for when such estimates 
 
 ## Bank Marketing Case Study
 
-This notebook illustrates **Chapter 4 of Matheus Facure’s _Causal Inference in Python_** using the Bank Marketing dataset.
+This analysis applies causal inference concepts to the Bank Marketing dataset to estimate treatment effects in a practical setting. 
 
 ### Causal question
 
@@ -45,7 +45,7 @@ Each row = customer
 
 ## 📚 Reference
 
-Facure, Matheus. *Causal Inference for the Brave and True*.  
+Facure, Matheus. *Causal Inference in Python: Applying Causal Inference in the Tech Industry*.  
 https://matheusfacure.github.io/python-causality-handbook/
 
 ## Interpretation Layer
