@@ -458,7 +458,7 @@ ATE = E[Y(1) - Y(0)]
 - “For a person with characteristics `x`, what is the expected effect?”
 
 \[
-	au(x) = E[Y(1) - Y(0)| X=x]
+	tau(x) = E[Y(1) - Y(0)| X=x]
 \]
 
 In marketing terms, **ATE** is “Does the campaign work on average?”  
@@ -881,7 +881,7 @@ Fit one model for the outcome:
 Then predict:
 
 \[
-	au(x) = &micro;(x,1) - &micro;(x,0)
+	tau(x) = &micro;(x,1) - &micro;(x,0)
 \]
 
 **Risk:** the model can “ignore” `T` if the signal is weak relative to `X`.
@@ -896,7 +896,7 @@ Fit two separate models:
 Then:
 
 \[
-	au(x) = &micro;_1(x) - &micro;_0(x)
+	tau(x) = &micro;_1(x) - &micro;_0(x)
 \]
 
 **Strength:** cannot ignore treatment  
