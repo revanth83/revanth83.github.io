@@ -116,7 +116,7 @@ This analysis builds on standard concepts in randomized experiments from:
 
 - Matheus Facure — *Causal Inference for the Brave and True* (Chapter 2: Randomized Experiments)
 
-However, all examples, datasets, and interpretations are **original and tailored to practical marketing use cases**.
+However, all examples, datasets, and interpretations are **tailored to practical marketing use cases**.
 
 ---
 
