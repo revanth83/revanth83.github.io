@@ -229,7 +229,7 @@ In practice, the choice of cutoff is a modeling decision:
 - **Median** gives equal group sizes (often stable).
 - **Mean** can create imbalance if the variable is skewed (and imbalance matters for T‑ and X‑Learner behavior).
 
-Because Chapter 9 is about *why different learners behave differently under imbalance*, it’s actually useful to see what happens when the split is not perfectly balanced.
+Because work is about *why different learners behave differently under imbalance*, it’s actually useful to see what happens when the split is not perfectly balanced.
 
 
 
@@ -475,7 +475,7 @@ That means: after adjusting for `X`, there are no *unmeasured confounders* that 
 
 If this assumption fails, matching/weighting/meta‑learners can still produce numbers—but they may not be causal.
 
-### Why propensity scores show up everywhere in Chapter 9 Molak
+### Why propensity scores show up everywhere in this analysis
 
 The propensity score `e(x)=P(T=1|X=x)` helps with:
 
