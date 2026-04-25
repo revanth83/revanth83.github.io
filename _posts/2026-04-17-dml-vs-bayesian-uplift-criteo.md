@@ -119,7 +119,7 @@ If your file uses different names, adjust the mapping in the next cell.
 DATA_PATH = "data/criteo-uplift-v2.1.csv.gz"
 
 
-df = pd.read_csv(DATA_PATH,compression='gzip', nrows=500000)
+df = pd.read_csv(DATA_PATH,compression='gzip')
 
 # Normalize column names for easier handling
 df.columns = [str(c).strip().lower() for c in df.columns]
