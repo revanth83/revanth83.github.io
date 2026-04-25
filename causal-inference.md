@@ -14,7 +14,7 @@ The focus is on **estimating causal effects, understanding heterogeneity, and ma
 
 Core concepts behind causal reasoning and why correlation is not enough.
 
-- [Association vs Causation: A Minimal Potential Outcomes Demo]({% 2025-11-23-potential-outcomes-association-vs-causation-aligned %})
+- [Association vs Causation: A Minimal Potential Outcomes Demo]({% post_url 2025-11-23-potential-outcomes-association-vs-causation-aligned %})
 - [Causal Graphs, Confounding, Colliders, and Selection Bias]({% post_url 2025-12-8-causal_graphs_full_tutorial_networkx %})
 
 ---
