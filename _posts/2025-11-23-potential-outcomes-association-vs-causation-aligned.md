@@ -378,17 +378,3 @@ print(f"Randomized treated - control: {rand_diff: .4f}")
     Randomized treated - control:  0.1443
     
 
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
