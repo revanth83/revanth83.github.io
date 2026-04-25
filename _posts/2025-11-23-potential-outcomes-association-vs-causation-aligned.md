@@ -1,4 +1,11 @@
 ---
+layout: post
+title: "Potential Outcomes, Association vs Causation – A Minimal Demo in Python"
+date: 2025-11-23
+author: "Revanth Garlapati"
+---
+
+---
 
 ## Abstract
 
