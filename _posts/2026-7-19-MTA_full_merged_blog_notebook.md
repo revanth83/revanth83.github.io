@@ -1,4 +1,8 @@
-# When Attribution Models Disagree: How Different Methods Lead to Different Strategies
+---
+layout: post
+title: When Attribution Models Disagree: How Different Methods Lead to Different Strategies
+date: 2026-07-19 12:00:00 -0500
+---
 
 ## A practical study of customer journeys showing how attribution methods influence budget allocation.
 
