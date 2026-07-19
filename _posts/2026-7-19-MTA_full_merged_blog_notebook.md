@@ -15,7 +15,7 @@ This notebook uses the Kaggle **Multi-Touch Attribution** dataset.
 
 The dataset contains user-level marketing interactions with timestamp, channel, campaign, conversion, revenue, and other fields.
 
-## Core Message
+## Abstract
 
 Multi-touch attribution is useful for understanding observed customer journeys, but different attribution methods answer different questions.
 
