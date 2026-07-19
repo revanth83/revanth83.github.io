@@ -612,9 +612,9 @@ Adstock captures the idea that marketing can keep influencing customers after th
 
 A simple geometric adstock formula is:
 
-$$
-Adstock_t = X_t + \lambda \cdot Adstock_{t-1}
-$$
+
+\[Adstock_t = X_t + \lambda \cdot Adstock_{t-1}\]
+
 
 where $\lambda$ is the decay rate.
 
