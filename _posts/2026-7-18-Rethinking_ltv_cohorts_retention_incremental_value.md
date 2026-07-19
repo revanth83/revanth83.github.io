@@ -645,9 +645,10 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
-
-    
-![png](output_8_0_ltv.png)
+<figure>
+  <img src="{{ site.baseurl }}/images/output_8_0_ltv.png">
+  <figcaption style="text-align:center;">Fig1.Average Cumulative Value per Customer overtime </figcaption>
+</figure>
     
 
 
@@ -793,9 +794,11 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_12_0_ltv.png">
+  <figcaption style="text-align:center;">Fig2.Retention Curves by Cohort </figcaption>
+</figure>
     
-![png](output_12_0_ltv.png)
     
 
 
@@ -1023,9 +1026,11 @@ plt.grid(True, alpha=0.3)
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_16_0_ltv.png">
+  <figcaption style="text-align:center;">Fig3.Survival-Adjusted LTV by Customer Segment </figcaption>
+</figure>
     
-![png](output_16_0_ltv.png)
     
 
 
@@ -1231,9 +1236,11 @@ plt.grid(True, axis="y", alpha=0.3)
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_23_0_ltv.png">
+  <figcaption style="text-align:center;">Fig4.Observed vs Adjusted vs True Incremental LTV </figcaption>
+</figure>
     
-![png](output_23_0_ltv.png)
     
 
 
