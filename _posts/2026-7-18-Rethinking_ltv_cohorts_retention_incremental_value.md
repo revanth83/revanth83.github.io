@@ -814,9 +814,10 @@ A survival-style view does not assume that every customer remains active for the
 
 A compact way to write the idea is:
 
-$$
-LTV_i = \sum_{t=1}^{T} P(active_{i,t}) \times E(value_{i,t}) \times discount_t
-$$
+LTVᵢ = Σₜ P(activeᵢ,ₜ) × E(valueᵢ,ₜ) × discountₜ
+
+
+
 
 This is enough for a practical marketing blog post. The goal is not to turn the analysis into a survival modeling tutorial. The goal is to show that future value should be adjusted for the probability of remaining active.
 
@@ -1263,14 +1264,13 @@ A useful LTV framework combines four pieces:
 
 In production, LTV does not have to be a single specialized model. It can be built as a composition of familiar components:
 
-$$
-Expected\ Value = Propensity \times Value \times Retention
-$$
+Expected Value = Propensity × Value × Retention
+
+
+
 
 For decision-making, the stronger version is:
 
-$$
-Incremental\ LTV = Incremental\ Propensity \times Value \times Retention
-$$
+Incremental LTV = Incremental Propensity × Value × Retention
 
 That distinction matters. A high observed LTV customer is not automatically a high incremental-value customer. Marketing decisions should prioritize value that the action actually creates.
