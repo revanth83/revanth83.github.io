@@ -4,11 +4,9 @@ title: Marketing Analytics
 permalink: /marketing-analytics/
 ---
 
-# Marketing Analytics in Practice
-
-## Overview
-
+## Marketing Analytics in Practice
 This collection brings together practical marketing analytics notebooks focused on measuring marketing effectiveness and customer value.
+## Overview
 
 Rather than presenting individual models in isolation, these notebooks show how different modeling assumptions influence business decisions—from assigning credit across customer journeys, to measuring channel effectiveness, to estimating long-term customer value.
 
