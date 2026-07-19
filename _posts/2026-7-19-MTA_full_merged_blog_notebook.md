@@ -609,9 +609,11 @@ plt.show()
 </div>
 
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_9_1_mta.png">
+  <figcaption style="text-align:center;">Fig1.Most Common Customer Journey Paths </figcaption>
+</figure>
     
-![png](output_9_1.png)
     
 
 
@@ -1006,9 +1008,11 @@ plt.show()
 </div>
 
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_17_1_mta.png">
+  <figcaption style="text-align:center;">Fig2. Attribution Share by Method </figcaption>
+</figure>
     
-![png](output_17_1.png)
     
 
 
@@ -1185,11 +1189,11 @@ plt.show()
 </div>
 
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_22_1_mta.png">
+  <figcaption style="text-align:center;">Fig3. Raw Conversion Rate Difference: Saw Channel vs Did Not See Channel </figcaption>
+</figure>
     
-![png](output_22_1.png)
-    
-
 
 ### Interpretation
 
@@ -1457,9 +1461,10 @@ plt.show()
 </div>
 
 
-
-    
-![png](output_29_1.png)
+<figure>
+  <img src="{{ site.baseurl }}/images/output_29_1_mta.png">
+  <figcaption style="text-align:center;">Fig4. Model-Based Channel Presence Coefficients </figcaption>
+</figure>
     
 
 
