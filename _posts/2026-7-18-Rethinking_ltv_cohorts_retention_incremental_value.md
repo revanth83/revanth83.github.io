@@ -15,7 +15,7 @@ It is also:
 
 > How much value is incremental because of a marketing action?
 
-This notebook builds a synthetic customer panel to demonstrate four connected ideas:
+This work builds a synthetic customer panel to demonstrate four connected ideas:
 
 1. Cohort LTV: how value accumulates over customer age.
 2. Retention curves: how many customers remain active over time.
