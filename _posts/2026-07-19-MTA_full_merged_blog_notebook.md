@@ -4,7 +4,7 @@ title: "When Attribution Models Disagree: How Different Methods Lead to Differen
 date: 2026-07-19 12:00:00 -0500
 ---
 
-## A practical study of customer journeys showing how attribution methods influence budget allocation.
+## A practical study of customer journeys showing how attribution methods influence budget allocation
 
 ---
 
