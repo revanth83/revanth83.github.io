@@ -1,5 +1,10 @@
-# Rethinking LTV: Cohorts, Retention, and Incremental Value
+---
+layout: post
+title: "Rethinking LTV: Cohorts, Retention, and Incremental Value"
+date: 2026-07-18 12:00:00 -0500
+---
 
+### Abstract
 Lifetime value is often presented as a standalone model. In real marketing analytics work, it is more useful to treat LTV as a decision framework.
 
 The practical question is not only:
