@@ -1,4 +1,8 @@
-# A Media Mix Model That Changes with Assumptions — A Practical Walkthrough
+---
+layout: post
+title: "A Media Mix Model That Changes with Assumptions — A Practical Walkthrough"
+date: 2026-07-19 12:00:00 -0500
+---
 
 ## A hands-on analysis using public data showing how adstock and saturation affect channel decisions.
 
