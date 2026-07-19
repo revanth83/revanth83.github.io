@@ -399,16 +399,16 @@ plt.tight_layout()
 plt.show()
 ```
 
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_6_0_mmm.png">
+  <figcaption style="text-align:center;">Fig1. Weekly Sales Over Time </figcaption>
+</figure>
     
-![png](output_6_0.png)
-    
 
-
-
-    
-![png](output_6_1.png)
-    
+<figure>
+  <img src="{{ site.baseurl }}/images/output_6_1_mmm.png">
+  <figcaption style="text-align:center;">Fig2. Normalized Channel Activity Over Time </figcaption>
+</figure>
 
 
 ### Interpretation
@@ -983,9 +983,10 @@ display(ranks.sort_values(["model", "rank"]))
 </div>
 
 
-
-    
-![png](output_20_1.png)
+<figure>
+  <img src="{{ site.baseurl }}/images/output_20_1_mmm.png">
+  <figcaption style="text-align:center;">Fig3. Test R² by MMM Specification </figcaption>
+</figure>
     
 
 
@@ -1313,12 +1314,10 @@ plt.show()
 </table>
 </div>
 
-
-
-    
-![png](output_23_1.png)
-    
-
+<figure>
+  <img src="{{ site.baseurl }}/images/output_23_1_mmm.png">
+  <figcaption style="text-align:center;">Fig4. Adstock Decay Sensitivity </figcaption>
+</figure>
 
 ## A Small Change That Flipped the Story
 
