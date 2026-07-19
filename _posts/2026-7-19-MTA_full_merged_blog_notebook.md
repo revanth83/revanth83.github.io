@@ -1,6 +1,6 @@
 ---
 layout: post
-title: When Attribution Models Disagree: How Different Methods Lead to Different Strategies
+title: "When Attribution Models Disagree: How Different Methods Lead to Different Strategies"
 date: 2026-07-19 12:00:00 -0500
 ---
 
